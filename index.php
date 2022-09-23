@@ -20,7 +20,7 @@
     <header class="bg-dark d-flex justify-content-center align-items-center py-3 text-light flex-column">
         <!-- logo del lugar -->
         <img class="logo-custom" src="assets/img/pixlr-bg-result.png" alt="LogoNotFound">
-        <h1> Menu</h1>
+        <h1> Menú</h1>
     </header>
     <!-- Swiper -->
 
