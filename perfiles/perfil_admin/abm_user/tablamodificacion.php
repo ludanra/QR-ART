@@ -33,13 +33,13 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
+          <a class="nav-link active text-dark" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="./abm_usuarios.php">Alta de usuario</a>
+          <a class="nav-link text-dark" href="./abm_usuarios.php">Alta de usuario</a>
         </li>
-        <li class="nav-item dropdown text-light">
-          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown text-dark">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Accesos Rapidos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -53,7 +53,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
       </ul>
       
       
-      <h4 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h4>
+      <h4 class="text-sm-center text-dark">Modificación de usuario🙋🏻‍♂️</h4>
       
     </div>
   </div>
@@ -65,14 +65,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
     <table id="usuarios" name="usuarios" class="table table-striped" style="width:100%">
         <thead>
-            <tr class="text-light">
-                <th class="text-light">Usuario</th>
-                <th class="text-light">Cod_perfil</th>
-                <th class="text-light">Nombre</th>
-                <th class="text-light">Apellido</th>
-                <th class="text-light">Estado</th>
-                <th class="text-light">Email</th>
-                <th class="text-light">Editar</th>
+            <tr class="text-dark">
+                <th class="text-dark">Usuario</th>
+                <th class="text-dark">Cod_perfil</th>
+                <th class="text-dark">Nombre</th>
+                <th class="text-dark">Apellido</th>
+                <th class="text-dark">Estado</th>
+                <th class="text-dark">Email</th>
+                <th class="text-dark">Editar</th>
             </tr>
         </thead>
 
@@ -87,12 +87,12 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <tbody>
             <tr>
-                <td class="text-light" ><?php echo $mostrar['usuario'] ?></td>
-                <td class="text-light"><?php echo $mostrar['cod_perfil'] ?></td>
-                <td class="text-light"><?php echo $mostrar['nombre_usu'] ?></td>
-                <td class="text-light"><?php echo $mostrar['apellido_usu'] ?></td>
-                <td class="text-light"><?php echo $mostrar['est_baja_usu'] ?></td>
-                <td class="text-light"><?php echo $mostrar['email_usu'] ?></td>
+                <td class="text-dark" ><?php echo $mostrar['usuario'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['cod_perfil'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['nombre_usu'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['apellido_usu'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['est_baja_usu'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['email_usu'] ?></td>
                 <td>
                 <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" class="table__item__link" >Editar</a>       
                 </td>
