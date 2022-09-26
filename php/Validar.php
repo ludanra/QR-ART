@@ -1,76 +1,55 @@
 <?php
 
-$usuario=$_POST['usuario'];
-$contrasena=$_POST['contrasena'];
-session_start();
-$_SESSION['usuario']=$usuario;
+$alert='';
+
+if(!empty($_POST))
+
+{
+    if(empty($_POST['usuario']) || empty($_POST['contrasena']))
+    
+    {
+        $alert = 'Por faavor ingres su usuario y password';
 
 
-$conexion=mysqli_connect("localhost","root","","qr_art");
+    }else{
 
-$consulta="SELECT*FROM usuarios where usuario='$usuario' and contrasena=$contrasena";
-echo $consulta;
-$resultado=mysqli_query($conexion,$consulta);
+        require_once "base_de_datos.php";
 
+        $usuario = $_POST['usuario'];
+        $contrasena =$_POST['contrasena'];
+        $consulta= mysqli_query($db,"SELECT*FROM usuarios where usuario='$usuario' and contrasena='$contrasena'");
+        $filas=mysqli_num_rows($consulta);
 
-//$total=mysqli_num_rows($resultado);
-//echo $total;
+        if($filas > 0)
+        {
+            $data = mysqli_fetch_array($consulta);
 
-//if ($total >0){
-  //echo "DATO EXISTENTE";
-  
+            session_start();
+            $_SESSION['active'] = true;
+            $_SESSION['usuario']= $data[usuario];
+            $_SESSION['cod_perfil']= $data[cod_perfil];
+            $_SESSION['nombre_usu']= $data[nombre_usu];
+            $_SESSION['apellido_usu']= $data[apellido_usu];
+            $_SESSION['est_baja_usu']= $data[est_baja_usu];
+            $_SESSION['email_usu']= $data[email_usu];
+            $_SESSION['id_usuario']= $data[id_usuario];
 
+            heard('location:');
 
-//}
-//else{
-  //echo "nO existe";
+            
 
-//}
+        }else
+        {
+            $alert = 'Usuario o password incorrecto';
 
-//echo 
-
-$filas=mysqli_fetch_array($resultado);
-
-
-
-if($filas['cod_perfil']==1){//Administrador
-    header("location:./../perfiles/perfil_admin/perfil_admin.php");
-
-}elseif ($filas ['cod_perfil']==2){ //cocina
-header("location:perfil_cocina.html");
-}elseif($filas ['cod_perfil']==3){ //Mozo
-header("location:perfil_mozo.html");
-}elseif($filas ['cod_perfil']==4){ //Caja
-    header("location:perfil_caja.html");
+            session_destroy();
+        }
+    }
 
 
 }
-else{
-    ?>
-    <?php
-    header("location:login.php");
 
-  ?>
-      <div class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-       <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      </div>
-     </div>
-      </div>
-  <?php
-}
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+
+
+
+

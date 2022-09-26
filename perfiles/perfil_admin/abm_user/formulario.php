@@ -76,6 +76,7 @@
 
                 <div class="card-body">
 
+
                     <form action="../../../php/insertar.php" method="post">
                         <label for="formFile" class="form-label">Usuario</label>
 

@@ -3,7 +3,72 @@
 $conexion=mysqli_connect("localhost","root","","qr_art");
 $id= $_GET['id'];
 
+
+
+//Mostrar datos
+
+
+//Si el id esta vacio que vuelva a la lista de usuarios
+
+if(empty($_GET['id']))
+
+{
+
+  header('location:../perfiles/perfil_admin/abm_user/tablamodificacion.php');
+
+}
+
+$query="SELECT * FROM usuarios WHERE id_usuario='$id'";
+
+
+$sql="SELECT * FROM usuarios WHERE id_usuario='$id'";
+$result=mysqli_query($conexion, $sql);
+$result_query=mysqli_num_rows($result);
+
+
+if($result_query == 0){
+
+  header('location:../perfiles/perfil_admin/abm_user/tablamodificacion.php');
+
+}else{
+
+
+  $option = '';
+
+  while($data=mysqli_fetch_array($result)) {
+
+    $id_usuario = $data['id_usuario'];
+    $usuario = $data['usuario'];
+    $cod_perfil = $data['cod_perfil'];
+    $nombre_usu = $data['nombre_usu'];
+    $apellido_usu = $data['apellido_usu'];
+    $email_usu = $data['email_usu'];
+
+    if($cod_perfil == 1){
+
+      $option = '<option value="'.$cod_perfil.'" select>'.$cod_perfil.'</option>';
+    }else if($cod_perfil == 2){
+
+      $option = '<option value="'.$cod_perfil.'"select>'.$cod_perfil.'</option>';
+
+    }else if($cod_perfil == 3){
+
+      $option = '<option value="'.$cod_perfil.'"select>'.$cod_perfil.'</option>';
+
+    }
+
+
+  }
+
+}
+
+
+
 ?>
+
+
+
+
 
 
 <!DOCTYPE html>
@@ -73,7 +138,25 @@ $id= $_GET['id'];
 
                 <div class="card-body">
 
-                    <form action="../../../php/insertar.php" method="post">
+                    <form action="../../../php/actualizar.php" method="post">
+
+
+                      <label for="formFile " class="form-label text-light " ></label>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+
+                            </div>
+
+                            <input type="hidden" class="form-control"  id="id_usuario" name="id_usuario" value=<?php echo $id_usuario; ?>>
+
+
+                        </div>
+
+
+
+
+
                         <label for="formFile " class="form-label text-light " >Usuario</label>
 
                         <div class="input-group form-group">
@@ -81,7 +164,7 @@ $id= $_GET['id'];
 
                             </div>
 
-                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" autofocus required>
+                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" value=<?php echo $usuario; ?>  autofocus required>
 
 
                         </div>
@@ -96,8 +179,12 @@ $id= $_GET['id'];
                         </div>
                         <br>
 
-                        <label for="formFile" class="form-label text-light" name="cod_perfil" id="cod_perfil">Codigo del perfil </label>
+                        <label for="formFile" class="form-label text-light" name="cod_perfil" id="cod_perfil" value=<?php echo $cod_perfil; ?>>Codigo del perfil </label>
                         <select class="form-select" name="cod_perfil" id="cod_perfil"  aria-label="Default select example">
+                            <?php
+                             echo $option;
+                            
+                             ?>
                             <option value="1">Codigo_1</option>
                             <option value="2">Codigo_2</option>
                             <option value="3">Codigo_3</option>
@@ -117,7 +204,7 @@ $id= $_GET['id'];
 
                             </div>
 
-                            <input type="text" class="form-control text-light" placeholder="Nombre" name="nombre_usu" id="nombre_usu" autofocus required>
+                            <input type="text" class="form-control text-light" placeholder="Nombre" name="nombre_usu" id="nombre_usu" value=<?php echo $nombre_usu; ?> autofocus required>
                         </div>
                         <br>
                         <label for="formFile" class="form-label text-light">Apellido</label>
@@ -127,7 +214,7 @@ $id= $_GET['id'];
                             </div>
                             <br>
 
-                            <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" autofocus required>
+                            <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" value=<?php echo $apellido_usu; ?> autofocus required>
                         </div>
                         <label for="formFile" class="form-label text-light">Email</label>
                         <div class="input-group form-group">
@@ -135,7 +222,7 @@ $id= $_GET['id'];
 
                             </div>
 
-                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" autofocus required>
+                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?>autofocus required>
                         </div>
                         <input type="submit" name="Actualizar" value="Actualizar" />
                 </div>
@@ -171,8 +258,8 @@ $id= $_GET['id'];
         <?php
 
         
-        $sql="SELECT * FROM usuarios WHERE id_usuario='$id'";
-        $result=mysqli_query($conexion, $sql);
+        
+        
         $id=['id_usuario'];
 
         while($mostrar=mysqli_fetch_array($result)){
