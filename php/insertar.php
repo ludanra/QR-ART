@@ -1,7 +1,5 @@
 <?php
 
-$alert='';
-
 
 include ("base_de_datos.php");
 

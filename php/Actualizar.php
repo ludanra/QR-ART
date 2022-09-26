@@ -138,7 +138,7 @@ if($result_query == 0){
 
                 <div class="card-body">
 
-                    <form action="../../../php/actualizar.php" method="post">
+                    <form action="./../../php/procesar.php" method="post">
 
 
                       <label for="formFile " class="form-label text-light " ></label>
@@ -228,7 +228,7 @@ if($result_query == 0){
                 </div>
                 </form>
 
-                <link rel="stylesheet" href="/php/insertar.php">
+                <link rel="stylesheet" href="">
 
             </div>
 
