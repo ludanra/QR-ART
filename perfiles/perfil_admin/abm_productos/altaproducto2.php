@@ -82,7 +82,7 @@
 
                 <div class="card-body">
 
-                    <form action="insertar_producto.php" method="post">
+                    <form action="insertar_producto2.php" method="post">
                         <label for="formFile" class="form-label">Nombre del producto</label>
 
                         <div class="input-group form-group">
