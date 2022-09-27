@@ -40,7 +40,18 @@ if(!empty($_POST))
             $_SESSION['email_usu']= $data['email_usu'];
             $_SESSION['id_usuario']= $data['id_usuario'];
 
-            header('location:index.php');
+            if($data['cod_perfil']==1){//Administrador
+                header("location:./perfiles/perfil_admin/perfil_admin.php");
+            
+            }elseif ($data ['cod_perfil']==2){ //Mozo
+            header("location:./perfiles/perfil_mozo/perfil_mozo.php");
+            }elseif($data ['cod_perfil']==3){ //Caja
+            header("location:perfil_mozo.html");
+            }elseif($data ['cod_perfil']==4){ //Caja
+                header("location:perfil_caja.html");
+            
+            
+            }
 
             
 

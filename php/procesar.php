@@ -11,19 +11,40 @@ $email = $_POST ['email_usu'];
 $estado = $_POST ['est_baja_usu'];
 
 
-//actualizar
+    $consulta = "SELECT * FROM usuarios WHERE (usuario='$usuario' AND id_usuario != '$id_usuario') OR (email_usu='$email' AND id_usuario != '$id')";
+    $result = mysqli_query($conexion, $consulta);
+    $query= mysqli_fetch_array($result);
+    
+    if($query > 0 ){
+        echo "El correo o el usuario ya existe";
+    }else{
 
-$actualizar= "UPDATE usuarios SET usuario='$usuario', cod_perfil='$cod_perfil', nombre_usu='$nombre', apellido_usu='$apellido', email_usu='$email', est_baja_usu='$estado' WHERE id_usuario='$id'";
+      if(empty($_POST['contrasena']))
+      {
 
-$resultado = mysqli_query($conexion, $actualizar);
 
-if($resultado){
-    echo "<scrip>alert('Se ha modificado correctamente el usuario')";
-}else {
+        $actualizar= "UPDATE usuarios SET usuario='$usuario', cod_perfil='$cod_perfil', nombre_usu='$nombre', apellido_usu='$apellido', email_usu='$email', est_baja_usu='$estado' WHERE id_usuario='$id'";
 
-    echo "<scrip>alert('Error, el usuario no se ha podido modificar')";
+        $resultado = mysqli_query($conexion, $actualizar);
+         
 
-}
+      }else{
 
+        $actualizar= "UPDATE usuarios SET usuario='$usuario', contrasena='$contrasena', cod_perfil='$cod_perfil', nombre_usu='$nombre', apellido_usu='$apellido', email_usu='$email', est_baja_usu='$estado' WHERE id_usuario='$id'";
+
+        $resultado = mysqli_query($conexion, $actualizar);
+
+         
+
+      }
+
+      if($resultado){
+      echo "<scrip>alert('Se ha modificado correctamente el usuario')";
+      }else{
+
+       echo "<scrip>alert('Error, el usuario no se ha podido modificar')";
+
+      }
+    }
 
 ?>

@@ -1,3 +1,13 @@
+<?php
+
+   session_start();
+
+   $nombre = $_SESSION['nombre_usu'];
+   $usuario= $_SESSION['usuario'];
+   $apellido= $_SESSION['apellido_usu'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +33,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
             <div class="info ">
-                <a href="# " class="d-block ">Agustin Martel</a>
+                <a href="# " class="d-block "><?php echo $usuario;?></a>
             </div>
         </div>
 
@@ -50,7 +60,7 @@
         <div class="container-fluid ">
             <div class="row mb-2 ">
                 <div class="col-sm-8">
-                    <h1 class="text-right">¡Bienvenido Agustin Martel! </h1>
+                    <h1 class="text-right"><?php echo 'Bienvenid@ ' .$nombre. $apellido;?> </h1>
                 </div>
                 <!-- /.col -->
                 <!-- /.col -->
