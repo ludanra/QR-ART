@@ -86,8 +86,7 @@
 
     <div class="d-grid gap-4 col-6 mx-auto">
         <a href="./altaproducto.php" class="btn btn-warning btn-lg" type="button">Ingresar Producto</a>
-        <a href="./modificacionproducto.php" class="btn btn-warning btn-lg" type="button">Modificar Producto</a>
-        <a href="./eliminarproducto.php" class="btn btn-warning btn-lg" type="button">Eliminar Producto</a>
+        <a href="./modificacionproducto.php" class="btn btn-warning btn-lg" type="button">Listado de productos</a>
     </div>
 
 

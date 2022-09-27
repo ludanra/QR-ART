@@ -21,12 +21,15 @@ $query= mysqli_fetch_array($result);
 
 if ($query > 0){
     echo "El producto que desea cargar ya existe";
+    echo 'window.location.href="altaproducto.php";';
 }else{
     $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod')";
     $resultado = mysqli_query($conexion, $insertar);
     if($resultado){
         echo "<scrip>alert('Se ha registrado correctamente el producto')";
+        echo 'window.location.href="abm_productos.php";';
     }else {
         echo "<scrip>alert('Error, el producto no se ha podido crear')";
+        echo 'window.location.href="abm_productos.php";';
     }
 }
