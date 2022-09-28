@@ -60,7 +60,7 @@
         <div class="container-fluid ">
             <div class="row mb-2 ">
                 <div class="col-sm-8">
-                    <h1 class="text-right"><?php echo 'Bienvenid@ ' .$nombre. $apellido;?> </h1>
+                    <h1 class="text-right"><?php echo 'Bienvenid@ ' .$nombre." ". $apellido;?> </h1>
                 </div>
                 <!-- /.col -->
                 <!-- /.col -->
