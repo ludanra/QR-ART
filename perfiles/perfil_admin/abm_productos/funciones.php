@@ -20,13 +20,21 @@ function insertarprod(){
         $query= mysqli_fetch_array($result);
 
         if ($query > 0){
-            echo "El producto que desea cargar ya existe";
-            echo 'window.location.href="altaproducto.php";';
+
+            PRINT<<<HERE
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <div class="alert alert-danger" role="alert">
+            ERROR: El nombre del producto que desea cargar ya existe
+            </div>
+            HERE;
+
+
         }else{
             $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod')";
             $resultado = mysqli_query($conexion, $insertar);
             if($resultado){
-
                 PRINT<<<HERE
                 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
                 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -35,12 +43,15 @@ function insertarprod(){
                 Cargado correctamente
                 </div>
                 HERE;
-
-                //echo "<scrip>alert('Se ha registrado correctamente el producto')";
-                //echo 'window.location.href="abm_productos.php";';
             }else {
-                echo "<scrip>alert('Error, el producto no se ha podido crear')";
-                echo 'window.location.href="abm_productos.php";';
+                PRINT<<<HERE
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <div class="alert alert-danger" role="alert">
+                ERROR:No fue posible cargar el producto. Intente nuevamente
+                </div>
+                HERE;
             }
         }
 
