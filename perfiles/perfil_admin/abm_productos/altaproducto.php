@@ -82,7 +82,8 @@
 
                 <div class="card-body">
 
-                    <form action="insertar_producto.php" method="post">
+                    <form method="post">
+                    <!--form action="insertar_producto.php" method="post">-->
                         <label for="formFile" class="form-label">Nombre del producto</label>
 
                         <div class="input-group form-group">
@@ -147,9 +148,13 @@
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
-                        <input type="submit" name="Registrar" value="Ingresar Producto" />
+                        <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto" />
                 </div>
                 </form>
+                <?php
+                include("funciones.php");
+                insertarprod();
+                ?>
             </div>
 
 </body>

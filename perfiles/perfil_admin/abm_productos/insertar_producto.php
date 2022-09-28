@@ -26,8 +26,18 @@ if ($query > 0){
     $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod')";
     $resultado = mysqli_query($conexion, $insertar);
     if($resultado){
-        echo "<scrip>alert('Se ha registrado correctamente el producto')";
-        echo 'window.location.href="abm_productos.php";';
+
+        PRINT<<<HERE
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <div class="alert alert-success" role="alert">
+          Cargado correctamente
+        </div>
+        HERE;
+
+        //echo "<scrip>alert('Se ha registrado correctamente el producto')";
+        //echo 'window.location.href="abm_productos.php";';
     }else {
         echo "<scrip>alert('Error, el producto no se ha podido crear')";
         echo 'window.location.href="abm_productos.php";';
