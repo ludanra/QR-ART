@@ -94,7 +94,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-dark"><?php echo $mostrar['est_baja_prod'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['categ_extra'] ?></td>
                 <td>
-                <a class= "btn btn-primary" href="act_producto.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
+                <a class= "btn btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
                 </td>
 
  

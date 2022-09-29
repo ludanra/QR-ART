@@ -4,6 +4,8 @@ function insertarprod(){
     include ("base_de_datos.php");
     if (isset($_POST['Registrar'])){
 
+        // Para el archivo adjunto hacer un select para saber el maximo valor, y luego con eso +1 ya se tengo el nombre del .jpg --> img+cod_prod.jpg
+            
         $nombre_prod = $_POST ['nombre_prod'];
         $precio_prod = $_POST ['precio_prod'];
         $categoria_prod = $_POST ['categoria_prod'];
