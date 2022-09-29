@@ -164,7 +164,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" value=<?php echo $usuario; ?>  autofocus required>
+                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" value=<?php echo $usuario;?>  autofocus required>
 
 
                         </div>

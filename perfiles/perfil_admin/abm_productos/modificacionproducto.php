@@ -85,7 +85,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <tbody>
             <tr>
-                <td class="text-dark" ><?php echo $mostrar['nombre_prod'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['nombre_prod'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['precio_prod'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['categoria_prod'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['detalle_prod'] ?></td>
@@ -99,7 +99,6 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
  
             </tr>
-           
         </tbody>
         <?php
         }

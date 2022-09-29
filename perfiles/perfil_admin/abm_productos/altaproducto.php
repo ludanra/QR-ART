@@ -142,6 +142,7 @@
                             <textarea class="form-control" name="detalle_prod" id="detalle_prod" rows="3"></textarea>
 
                         </div>
+                        
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Foto del producto</label>
                             <input class="form-control" type="file" id="formFile">
