@@ -16,7 +16,19 @@ $result = mysqli_query($conexion, $consulta);
 $query= mysqli_fetch_array($result);
 
 if($query > 0 ){
-    echo "El correo o el usuario ya existe";
+
+    PRINT<<<HERE
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="alert alert-danger" role="alert">
+    ERROR: El usuario o correo que intenta crear ya existe.
+    </div>
+    HERE;
+
+
+
+   
 }else{
 
 
@@ -25,12 +37,27 @@ if($query > 0 ){
 
     if($resultado){
 
-       echo " El usuario se creo correctamente";
+        PRINT<<<HERE
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <div class="alert alert-success" role="alert">
+        El usuario se creo correctamente.
+        </div>
+        HERE;
         
     
     }else {
     
-        echo "Error, el usuario no se pudo crear";
+        PRINT<<<HERE
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <div class="alert alert-danger" role="alert">
+            ERROR: El usuario no se pudo crear.
+            </div>
+            HERE;
+
     
     }
 

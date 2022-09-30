@@ -45,8 +45,9 @@
         </a>
 
 
-        <a href="../../../login.php" class="nav-link active ">
-            <p>Cerrar Sesión</p>
+        <a href="../../login.php" class="nav-link active ">
+                <i class="far fa-circle nav-icon "></i>
+                <p>Cerrar Sesión</p>
         </a>
 
 

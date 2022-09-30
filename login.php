@@ -1,8 +1,5 @@
 <?php
 
-$alert='';
-
-
 if(!empty($_POST))
 
 {
@@ -47,8 +44,7 @@ if(!empty($_POST))
             header("location:./perfiles/perfil_mozo/perfil_mozo.php");
             }elseif($data ['cod_perfil']==3){ //Caja
             header("location:perfil_mozo.html");
-            }elseif($data ['cod_perfil']==4){ //Caja
-                header("location:perfil_caja.html");
+           
             
             
             }
@@ -57,7 +53,14 @@ if(!empty($_POST))
 
         }else
         {
-            $alert = 'Usuario o password incorrecto';
+            PRINT<<<HERE
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <div class="alert alert-danger" role="alert">
+            ERROR: Usuario o password incorrecto.
+            </div>
+            HERE;
 
             
         }
@@ -110,7 +113,7 @@ if(!empty($_POST))
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
 
-                            <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+                            <input type="text" class="form-control" placeholder="Usuario" name="usuario" autofocus required>
 
 
                         </div>
@@ -119,7 +122,7 @@ if(!empty($_POST))
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
 
-                            <input type="password" class="form-control" placeholder="Password" name="contrasena" >
+                            <input type="password" class="form-control" placeholder="Password" name="contrasena" autofocus required >
                         </div>
 
                         

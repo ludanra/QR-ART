@@ -77,7 +77,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         </thead>
 
         <?php
-      
+
         $sql="SELECT * from usuarios";
         $result=mysqli_query($conexion, $sql);
         $id=['id_usuario'];
@@ -96,6 +96,10 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td>
                 <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" class="table__item__link" >Editar</a>       
                 </td>
+                <td>
+                <a class= "btn btn-primary" href="" class="table__item__link" >Activo</a>       
+                </td>
+             
 
  
             </tr>
