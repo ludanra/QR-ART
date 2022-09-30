@@ -2,7 +2,9 @@
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
-$id=$_POST['id'];
+
+$id=$_POST['id_usuario'];
+$contrasena = md5($_POST ['contrasena']);
 $usuario = $_POST ['usuario'];
 $cod_perfil = $_POST ['cod_perfil'];
 $nombre = $_POST ['nombre_usu'];
@@ -11,7 +13,7 @@ $email = $_POST ['email_usu'];
 $estado = $_POST ['est_baja_usu'];
 
 
-    $consulta = "SELECT * FROM usuarios WHERE (usuario='$usuario' AND id_usuario != '$id_usuario') OR (email_usu='$email' AND id_usuario != '$id')";
+    $consulta = "SELECT * FROM usuarios WHERE (usuario='$usuario' AND id_usuario != '$id') OR (email_usu='$email' AND id_usuario != '$id')";
     $result = mysqli_query($conexion, $consulta);
     $query= mysqli_fetch_array($result);
     

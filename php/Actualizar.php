@@ -138,7 +138,7 @@ if($result_query == 0){
 
                 <div class="card-body">
 
-                    <form action="./../../php/procesar.php" method="post">
+                    <form action="procesar.php" method="post">
 
 
                       <label for="formFile " class="form-label text-light " ></label>
@@ -175,7 +175,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" autofocus required>
+                            <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" value=<?php echo $cod_perfil; ?> >
                         </div>
                         <br>
 
@@ -222,7 +222,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?>autofocus required>
+                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?> autofocus required>
                         </div>
                         <input type="submit" name="Actualizar" value="Actualizar" />
                 </div>
