@@ -34,6 +34,9 @@ function insertarprod(){
 
 
         }else{
+            
+            $maxcod_prod = "SELECT * FROM productos MAX(cod_prod)";
+
             $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod')";
             $resultado = mysqli_query($conexion, $insertar);
             if($resultado){

@@ -131,7 +131,7 @@
                           </select>
                         <br>
 
-                        <label for="formFile" class="form-label" name="est_baja_prod" id="est_baja_prod">Estado del</label>
+                        <label for="formFile" class="form-label" name="est_baja_prod" id="est_baja_prod">Estado del producto</label>
                         <select class="form-select" name="est_baja_prod" id="est_baja_prod" aria-label="Default select example">
                             <option value="ACTIVO">ACTIVO</option>
                           </select>
@@ -144,11 +144,12 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Foto del producto</label>
+                            <label for="formFile" class="form-label" name="userfile" id="userfile">Foto del producto</label>
                             <input class="form-control" type="file" id="formFile">
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
+
                         <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto" />
                 </div>
                 </form>
