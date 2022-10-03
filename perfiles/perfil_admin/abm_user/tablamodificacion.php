@@ -91,14 +91,27 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-dark"><?php echo $mostrar['cod_perfil'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['nombre_usu'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['apellido_usu'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['est_baja_usu'] ?></td>
+               <?php
+
+                if($mostrar["est_baja_usu"] != 1){
+
+                  echo '<td><button class= "btn btn-danger btn-xs btnActivar" id="'.$mostrar['id_usuario'].'" est_baja_usu="1">Inactivo</button></td>' ;
+                }else{
+
+                  echo '<td><button class= "btn btn-success btn-xs btnActivar" id="'.$mostrar['id_usuario'].'" est_baja_usu="0">Activo</button></td>' ;
+
+
+                }
+
+
+  
+                ?>
+
                 <td class="text-dark"><?php echo $mostrar['email_usu'] ?></td>
                 <td>
                 <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" class="table__item__link" >Editar</a>       
                 </td>
-                <td>
-                <a class= "btn btn-primary" href="" class="table__item__link" >Activo</a>       
-                </td>
+               
              
 
  

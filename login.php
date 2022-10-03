@@ -6,7 +6,7 @@ if(!empty($_POST))
     if(empty($_POST['usuario']) || empty($_POST['contrasena']))
     
     {
-        $alert = 'Por favor ingrese su usuario y password';
+         echo 'Por favor ingrese su usuario y password';
 
 
     }else{
@@ -16,17 +16,24 @@ if(!empty($_POST))
         $usuario = mysqli_real_escape_string($conexion, $_POST['usuario']);
         $contrasena = md5(mysqli_real_escape_string($conexion, $_POST['contrasena']));
 
-        
-
-
         $consulta="SELECT * FROM usuarios WHERE usuario='$usuario' AND contrasena='$contrasena'";
         $resultado = mysqli_query($conexion, $consulta);
         $filas=mysqli_num_rows($resultado);
 
-        if($filas > 0)  
+      
+        
+
+        if($filas > 0)
+
         {
+          
+          
+            
+            
+
             $data = mysqli_fetch_array($resultado);
 
+            
             session_start();
             $_SESSION['activo'] = true;
             $_SESSION['usuario']= $data['usuario'];
@@ -44,11 +51,9 @@ if(!empty($_POST))
             header("location:./perfiles/perfil_mozo/perfil_mozo.php");
             }elseif($data ['cod_perfil']==3){ //Caja
             header("location:perfil_mozo.html");
-           
-            
-            
-            }
 
+            }
+       
             
 
         }else
@@ -63,7 +68,12 @@ if(!empty($_POST))
             HERE;
 
             
-        }
+        }   
+
+
+
+
+
     }
 
 
