@@ -81,6 +81,10 @@
             <div class="card">
 
                 <div class="card-body">
+                <?php
+                include("funciones.php");
+                insertarprod();
+                ?>
 
                     <form method="post">
                     <!--form action="insertar_producto.php" method="post">-->
@@ -153,10 +157,7 @@
                         <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto" />
                 </div>
                 </form>
-                <?php
-                include("funciones.php");
-                insertarprod();
-                ?>
+
             </div>
 
 </body>

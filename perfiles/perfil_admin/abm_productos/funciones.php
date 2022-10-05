@@ -13,6 +13,8 @@ function insertarprod(){
         $detalle_prod = $_POST ['detalle_prod'];
         $prod_disponible = $_POST ['prod_disponible'];
         $est_baja_prod = $_POST ['est_baja_prod'];
+        $foto_prod = $_FILES['userfile']['name'];
+        
 
         ///Ver como hacer con la foto del producto
         ///$foto_prod = $_POST ['foto_prod'];
@@ -34,20 +36,28 @@ function insertarprod(){
 
 
         }else{
-            
-            $maxcod_prod = "SELECT * FROM productos MAX(cod_prod)";
-
-            $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod')";
+            $insertar = "INSERT INTO productos (nombre_prod, precio_prod, categoria_prod, categ_extra, detalle_prod, prod_disponible, est_baja_prod, foto_prod) VALUES ('$nombre_prod', '$precio_prod', '$categoria_prod', '$categ_extra', '$detalle_prod', '$prod_disponible', '$est_baja_prod', '$foto_prod')";
             $resultado = mysqli_query($conexion, $insertar);
             if($resultado){
-                PRINT<<<HERE
-                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                <div class="alert alert-success" role="alert">
-                Cargado correctamente
-                </div>
-                HERE;
+                if(move_uploaded_file($_FILES['userfile']['tmp_name'], "imagenes_prod/".$foto_prod)){
+                    PRINT<<<HERE
+                    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <div class="alert alert-success" role="alert">
+                    Cargado correctamente
+                    </div>
+                    HERE;
+                }else{
+                    PRINT<<<HERE
+                    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <div class="alert alert-danger" role="alert">
+                    Se cargó el producto, pero no la imagen
+                    </div>
+                    HERE;
+                }
             }else {
                 PRINT<<<HERE
                 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
