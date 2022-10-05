@@ -86,7 +86,7 @@
                 insertarprod();
                 ?>
 
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                     <!--form action="insertar_producto.php" method="post">-->
                         <label for="formFile" class="form-label">Nombre del producto</label>
 
@@ -148,8 +148,8 @@
                         </div>
                         
                         <div class="mb-3">
-                            <label for="formFile" class="form-label" name="userfile" id="userfile">Foto del producto</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
+                            <input class="form-control" type="file" name="foto_prod" id="foto_prod">
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
