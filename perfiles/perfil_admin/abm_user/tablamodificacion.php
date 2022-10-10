@@ -67,7 +67,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         <thead>
             <tr class="text-dark">
                 <th class="text-dark">Usuario</th>
-                <th class="text-dark">Cod_perfil</th>
+                <th class="text-dark">Perfil</th> 
                 <th class="text-dark">Nombre</th>
                 <th class="text-dark">Apellido</th>
                 <th class="text-dark">Estado</th>
@@ -78,38 +78,31 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
 
-        $sql="SELECT * from usuarios";
+        $sql="SELECT u.apellido_usu, u.email_usu, u.est_baja_usu, u.id_usuario, u.nombre_usu, u.usuario, p.nombre_perfil FROM usuarios u INNER JOIN perfiles p ON u.cod_perfil = p.cod_perfil ";
         $result=mysqli_query($conexion, $sql);
-        $id=['id_usuario'];
 
+        $resultado=mysqli_num_rows( $result);
+
+        $id=['id_usuario'];
+        
+
+        if($resultado > 0){
+
+
+         
         while($mostrar=mysqli_fetch_array($result)){
         ?>
 
         <tbody>
             <tr>
                 <td class="text-dark" ><?php echo $mostrar['usuario'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['cod_perfil'] ?></td>
+                <td class="text-dark"><?php echo $mostrar['nombre_perfil'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['nombre_usu'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['apellido_usu'] ?></td>
-               <?php
-
-                if($mostrar["est_baja_usu"] != 1){
-
-                  echo '<td><button class= "btn btn-danger btn-xs btnActivar" id="'.$mostrar['id_usuario'].'" est_baja_usu="1">Inactivo</button></td>' ;
-                }else{
-
-                  echo '<td><button class= "btn btn-success btn-xs btnActivar" id="'.$mostrar['id_usuario'].'" est_baja_usu="0">Activo</button></td>' ;
-
-
-                }
-
-
-  
-                ?>
-
+                <td class="text-dark"><?php echo $mostrar['est_baja_usu'] ?></td>
                 <td class="text-dark"><?php echo $mostrar['email_usu'] ?></td>
                 <td>
-                <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" class="table__item__link" >Editar</a>       
+                <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" >Editar</a>       
                 </td>
                
              
@@ -120,6 +113,9 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         </tbody>
         <?php
         }
+
+
+      }
         ?>
 
     </table>

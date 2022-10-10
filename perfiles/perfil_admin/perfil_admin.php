@@ -45,7 +45,7 @@
         </a>
 
 
-        <a href="../../login.php" class="nav-link active ">
+        <a href="../perfil_admin/abm_user/Salir.php" class="nav-link active ">
                 <i class="far fa-circle nav-icon "></i>
                 <p>Cerrar Sesión</p>
         </a>

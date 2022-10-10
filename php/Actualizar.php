@@ -18,10 +18,13 @@ if(empty($_GET['id']))
 
 }
 
-$query="SELECT * FROM usuarios WHERE id_usuario='$id'";
 
+$sql="SELECT u.apellido_usu, u.email_usu, u.est_baja_usu, u.id_usuario, u.nombre_usu, u.usuario, (u.cod_perfil) as cod_perfil,(p.nombre_perfil) as nombre_perfil
+      FROM usuarios u
+      INNER JOIN perfiles p
+      on u.cod_perfil = p.cod_perfil
+      WHERE id_usuario = $id";
 
-$sql="SELECT * FROM usuarios WHERE id_usuario='$id'";
 $result=mysqli_query($conexion, $sql);
 $result_query=mysqli_num_rows($result);
 
@@ -37,23 +40,32 @@ if($result_query == 0){
 
   while($data=mysqli_fetch_array($result)) {
 
-    $id_usuario = $data['id_usuario'];
+    $id = $data['id_usuario'];
     $usuario = $data['usuario'];
     $cod_perfil = $data['cod_perfil'];
+    $nombre_perfil = $data['nombre_perfil'];
     $nombre_usu = $data['nombre_usu'];
     $apellido_usu = $data['apellido_usu'];
     $email_usu = $data['email_usu'];
 
+
+
+
+
+
+
+    
+
     if($cod_perfil == 1){
 
-      $option = '<option value="'.$cod_perfil.'" select>'.$cod_perfil.'</option>';
+      $option = '<option value="'.$cod_perfil.'" select>'.$nombre_perfil.'</option>';
     }else if($cod_perfil == 2){
 
-      $option = '<option value="'.$cod_perfil.'"select>'.$cod_perfil.'</option>';
+      $option = '<option value="'.$cod_perfil.'"select>'.$nombre_perfil.'</option>';
 
     }else if($cod_perfil == 3){
 
-      $option = '<option value="'.$cod_perfil.'"select>'.$cod_perfil.'</option>';
+      $option = '<option value="'.$cod_perfil.'"select>'.$nombre_perfil.'</option>';
 
     }
 
@@ -148,7 +160,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="hidden" class="form-control"  id="id_usuario" name="id_usuario" value=<?php echo $id_usuario; ?>>
+                            <input type="hidden" class="form-control"  id="id_usuario" name="id_usuario" value=<?php echo $id; ?>>
 
 
                         </div>
@@ -164,7 +176,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" value=<?php echo $usuario;?>  autofocus required>
+                            <input type="text" class="form-control" placeholder="Usuario" id="usuario " name="usuario" value=<?php echo $usuario;?>  readonly>
 
 
                         </div>
@@ -175,36 +187,60 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" value=<?php echo $cod_perfil; ?> >
+                            <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena"; readonly >
                         </div>
                         <br>
 
-                        <label for="formFile" class="form-label text-light" name="cod_perfil" id="cod_perfil" value=<?php echo $cod_perfil; ?>>Codigo del perfil </label>
+                        <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Codigo del perfil </label>
+
+                        <?php
+ 
+                        $query_perfil = "SELECT * FROM perfiles ";
+                        $result = mysqli_query($conexion, $query_perfil);
+                        $perfil_result= mysqli_num_rows($result);
+
+
+                       ?>
+
+
+
                         <select class="form-select" name="cod_perfil" id="cod_perfil"  aria-label="Default select example">
-                            <?php
-                             echo $option;
-                            
-                             ?>
-                            <option value="1">Codigo_1</option>
-                            <option value="2">Codigo_2</option>
-                            <option value="3">Codigo_3</option>
-                          </select>
-                        <br>
-                        <label for="formFile" class="form-label text-light" name="cod_perfil" id="cod_perfil">Estado </label>
-                        <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
-                            <option value="ACTIVO">Activo</option>
-                            
-                            
-                           
+
+                        <?php
+
+                        if($perfil_result > 0){
+
+                          echo $option;
+
+                            while($perfiles = mysqli_fetch_array($result) ){
+                        ?>  
+                        
+                          <option value="<?php echo $perfiles["cod_perfil"]; ?>"><?php echo $perfiles["nombre_perfil"] ?></option>
+
+                        <?php
+
+
+                
+                            }
+    
+
+
+                        }
+                        
+                        ?>
+
+
+
+                        
                           </select>
                           <BR>
-                        <label for="formFile" class="form-label text-light">Nombre</label>
+                        <label for="formFile" class="form-label text-dark">Nombre</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
 
                             </div>
 
-                            <input type="text" class="form-control text-light" placeholder="Nombre" name="nombre_usu" id="nombre_usu" value=<?php echo $nombre_usu; ?> autofocus required>
+                            <input type="text" class="form-control text-dark" placeholder="Nombre" name="nombre_usu" id="nombre_usu" value=<?php echo $nombre_usu; ?> readonly>
                         </div>
                         <br>
                         <label for="formFile" class="form-label text-light">Apellido</label>
@@ -214,7 +250,7 @@ if($result_query == 0){
                             </div>
                             <br>
 
-                            <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" value=<?php echo $apellido_usu; ?> autofocus required>
+                            <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" value=<?php echo $apellido_usu; ?> readonly>
                         </div>
                         <label for="formFile" class="form-label text-light">Email</label>
                         <div class="input-group form-group">
@@ -222,7 +258,7 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?> autofocus required>
+                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?> readonly>
                         </div>
                         <input type="submit" name="Actualizar" value="Actualizar" />
                 </div>
