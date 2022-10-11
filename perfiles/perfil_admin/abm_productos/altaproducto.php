@@ -16,7 +16,7 @@
     <!--Fontawesome CDN-->
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/stylesform.css">
+    <link rel="stylesheet " href="../../../assets/stylealtap.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/adminlte.css">
@@ -36,7 +36,7 @@
         <!-- Sidebar -->
         <div class="sidebar ">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-6 pb-6 mb-6 d-flex ">
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
                 <div class="info ">
                     <a class="d-block ">ADMINISTRADOR</a>
                 </div>

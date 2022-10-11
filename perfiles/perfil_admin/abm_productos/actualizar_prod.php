@@ -73,33 +73,34 @@ if($result_query == 0){
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
-    <link rel="stylesheet " href="../assets/stylemodi.css">
+    
+    <link rel="stylesheet " href="../../../assets/stylemodip.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../assets/stylesnav.css">
+    <link rel="stylesheet " href="../../../assets/stylesnav.css">
 </head>
 
 <body>
 
-<nav class=" navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-xl">
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="../perfiles/perfil_admin/perfil_admin.php">Inicio</a>
+          <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../perfiles/perfil_admin/abm_user/formulario.php">Alta de usuario</a>
+          <a class="nav-link text-light" href="./altaproducto.php">Alta de Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../perfiles/perfil_admin/abm_user/tablamodificacion.php">Lista de usuarios</a>
+          <a class="nav-link text-light" href="./eliminarproducto.php">Eliminar Producto</a>
         </li>
-        <li class="nav-item dropdown text-light">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Accesos Rapidos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
+            <li><a class="dropdown-item" href="../abm_user/abm_usuarios.php">Administración De Usuarios🙋🏻‍♂️</a></li>
             <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
             <li><a class="dropdown-item" href="../abm_extras/abm_extras.php">Administración De Extras🍟</a></li>
           </ul>
@@ -108,25 +109,23 @@ if($result_query == 0){
         
       </ul>
       
+      <h4 class="text-sm-center text-light">Listado de productos🍔</h4>
       
-      <h4 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h4>
       
     </div>
   </div>
 </nav>
 
-    <nav>
-        <h3 class="text-sm-center text-light">Datos del usuario</h3>
-    </nav>
+<br>
 
-
-    <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
-
-                <div class="card-body">
-
-                    <form  method="post">
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      
+      <div class="card-body">
+        
+        <form  method="post">
+                      <h3 class="text-sm-center">Datos del producto</h3>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
 

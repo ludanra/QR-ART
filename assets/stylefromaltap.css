@@ -9,22 +9,16 @@ body {
 }
 
 .container {
-    height: 10%;
+    height: 35%;
     align-content: center;
 }
 
 .card {
-    height: 100px;
+    height: 200px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 500px;
-    background-color: rgba(36, 17, 121, 0.5) !important;
-}
-
-.social_icon span {
-    font-size: 60px;
-    margin-left: 10px;
-    color: #f5f2e9;
+    width: 600px;
+    background-color: #ffc107 !important;
 }
 
 .social_icon span:hover {
@@ -92,5 +86,5 @@ form input[type="submit"] {
     border-radius: 5px;
     display: block;
     color: #fff;
-    background-color: rgb(77, 25, 221);
+    background-color: rgb(235, 21, 178);
 }

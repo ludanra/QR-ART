@@ -48,7 +48,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Modificar Productos🍔</h4>
+      <h4 class="text-sm-center text-light">Listado de productos🍔</h4>
       
       
     </div>

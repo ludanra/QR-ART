@@ -85,7 +85,7 @@ if($result_query == 0){
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
-    <link rel="stylesheet " href="../assets/stylemodi.css">
+    <link rel="stylesheet " href="../assets/stylemodiu.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet " href="../assets/stylesnav.css">
 </head>
@@ -127,9 +127,9 @@ if($result_query == 0){
   </div>
 </nav>
 
-    <nav>
-        <h3 class="text-sm-center text-light">Datos del usuario</h3>
-    </nav>
+   <br>
+   <br>
+   <br>
 
 
     <div class="container">
@@ -152,6 +152,8 @@ if($result_query == 0){
 
 
                         </div>
+
+                        <h4 class="text-sm-center">Datos del usuario</h4>
 
 
 

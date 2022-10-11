@@ -16,21 +16,17 @@
     <!--Fontawesome CDN-->
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../../../assets/stylesform.css">
+    <link rel="stylesheet" href="../../../assets/styleualt.css">
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/adminlte.css">
-    <link rel="stylesheet " href="../../../assets/back.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../../../assets/OverlayScrollbars.min.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-    <nav>
-        <h3 class="text-sm-center">Alta de usuario🙋🏻‍♂️</h3>
-    </nav>
+    
 
 
     <aside class="main-sidebar sidebar-dark-secondary elevation-4 ">
@@ -69,12 +65,16 @@
 
         </div>
     </aside>
+    <br>
+    <br>
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
 
                 <div class="card-body">
+
+                 <h3 class="text-sm-center">Alta de usuario🙋🏻‍♂️</h3>
 
 
                     <form action="../../../php/insertar.php" method="post">
