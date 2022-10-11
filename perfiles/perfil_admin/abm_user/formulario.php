@@ -151,8 +151,8 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                         <br>
                         <label for="formFile" class="form-label" name="estado" id="estado">Estado </label>
                         <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
-                            <option value="ACTIVO">Activo</option>
-                            
+                            <option value="ACTIVO">ACTIVO</option>
+                           
                             
                            
                           </select>

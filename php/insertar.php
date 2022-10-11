@@ -45,6 +45,8 @@ if($query > 0 ){
         El usuario se creo correctamente.
         </div>
         HERE;
+
+        header("Refresh: 3; URL=../perfiles/perfil_admin/abm_user/tablamodificacion.php");
         
     
     }else {
@@ -57,6 +59,8 @@ if($query > 0 ){
             ERROR: El usuario no se pudo crear.
             </div>
             HERE;
+
+            header("Refresh: 3; URL=../perfiles/perfil_admin/abm_user/formulario.php");
 
     
     }

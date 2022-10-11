@@ -38,6 +38,8 @@ if($result_query == 0){
 
   $option = '';
 
+
+
   while($data=mysqli_fetch_array($result)) {
 
     $id = $data['id_usuario'];
@@ -68,6 +70,8 @@ if($result_query == 0){
       $option = '<option value="'.$cod_perfil.'"select>'.$nombre_perfil.'</option>';
 
     }
+
+
 
 
   }
@@ -233,7 +237,52 @@ if($result_query == 0){
 
                         
                           </select>
+                          
+
+                          <br>
+                        <label for="formFile" class="form-label text-light" name="estado" id="estado">Estado </label>
+
+
+                         <?php
+ 
+                        $query_estado = "SELECT DISTINCT est_baja_usu FROM usuarios ";
+                        $resultado = mysqli_query($conexion, $query_estado);
+                        $estado_result= mysqli_num_rows($resultado);
+
+
+                       ?>
+
+                        <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
+                          
+
+                        <?php
+
+                        if($estado_result > 0){
+
+                         
+
+                            while($estados = mysqli_fetch_array($resultado) ){
+                        ?>  
+                        
+                          <option value="<?php echo $estados["est_baja_usu"]; ?>"><?php echo $estados["est_baja_usu"] ?></option>
+
+                        <?php
+
+
+                
+                            }
+    
+
+
+                        }
+                        
+                        ?>
+                            
+                            
+                           
+                          </select>
                           <BR>
+
                         <label for="formFile" class="form-label text-dark">Nombre</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

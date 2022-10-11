@@ -5,6 +5,50 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
 
+if(isset($_POST['restablecer'])){
+
+  $email_usu = mysqli_real_escape_string($conexion, $_POST['email_usu']);
+  
+  
+  
+
+
+  
+  $consulta="SELECT usuario, email_usu FROM usuarios WHERE email_usu = '$email_usu'";
+
+  $resultado = mysqli_query($conexion, $consulta);
+  $fila=mysqli_fetch_array();
+  $row= mysqli_num_rows($resultado);
+
+
+  if($row == 1){
+
+    $token = uniqid();
+
+    
+    $act ="UPDATE usuarios SET token= '$token' WHERE email_usu = '$email_usu'";
+    $result = mysqli_query($conexion, $act);
+
+    
+
+
+
+    echo"Se ah enviado un mail";
+    header("Refresh: 3; URL=../login.php");
+
+   
+    
+
+
+  }else{
+    echo "Este correo no existe";
+  }
+  
+
+
+  
+
+}
 ?>
 
 
@@ -24,7 +68,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 <body>
     <div class="container">
         <div class="row justify-content-md-center" style="margin-top:15%">
-            <form class="col-3" action="prueba.php" method="POST">
+            <form class="col-3" action="" method="POST">
                 <h2>Restablecer Password</h2>
 
 
@@ -35,8 +79,10 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                     <input type="email" class="form-control" id="email_usu" name="email_usu" >
                  
                 </div>
+
                
-                <button type="submit" name="editar" href="pass.php?id_usuario=<?php echo ['id_usuario'] ?>" class="btn btn-primary">Restablecer</button>
+               
+                <button type="submit" name="restablecer" class="btn btn-primary">Restablecer</button>
             </form>
         </div>
     </div>

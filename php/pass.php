@@ -2,13 +2,28 @@
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
-if(empty($_GET['id_usario'])){
 
-  header('location:../login.php');
 
-  
+if(isset($_GET['token']) AND isset($_GET['usuario'])){
+
+
+
+    $usuario= mysqli_real_escape_string($conexion, $_POST['usuario']);
+    $token= mysqli_real_escape_string($conexion, $_POST['token']);
+
+    $sql= ("SELECT token FROM usuarios WHERE usuario= '$usuario' ");
+    $resultado = mysqli_query($conexion, $sql);
+    $row= mysqli_fetch_array($resultado);
+
+
+    if($row['token']==$token){
+
+    }
+
+
+
+
 }
-
 
 ?>
 
@@ -24,6 +39,40 @@ if(empty($_GET['id_usario'])){
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
+
+<?php
+
+$conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+if(isset($_POST['cambiar'])){
+
+    
+
+$contrasena= mysqli_real_escape_string($conexion, $_POST['contrasena']);
+
+
+$contrasena=md5($contrasena);
+
+$actualizar= "UPDATE usuarios SET contrasena = '$contrasena', token='' WHERE usuario = '$usuario'";
+$resultado = mysqli_query($conexion, $actualizar);
+
+if($actualizar){
+
+    echo "su contraseña se ah cambiado";
+    header("Refresh: 3; URL=../login.php");
+
+}else{
+
+    echo "Su contraseña no se pudo restablecer";
+}
+
+
+}
+
+
+
+?>
     <div class="container">
         <div class="row justify-content-md-center" style="margin-top:15%">
             
@@ -33,17 +82,12 @@ if(empty($_GET['id_usario'])){
 
                       <div class="mb-3">
                         <label for="c" class="form-label">Nuevo Password</label>
-                        <input type="password" class="form-control" id="c" name="p1">
+                        <input type="password" class="form-control" id="contrasena" name="contrasena">
                     
                     </div>
-                    <div class="mb-3">
-                        <label for="c" class="form-label">Confirmar Password</label>
-                        <input type="password" class="form-control" id="c" name="p2">
-                        <input type="hidden" class="form-control" id="c" name="email_usu" >
-
-                    </div>
+            
                 
-                    <button type="submit" class="btn btn-primary">Cambiar</button>
+                    <button type="submit" name="cambiar" class="btn btn-primary">Cambiar</button>
                 </form>
             
 
@@ -53,4 +97,6 @@ if(empty($_GET['id_usario'])){
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
+
+
 </html>
