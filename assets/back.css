@@ -1,7 +1,11 @@
-html,body {
-    background-image: url('https://img.freepik.com/fotos-premium/primer-plano-hamburguesa-casera-carne-res-tomate-lechuga-queso-cebolla-mesa-madera_96727-1158.jpg?w=740');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://previews.123rf.com/images/vasiliybudarin/vasiliybudarin1902/vasiliybudarin190200047/117517269-sabrosa-pizza-de-pepperoni-con-albahaca-sobre-fondo-de-hormig%C3%B3n-marr%C3%B3n-vista-superior-de-la-pizza-de.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 95%;
-    font-family: 'Numans', sans-serif;
-   
+    opacity: 0.9;
 }

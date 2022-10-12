@@ -21,6 +21,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
+    <link rel="stylesheet " href="../../../assets/back.css">
    
     <!-- overlayScrollbars -->
     
@@ -63,16 +64,16 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 <br>
    
 
-    <table id="usuarios" name="usuarios" class="table table-striped" style="width:100%">
+    <table id="usuarios" name="usuarios" class="table table-striped" style="width:100%" class="text-light">
         <thead>
-            <tr class="text-dark">
-                <th class="text-dark">Usuario</th>
-                <th class="text-dark">Perfil</th> 
-                <th class="text-dark">Nombre</th>
-                <th class="text-dark">Apellido</th>
-                <th class="text-dark">Estado</th>
-                <th class="text-dark">Email</th>
-                <th class="text-dark">Editar</th>
+            <tr class="text-light">
+                <th class="text-light">Usuario</th>
+                <th class="text-light">Perfil</th> 
+                <th class="text-light">Nombre</th>
+                <th class="text-light">Apellido</th>
+                <th class="text-light">Estado</th>
+                <th class="text-light">Email</th>
+                <th class="text-light">Editar</th>
             </tr>
         </thead>
 
@@ -95,12 +96,12 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <tbody>
             <tr>
-                <td class="text-dark" ><?php echo $mostrar['usuario'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['nombre_perfil'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['nombre_usu'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['apellido_usu'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['est_baja_usu'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['email_usu'] ?></td>
+                <td class="text-light" ><?php echo $mostrar['usuario'] ?></td>
+                <td class="text-light"><?php echo $mostrar['nombre_perfil'] ?></td>
+                <td class="text-light"><?php echo $mostrar['nombre_usu'] ?></td>
+                <td class="text-light"><?php echo $mostrar['apellido_usu'] ?></td>
+                <td class="text-light"><?php echo $mostrar['est_baja_usu'] ?></td>
+                <td class="text-light"><?php echo $mostrar['email_usu'] ?></td>
                 <td>
                 <a class= "btn btn-primary" href="/QR-ART/php/Actualizar.php?id=<?php echo $mostrar['id_usuario']?>" >Editar</a>       
                 </td>
