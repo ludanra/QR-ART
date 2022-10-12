@@ -144,7 +144,14 @@ if(!empty($_POST))
                         <div  style="  font-weight: bold; color:#FF0000"  class="alert"><?php echo isset($alert)? $alert : ''; ?></div>
  
                         <input type="submit" value="Ingresar">
-                </div>
+
+                        
+
+
+                        <div class="justify-content-end p-1">
+                        <a href="php/recuperarclave.php" id="olvido" title="Recuperar Password"> Recuperar password</a>
+                        </div>
+                        
                 </form>
                 <link rel="stylesheet" href="">
             </div>  

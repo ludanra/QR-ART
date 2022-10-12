@@ -197,6 +197,11 @@ if($result_query == 0){
                           </select>
                         <br>
 
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
+                            <input class="form-control" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
+                        </div>
+
                         <input type="submit" name="Actualizar" value="Actualizar" />
                 </div>
                 </form>

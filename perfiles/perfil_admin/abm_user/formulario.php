@@ -1,3 +1,6 @@
+
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -65,8 +68,18 @@
 
         </div>
     </aside>
+<<<<<<< HEAD
     <br>
     <br>
+=======
+    <?php
+
+$conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+
+?>
+>>>>>>> 412a5dee51432aa65842cadda7c7a0c480002cdc
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
@@ -99,16 +112,50 @@
                         </div>
 
                         <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Codigo del perfil </label>
+
+                        <?php
+ 
+                        $query_perfil = "SELECT * FROM perfiles ";
+                        $result = mysqli_query($conexion, $query_perfil);
+                        $perfil_result= mysqli_num_rows($result);
+
+
+                       ?>
+
+
+
                         <select class="form-select" name="cod_perfil" id="cod_perfil"  aria-label="Default select example">
-                            <option value="1">Codigo_1</option>
-                            <option value="2">Codigo_2</option>
-                            <option value="3">Codigo_3</option>
+
+                        <?php
+
+                        if($perfil_result > 0){
+
+                            while($perfiles = mysqli_fetch_array($result) ){
+                        ?>  
+                        
+                          <option value="<?php echo $perfiles["cod_perfil"]; ?>"><?php echo $perfiles["nombre_perfil"] ?></option>
+
+                        <?php
+
+
+                
+                            }
+    
+
+
+                        }
+                        
+                        ?>
+
+
+
+                        
                           </select>
                         <br>
-                        <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Estado </label>
+                        <label for="formFile" class="form-label" name="estado" id="estado">Estado </label>
                         <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
-                            <option value="ACTIVO">Activo</option>
-                            
+                            <option value="ACTIVO">ACTIVO</option>
+                           
                             
                            
                           </select>
@@ -155,3 +202,4 @@
 </body>
 
 </html>
+
