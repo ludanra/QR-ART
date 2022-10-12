@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2022 a las 00:46:31
+-- Tiempo de generación: 12-10-2022 a las 14:01:40
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -80,6 +80,15 @@ CREATE TABLE `perfiles` (
   `nombre_perfil` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `perfiles`
+--
+
+INSERT INTO `perfiles` (`cod_perfil`, `nombre_perfil`) VALUES
+(1, 'Administador'),
+(2, 'Cocina'),
+(3, 'Caja');
+
 -- --------------------------------------------------------
 
 --
@@ -115,24 +124,29 @@ INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_pr
 
 CREATE TABLE `usuarios` (
   `usuario` text NOT NULL,
-  `contrasena` int(8) NOT NULL,
+  `contrasena` varchar(100) NOT NULL,
   `cod_perfil` int(2) NOT NULL,
   `nombre_usu` text NOT NULL,
   `apellido_usu` text NOT NULL,
   `est_baja_usu` text NOT NULL,
   `email_usu` text NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `id_usuario` int(11) NOT NULL,
+  `token` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`) VALUES
-('alfonsoj', 1234, 1, 'johanna', 'alfonso', 'Activo', 'johannaalfonso@gmail.com', 1),
-('sss', 7, 1, 'mar', 'flei', '', 'fleita@gmail.com', 14),
-('nicole', 1111, 0, 'nicole', 'fleita', '', 'nicole@fleita', 15),
-('Palermo', 1111, 0, 'martin', 'palermo', '', 'martinpalermo@gmial.com', 16);
+INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`, `token`) VALUES
+('Mia19', 'b59c67bf196a4758191e42f76670ceba', 2, 'Mia', 'fleita', 'ACTIVO', 'miafleita12@gmail.com', 47, '633ed1bd2c1a2'),
+('antoo', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'antonella', 'alfonso', 'ACTIVO', 'antoo@gmail.com', 56, '634577ce44021'),
+('Marting', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Martin', 'fleita', 'INACTIVO', 'Martingerardo@gmail.com', 68, '63457003e3c65'),
+('Boca', 'b84bd99d065f6aab6fcd590ec1b5fe16', 3, 'Boca', 'Juniors', 'INACTIVO', 'bocajuniors@gmail.com', 70, ''),
+('nicole', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'nicole@gmail.com', 71, ''),
+('tana', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'tana@gmail.com', 72, ''),
+('pepe', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'pepe@gmail.com', 73, ''),
+('tina', '4124bc0a9335c27f086f24ba207a4912', 3, 'aaaa', 'asss', 'ACTIVO', 'ssdfgt@sllslsl', 74, '');
 
 --
 -- Índices para tablas volcadas
@@ -187,7 +201,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `perfiles`
 --
 ALTER TABLE `perfiles`
-  MODIFY `cod_perfil` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_perfil` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -199,7 +213,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- Restricciones para tablas volcadas
@@ -217,12 +231,6 @@ ALTER TABLE `extra`
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`cod_mesa`) REFERENCES `mesa` (`cod_mesa`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `perfiles`
---
-ALTER TABLE `perfiles`
-  ADD CONSTRAINT `perfiles_ibfk_1` FOREIGN KEY (`cod_perfil`) REFERENCES `usuarios` (`cod_perfil`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
