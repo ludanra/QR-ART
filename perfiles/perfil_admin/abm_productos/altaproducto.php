@@ -1,3 +1,19 @@
+<?php
+
+   session_start();
+
+   $nombre = $_SESSION['nombre_usu'];
+   $usuario= $_SESSION['usuario'];
+   $apellido= $_SESSION['apellido_usu'];
+
+
+?>
+
+
+
+
+
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,9 +42,6 @@
 </head>
 
 <body>
-    <nav>
-        <h3 class="text-sm-center">Alta de producto 🍔</h3>
-    </nav>
 
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
@@ -37,10 +50,9 @@
         <div class="sidebar ">
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-                <div class="info ">
-                    <a class="d-block ">ADMINISTRADOR</a>
-                </div>
-            </div>
+          
+              <a class="d-block "><?php echo $usuario;?></a>
+             </div>
 
             <a href="../perfil_admin.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
@@ -58,11 +70,26 @@
                     <i class="right fas fa-angle-left "></i>
                 </p>
             </a>
-            <a href="./eliminarproducto.php" class="nav-link active ">
+
+            <a href="../abm_user/abm_usuarios.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Eliminar producto
+                    Administración De Usuarios🙋🏻‍♂️
+                    <i class="right fas fa-angle-left "></i>
+                </p>
+            </a>
+            <a href="../abm_pedidos/abm_pedidos.php" class="nav-link active ">
+                <i class="nav-icon fas fa-tachometer-alt "></i>
+                <p>
+                    Administración De Pedidos🗒️
 
+                    <i class="right fas fa-angle-left "></i>
+                </p>
+            </a>
+            <a href="../abm_extras/abm_extras.php" class="nav-link active ">
+                <i class="nav-icon fas fa-tachometer-alt "></i>
+                <p>
+                    Administración De Extras🍟
                     <i class="right fas fa-angle-left "></i>
                 </p>
             </a>
@@ -75,10 +102,13 @@
 
         </div>
     </aside>
+    <br>
+    <br>
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
+             <h3 class="text-sm-center">Alta de producto 🍔</h3>
 
                 <div class="card-body">
                 <?php

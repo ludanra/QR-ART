@@ -1,3 +1,13 @@
+<?php
+
+   session_start();
+
+   $nombre = $_SESSION['nombre_usu'];
+   $usuario= $_SESSION['usuario'];
+   $apellido= $_SESSION['apellido_usu'];
+
+
+?>
 
 
 
@@ -37,12 +47,10 @@
         <!-- Sidebar -->
         <div class="sidebar ">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-6 pb-6 mb-6 d-flex ">
-                <div class="info ">
-                    <a class="d-block ">ADMINISTRADOR</a>
-                </div>
-            </div>
-
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+          
+          <a class="d-block "><?php echo $usuario;?></a>
+             </div>
             <a href="../perfil_admin.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
@@ -50,8 +58,7 @@
                     <i class="bi bi-house"></i>
                 </p>
             </a>
-
-
+            
             <a href="./tablamodificacion.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
@@ -60,6 +67,31 @@
                 </p>
             </a>
         
+            
+            <a href="../abm_pedidos/abm_pedidos.php" class="nav-link active ">
+                <i class="nav-icon fas fa-tachometer-alt "></i>
+                <p>
+                    Administración De Pedidos🗒️
+                    <i class="right fas fa-angle-left "></i>
+                </p>
+            </a>
+            <a href="../abm_productos/abm_productos.php" class="nav-link active ">
+                <i class="nav-icon fas fa-tachometer-alt "></i>
+                <p>
+                    Administración De Productos🍔
+
+                    <i class="right fas fa-angle-left "></i>
+                </p>
+            </a>
+            <a href="../abm_extras/abm_extras.php" class="nav-link active ">
+                <i class="nav-icon fas fa-tachometer-alt "></i>
+                <p>
+                    Administración De Extras🍟
+                    <i class="right fas fa-angle-left "></i>
+                </p>
+            </a>
+
+
             <a href="../../../login.php" class="nav-link active ">
                 <i class="far fa-circle nav-icon "></i>
                 <p>Cerrar Sesión</p>
@@ -68,10 +100,10 @@
 
         </div>
     </aside>
-<<<<<<< HEAD
+
     <br>
     <br>
-=======
+
     <?php
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
@@ -79,7 +111,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
 ?>
->>>>>>> 412a5dee51432aa65842cadda7c7a0c480002cdc
+
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">

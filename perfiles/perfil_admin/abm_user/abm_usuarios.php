@@ -1,3 +1,15 @@
+<?php
+
+   session_start();
+
+   $nombre = $_SESSION['nombre_usu'];
+   $usuario= $_SESSION['usuario'];
+   $apellido= $_SESSION['apellido_usu'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,12 +43,13 @@
 
         <!-- Sidebar -->
         <div class="sidebar ">
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-                <div class="info ">
-                    <a class="d-block ">ADMINISTRADOR</a>
-                </div>
-            </div>
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+          
+                <a class="d-block "><?php echo $usuario;?></a>
+            
+        </div>
+
 
             <a href="../perfil_admin.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>

@@ -163,6 +163,8 @@ if($result_query == 0){
                           </select>
                         <br>
 
+                        
+
                         <label for="formFile " class="form-label text-dark " >Detalle del producto</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

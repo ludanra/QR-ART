@@ -31,9 +31,6 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         <li class="nav-item">
           <a class="nav-link text-light" href="./altaproducto.php">Alta de Productos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="./eliminarproducto.php">Eliminar Producto</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Accesos Rapidos
