@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/adminlte.css">
+    <link rel="stylesheet " href="../../../assets/backe.css">
 
     <!-- overlayScrollbars -->
     <link rel="stylesheet " href="../../../assets/footer.css">
@@ -32,7 +33,7 @@
 
 <body>
     <nav>
-        <h3 class="text-sm-center">Administración De Extras🍟</h3>
+        <h3 class="text-sm-center text-light">Administración De Extras🍟</h3>
     </nav>
 
 

@@ -145,11 +145,11 @@ if(!empty($_POST))
  
                         <input type="submit" value="Ingresar">
 
-                        
+                        <br>
 
 
                         <div class="justify-content-end p-1">
-                        <a href="php/recuperarclave.php" id="olvido" title="Recuperar Password"> Recuperar password</a>
+                        <a href="php/recuperarclave.php" id="olvido" title="Recuperar Password" class="text-light"> Recuperar password</a>
                         </div>
                         
                 </form>

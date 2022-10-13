@@ -22,6 +22,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
     <link rel="stylesheet " href="../../../assets/back.css">
+    <link rel="stylesheet " href="../../../assets/table.css">
    
     <!-- overlayScrollbars -->
     
@@ -34,13 +35,13 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-dark" aria-current="page" href="../perfil_admin.php">Inicio</a>
+          <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="./abm_usuarios.php">Alta de usuario</a>
+          <a class="nav-link text-light" href="./abm_usuarios.php">Alta de usuario</a>
         </li>
-        <li class="nav-item dropdown text-dark">
-          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown text-light">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Accesos Rapidos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,7 +55,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
       </ul>
       
       
-      <h4 class="text-sm-center text-dark">Modificación de usuario🙋🏻‍♂️</h4>
+      <h4 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h4>
       
     </div>
   </div>

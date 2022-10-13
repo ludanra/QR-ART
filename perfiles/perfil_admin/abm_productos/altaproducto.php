@@ -10,15 +10,6 @@
 ?>
 
 
-
-
-
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html>
 
@@ -26,8 +17,6 @@
     <title>QR-ART</title>
     <!--Made with love by Mutiullah Samim -->
 
-    <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!--Fontawesome CDN-->
 
@@ -37,7 +26,7 @@
     <!-- Theme style -->
     <link rel="stylesheet " href="../../../assets/adminlte.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../../../assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../../assets/backp.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
@@ -189,6 +178,14 @@
                 </form>
 
             </div>
+
+            
+
+        <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+            <p class="col-sm-15 mb-0 text-light text-center">QR-ARTⒸ2022</p>
+
+        </footer>
+
 
 </body>
 

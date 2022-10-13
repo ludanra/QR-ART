@@ -16,7 +16,8 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../../assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../../assets/backp.css">
+    <link rel="stylesheet " href="../../../assets/table.css">
 </head>
 
 <body>
@@ -58,16 +59,16 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
   <table id="productos" name="productos" class="table table-striped" style="width:100%">
         <thead>
-            <tr class="text-dark">
-                <th class="text-dark">Nombre</th>
-                <th class="text-dark">Precio</th>
-                <th class="text-dark">Categoria</th>
-                <th class="text-dark">Detalle</th>
-                <th class="text-dark">Disponible</th>
-                <th class="text-dark">Foto</th>
-                <th class="text-dark">Estado</th>
-                <th class="text-dark">Categoria de Extra</th>
-                <th class="text-dark">Editar</th>
+            <tr class="text-light">
+                <th class="text-light">Nombre</th>
+                <th class="text-light">Precio</th>
+                <th class="text-light">Categoria</th>
+                <th class="text-light">Detalle</th>
+                <th class="text-light">Disponible</th>
+                <th class="text-light">Foto</th>
+                <th class="text-light">Estado</th>
+                <th class="text-light">Categoria de Extra</th>
+                <th class="text-light">Editar</th>
             </tr>
         </thead>
 
@@ -82,14 +83,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <tbody>
             <tr>
-                <td class="text-dark"><?php echo $mostrar['nombre_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['precio_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['categoria_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['detalle_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['prod_disponible'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['foto_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['est_baja_prod'] ?></td>
-                <td class="text-dark"><?php echo $mostrar['categ_extra'] ?></td>
+                <td class="text-light"><?php echo $mostrar['nombre_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['precio_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['categoria_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['detalle_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['prod_disponible'] ?></td>
+                <td class="text-light"><?php echo $mostrar['foto_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['est_baja_prod'] ?></td>
+                <td class="text-light"><?php echo $mostrar['categ_extra'] ?></td>
                 <td>
                 <a class= "btn btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
                 </td>

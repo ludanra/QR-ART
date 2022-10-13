@@ -11,7 +11,8 @@
     <link rel="stylesheet " href="../../assets/adminlte.css">
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="../../assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../../assets/table.css">
+    <link rel="stylesheet " href="../../../assets/backpedi.css">
 </head>
 
 <body>

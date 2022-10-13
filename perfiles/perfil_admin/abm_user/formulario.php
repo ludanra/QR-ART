@@ -31,6 +31,7 @@
         <!--Custom styles-->
       
         <link rel="stylesheet" href="../../../assets/styleualt.css">
+        <link rel="stylesheet" href="../../../assets/back.css">
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Theme style -->
@@ -122,7 +123,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
                         <div class="card-body">
 
-                            <h3 class="text-sm-center">Alta de usuario🙋🏻‍♂️</h3>
+                            <h3 class="text-sm-center text-light">Alta de usuario🙋🏻‍♂️</h3>
 
 
                             <form action="../../../php/insertar.php" method="post">

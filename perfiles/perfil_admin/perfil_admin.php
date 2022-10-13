@@ -21,7 +21,7 @@
     <!-- Theme style -->
     <link rel="stylesheet " href="../../assets/adminlte.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../../assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../assets/backadmin.css">
     <!-- Daterange picker -->
 </head>
 
@@ -70,10 +70,8 @@
         </div>
         <!-- /.container-fluid -->
     </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content ">
+ 
+   
         <div class="container-fluid ">
             <!-- Small boxes (Stat box) -->
             <div class="row ">

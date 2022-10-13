@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
+    <link rel="stylesheet " href="../../../assets/table.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="../../assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../../assets/backpedi.css">
 </head>
 
 <body>
