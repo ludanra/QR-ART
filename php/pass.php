@@ -8,8 +8,8 @@ if(isset($_GET['token']) AND isset($_GET['usuario'])){
 
 
 
-    $usuario= mysqli_real_escape_string($conexion, $_POST['usuario']);
-    $token= mysqli_real_escape_string($conexion, $_POST['token']);
+    $usuario= mysqli_real_escape_string($conexion, $_GET['usuario']);
+    $token= mysqli_real_escape_string($conexion, $_GET['token']);
 
     $sql= ("SELECT token FROM usuarios WHERE usuario= '$usuario' ");
     $resultado = mysqli_query($conexion, $sql);
@@ -59,12 +59,26 @@ $resultado = mysqli_query($conexion, $actualizar);
 
 if($actualizar){
 
-    echo "su contraseña se ah cambiado";
-    header("Refresh: 3; URL=../login.php");
+    PRINT<<<HERE
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="alert alert-success" role="alert">
+    Su contraseña se restablecio correctamente, ya puede ingresar.
+    </div>
+    HERE;
+    header("Refresh: 4; URL=../login.php");
 
 }else{
 
-    echo "Su contraseña no se pudo restablecer";
+    PRINT<<<HERE
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="alert alert-danger" role="alert">
+    ERROR: Su contraseña no se pudo restablecer.
+    </div>
+    HERE;
 }
 
 

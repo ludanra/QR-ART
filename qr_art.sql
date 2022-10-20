@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2022 a las 14:01:40
+-- Tiempo de generación: 20-10-2022 a las 19:32:47
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -139,14 +139,16 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`, `token`) VALUES
-('Mia19', 'b59c67bf196a4758191e42f76670ceba', 2, 'Mia', 'fleita', 'ACTIVO', 'miafleita12@gmail.com', 47, '633ed1bd2c1a2'),
-('antoo', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'antonella', 'alfonso', 'ACTIVO', 'antoo@gmail.com', 56, '634577ce44021'),
-('Marting', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Martin', 'fleita', 'INACTIVO', 'Martingerardo@gmail.com', 68, '63457003e3c65'),
-('Boca', 'b84bd99d065f6aab6fcd590ec1b5fe16', 3, 'Boca', 'Juniors', 'INACTIVO', 'bocajuniors@gmail.com', 70, ''),
-('nicole', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'nicole@gmail.com', 71, ''),
-('tana', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'tana@gmail.com', 72, ''),
-('pepe', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'pepe@gmail.com', 73, ''),
-('tina', '4124bc0a9335c27f086f24ba207a4912', 3, 'aaaa', 'asss', 'ACTIVO', 'ssdfgt@sllslsl', 74, '');
+('Mia19', '81dc9bdb52d04dc20036dbd8313ed055', 2, 'Mia', 'fleita', 'ACTIVO', 'miafleita12@gmail.com', 47, ''),
+('antoo', 'b59c67bf196a4758191e42f76670ceba', 1, 'antonella', 'alfonso', 'ACTIVO', 'antoo@gmail.com', 56, ''),
+('Marting', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Martin', 'fleita', 'INACTIVO', 'Martingerardo@gmail.com', 68, ''),
+('Boca', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Boca', 'Juniors', 'INACTIVO', 'bocajuniors@gmail.com', 70, ''),
+('nicole', '81dc9bdb52d04dc20036dbd8313ed055', 2, 'Nicole', 'fleita', 'ACTIVO', 'nicole@gmail.com', 71, ''),
+('tana', '81dc9bdb52d04dc20036dbd8313ed055', 2, 'Nicole', 'fleita', 'ACTIVO', 'tana@gmail.com', 72, ''),
+('pepe', '81dc9bdb52d04dc20036dbd8313ed055', 2, 'Nicole', 'fleita', 'ACTIVO', 'pepe@gmail.com', 73, ''),
+('tina', '81dc9bdb52d04dc20036dbd8313ed055', 3, 'aaaa', 'asss', 'ACTIVO', 'ssdfgt@sllslsl', 74, ''),
+('', 'd41d8cd98f00b204e9800998ecf8427e', 0, '', '', '', '', 75, ''),
+('hola', '202cb962ac59075b964b07152d234b70', 1, 'hohoh', 'aaamanm', 'ACTIVO', 'aaam@jsjsjs', 76, '');
 
 --
 -- Índices para tablas volcadas
@@ -213,7 +215,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Restricciones para tablas volcadas
