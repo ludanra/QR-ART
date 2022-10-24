@@ -18,12 +18,11 @@ if(isset($_GET['token']) AND isset($_GET['usuario'])){
 
     if($row['token']==$token){
 
-    }
+    
 
 
 
 
-}
 
 ?>
 
@@ -67,7 +66,7 @@ if($actualizar){
     Su contraseña se restablecio correctamente, ya puede ingresar.
     </div>
     HERE;
-    header("Refresh: 4; URL=../login.php");
+    header("Refresh: 5; URL=../login.php");
 
 }else{
 
@@ -112,5 +111,6 @@ if($actualizar){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 
+<?php } } ?>
 
 </html>

@@ -20,8 +20,8 @@
                 <div class="mb-3">
 
 
-                    <label for="c" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email_usu" name="email_usu" >
+                    <label for="c" class="form-label">Ingrese su Email</label>
+                    <input type="email" class="form-control" placeholder="Email"id="email_usu" name="email_usu" >
                  
                 </div>
 

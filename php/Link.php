@@ -1,9 +1,6 @@
 <?php
 
 
-
-
-
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
@@ -56,9 +53,11 @@ if(isset($_POST['restablecer'])){
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <div class="alert alert-danger" role="alert">
-    ERROR: El correo que ingreso no se encuentra en la base de datos
+    ERROR: El correo que ingreso no se encuentra registrado, vuelva a intentarlo.
     </div>
     HERE;
+
+    header("Refresh: 5; URL=recuperarclave.php");
   }
   
 

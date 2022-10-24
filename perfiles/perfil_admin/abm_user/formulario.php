@@ -147,7 +147,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                                     <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" autofocus required>
                                 </div>
 
-                                <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Codigo del perfil </label>
+                                <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Perfil </label>
 
                                 <?php
  
@@ -160,7 +160,9 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
 
-                                    <select class="form-select" name="cod_perfil" id="cod_perfil" aria-label="Default select example">
+                        <select class="form-select" name="cod_perfil" id="cod_perfil" aria-label="Default select example">
+                         
+                        <option value="xxx000">Seleccione Perfil</option>
 
                         <?php
 
@@ -189,8 +191,10 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                           </select>
                                     <br>
                                     <label for="formFile" class="form-label" name="estado" id="estado">Estado </label>
-                                    <select class="form-select" name="est_baja_usu" id="est_baja_usu" aria-label="Default select example">
-                            <option value="ACTIVO">ACTIVO</option>
+                                    <select class="form-select" name="est_baja_usu">
+
+                                    <option value="ACTIVO">ACTIVO</option>
+                                
                            
                             
                            

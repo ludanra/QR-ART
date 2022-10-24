@@ -33,7 +33,7 @@ if(!empty($_POST))
 
             $data = mysqli_fetch_array($resultado);
 
-            
+            if($data['est_baja_usu']=='ACTIVO'){
             session_start();
             $_SESSION['activo'] = true;
             $_SESSION['usuario']= $data['usuario'];
@@ -55,7 +55,17 @@ if(!empty($_POST))
             }
        
             
-
+            }else{
+                PRINT<<<HERE
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <div class="alert alert-danger" role="alert">
+                ERROR: El usuario esta INACTIVO no puede ingresar al sistema.
+                </div>
+                HERE;
+    
+            }
         }else
         {
             PRINT<<<HERE

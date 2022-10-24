@@ -49,7 +49,8 @@ if($result_query == 0){
     $nombre_usu = $data['nombre_usu'];
     $apellido_usu = $data['apellido_usu'];
     $email_usu = $data['email_usu'];
-
+    $est_baja_usu=$data['est_baja_usu'];
+    
 
 
 
@@ -77,6 +78,14 @@ if($result_query == 0){
   }
 
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -246,21 +255,31 @@ if($result_query == 0){
                         <label for="formFile" class="form-label text-light" name="estado" id="estado">Estado </label>
 
 
+
+                        <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
+                       
+                     
+
+
+                        
                          <?php
  
-                        $query_estado = "SELECT DISTINCT est_baja_usu FROM usuarios ";
+                        $query_estado = "SELECT DISTINCT est_baja_usu FROM usuarios";
                         $resultado = mysqli_query($conexion, $query_estado);
                         $estado_result= mysqli_num_rows($resultado);
 
 
                        ?>
 
-                        <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
-                          
+
 
                         <?php
 
                         if($estado_result > 0){
+
+                          
+
+                          
 
                          
 

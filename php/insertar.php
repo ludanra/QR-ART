@@ -25,6 +25,7 @@ if($query > 0 ){
     ERROR: El usuario o correo que intenta crear ya existe.
     </div>
     HERE;
+    
 
 
 

@@ -58,9 +58,11 @@ $estado = $_POST ['est_baja_usu'];
                 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <div class="alert alert-success" role="alert">
-                Se ha modifico correctamente el usuario.
+                El usuario se modifico correctamente.
                 </div>
                 HERE;
+
+                header("Refresh: 3; URL=../perfiles/perfil_admin/abm_user/tablamodificacion.php");
 
       }else{
 
