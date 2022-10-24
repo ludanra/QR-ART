@@ -41,7 +41,7 @@ if($result_query == 0){
     $categoria_prod = $data['categoria_prod'];
     $detalle_prod = $data['detalle_prod'];
     $prod_disponible = $data['prod_disponible'];
-    $foto_prod = $files['foto_prod']['name'];
+    $foto_prod = $data['foto_prod'];
     $est_baja_prod = $data['est_baja_prod'];
     $categ_extra = $data['categ_extra'];
 

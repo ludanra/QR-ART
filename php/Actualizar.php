@@ -257,51 +257,15 @@ if($result_query == 0){
 
 
                         <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
+                          <option value= <?php $est_baja_usu; ?>><?php echo $est_baja_usu; ?></option>
+                          <option value="ACTIVO">ACTIVO</option>
+                          <option value="INACTIVO">INACTIVO</option>
                        
                      
 
 
                         
-                         <?php
- 
-                        $query_estado = "SELECT DISTINCT est_baja_usu FROM usuarios";
-                        $resultado = mysqli_query($conexion, $query_estado);
-                        $estado_result= mysqli_num_rows($resultado);
-
-
-                       ?>
-
-
-
-                        <?php
-
-                        if($estado_result > 0){
-
-                          
-
-                          
-
                          
-
-                            while($estados = mysqli_fetch_array($resultado) ){
-                        ?>  
-                        
-                          <option value="<?php echo $estados["est_baja_usu"]; ?>"><?php echo $estados["est_baja_usu"] ?></option>
-
-                        <?php
-
-
-                
-                            }
-    
-
-
-                        }
-                        
-                        ?>
-                            
-                            
-                           
                           </select>
                           <BR>
 
