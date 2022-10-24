@@ -40,7 +40,7 @@
           <a class="d-block "><?php echo $usuario;?></a>
              </div>
 
-            <a href="../perfil_admin.php" class="nav-link active ">
+            <a href="../perfil_mozo.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
                     Inicio
@@ -49,7 +49,7 @@
             </a>
 
 
-            <a href="./modificacionproducto.php" class="nav-link active ">
+            <a href="./modificacionproducto_m.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
                     Modificacion de producto
@@ -57,14 +57,7 @@
                 </p>
             </a>
 
-            <a href="../abm_user/abm_usuarios.php" class="nav-link active ">
-                <i class="nav-icon fas fa-tachometer-alt "></i>
-                <p>
-                    Administración De Usuarios🙋🏻‍♂️
-                    <i class="right fas fa-angle-left "></i>
-                </p>
-            </a>
-            <a href="../abm_pedidos/abm_pedidos.php" class="nav-link active ">
+            <a href="../pedidos/abm_pedidos_m.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
                     Administración De Pedidos🗒️
@@ -72,7 +65,7 @@
                     <i class="right fas fa-angle-left "></i>
                 </p>
             </a>
-            <a href="../abm_extras/abm_extras.php" class="nav-link active ">
+            <a href="../extras/abm_extras_m.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
                     Administración De Extras🍟
@@ -97,7 +90,7 @@
 
                 <div class="card-body">
                 <?php
-                include("funciones.php");
+                include("funciones_m.php");
                 insertarprod();
                 ?>
 

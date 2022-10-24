@@ -11158,7 +11158,7 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
     padding: 0;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 900.98px) {
     .main-sidebar,
     .main-sidebar::before {
         box-shadow: none !important;
@@ -11171,7 +11171,7 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 }
 
 body:not(.layout-fixed) .main-sidebar {
-    height: inherit;
+    height: 100%;
     min-height: 100%;
     position: absolute;
     top: 0;
@@ -53707,3 +53707,5 @@ led a,
 
 
 /*# sourceMappingURL=adminlte.css.map */
+
+%

@@ -36,6 +36,7 @@ if(isset($_GET['token']) AND isset($_GET['usuario'])){
     <title>Cambiar password </title>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../assets/backreset.css">
 </head>
 <body>
 
@@ -90,11 +91,11 @@ if($actualizar){
         <div class="row justify-content-md-center" style="margin-top:15%">
             
                 <form class="col-3" action="" method="POST">
-                    <h2>Restablecer Password</h2>
+                    <h2 class="text-light">Restablecer Password</h2>
 
 
                       <div class="mb-3">
-                        <label for="c" class="form-label">Nuevo Password</label>
+                        <label for="c" class="form-label text-light">Nuevo Password</label>
                         <input type="password" class="form-control" id="contrasena" name="contrasena">
                     
                     </div>

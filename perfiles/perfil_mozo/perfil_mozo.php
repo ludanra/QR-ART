@@ -1,3 +1,13 @@
+<?php
+
+   session_start();
+
+   $nombre = $_SESSION['nombre_usu'];
+   $usuario= $_SESSION['usuario'];
+   $apellido= $_SESSION['apellido_usu'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +19,9 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style -->
-    <link rel="stylesheet " href="assets/adminlte.min.css ">
+    <link rel="stylesheet " href="../../assets/adminlte.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet " href="assets/OverlayScrollbars.min.css">
+    <link rel="stylesheet " href="../../assets/backadmin.css">
     <!-- Daterange picker -->
 </head>
 
@@ -23,27 +33,21 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
             <div class="info ">
-                <a href="# " class="d-block ">Agustin Martel</a>
+                <a href="# " class="d-block "><?php echo $usuario;?></a>
             </div>
         </div>
 
-        <a href="# " class="nav-link active ">
+        <a href="./perfil_mozo.php" class="nav-link active ">
 
             <p>
                 Inicio
             </p>
         </a>
 
-        <a href="# " class="nav-link active ">
 
-            <p>
-                Mi perfil
-            </p>
-        </a>
-
-
-        <a href="login.html" class="nav-link active ">
-            <p>Cerrar Sesión</p>
+        <a href="../perfil_admin/abm_user/Salir.php" class="nav-link active ">
+                <i class="far fa-circle nav-icon "></i>
+                <p>Cerrar Sesión</p>
         </a>
 
 
@@ -56,8 +60,8 @@
     <div class="content-header ">
         <div class="container-fluid ">
             <div class="row mb-2 ">
-                <div class="col-sm-6 ">
-                    <h1 class="text-center">¡Bienvenido Agustin Martel! </h1>
+                <div class="col-sm-7">
+                    <h1 class="text-right"><?php echo 'Bienvenid@ ' .$nombre." ". $apellido;?> </h1>
                 </div>
                 <!-- /.col -->
                 <!-- /.col -->
@@ -66,74 +70,64 @@
         </div>
         <!-- /.container-fluid -->
     </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content ">
+ 
+   
         <div class="container-fluid ">
             <!-- Small boxes (Stat box) -->
             <div class="row ">
-                <div class="col-lg-3 col-6 ">
-                    <!-- small box -->
-                    <div class="small-box bg-info ">
-                        <div class="inner ">
-                            <p>Mesas</p>
-                        </div>
-                        <div class="icon ">
-                            <i class="ion ion-bag "></i>
-                        </div>
-                        <a href="abm_usuarios.html" class="small-box-footer ">VER <i class="fas fa-arrow-circle-right "></i></a>
-                    </div>
-                </div>
+                
                 <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
+                <div class="col-lg-12 col-6 ">
                     <!-- small box -->
-                    <div class="small-box bg-success ">
+                    <a class="small-box bg-success " href="../perfil_mozo/pedidos/abm_pedidos_m.php">
                         <div class="inner ">
 
-                            <p>Adminsitración De Pedidos 🗒️</p>
-                        </div>
-                        <div class="icon ">
-                            <i class="ion ion-stats-bars "></i>
-                        </div>
-                        <a href="abm_pedidos.html" class="small-box-footer ">VER <i class="fas fa-arrow-circle-right "></i></a>
-                    </div>
+                            <p class="text-center">Administración De Pedidos </p>
+                        </div>                            
+                    </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
+                <div class="col-lg-12 col-6 ">
                     <!-- small box -->
-                    <div class="small-box bg-warning ">
+                    <a class="small-box bg-warning " href="./productos/abm_productos_m.php">
                         <div class="inner ">
-                            <p>Adminsitración De Productos🍔</p>
+                            <p class="text-center">Administración De Productos</p>
                         </div>
                         <div class="icon ">
                             <i class="ion ion-person-add "></i>
                         </div>
-                        <a href="abm_productos.html" class="small-box-footer ">VER<i class="fas fa-arrow-circle-right "></i></a>
-                    </div>
+                        
+                        </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-3 col-6 ">
+                <div class="col-md-12 col-6 ">
                     <!-- small box -->
-                    <div class="small-box bg-danger ">
+                    <a class="small-box bg-danger " href="./extras/abm_extras_m.php">
                         <div class="inner ">
 
-                            <p>Adminsitración De Extras🍟</p>
+                            <p class="text-center">Administración De Extras</p>
                         </div>
                         <div class="icon ">
                             <i class="ion ion-pie-graph "></i>
                         </div>
-                        <a href="# " class="small-box-footer ">VER <i class="fas fa-arrow-circle-right "></i></a>
-                    </div>
+                        </a>
                 </div>
 
+             
                 <!-- ./col -->
             </div>
         </div>
         <!-- /.card-body -->
 
+
+        <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+            <p class="col-sm-15 mb-0 text-light text-center">QR-ARTⒸ2022</p>
+
+        </footer>
+
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

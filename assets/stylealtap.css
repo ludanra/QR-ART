@@ -1,20 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
-html,
-body {
-    background-image: url();
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-}
-
 .container {
     height: 35%;
     align-content: center;
 }
 
 .card {
-    height: 900px;
+    height: 20px;
     margin-top: auto;
     margin-bottom: auto;
     width: 600px;
