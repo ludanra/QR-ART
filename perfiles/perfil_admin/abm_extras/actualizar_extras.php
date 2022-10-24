@@ -18,34 +18,29 @@ if(empty($_GET['id']))
 
 }
 
-$query="SELECT * FROM productos WHERE cod_prod='$id'";
+$query="SELECT * FROM extra WHERE cod_extra='$id'";
 
 
-$sql="SELECT * FROM productos WHERE cod_prod='$id'";
+$sql="SELECT * FROM extra WHERE cod_extra='$id'";
 $result=mysqli_query($conexion, $sql);
 $result_query=mysqli_num_rows($result);
 
 
 if($result_query == 0){
 
-  header('location:modificacionproducto.php');
+  header('location:modificacion_extra.php');
 
 }else{
 
 
   while($data=mysqli_fetch_array($result)) {
 
-    $cod_prod = $data['cod_prod'];
-    $nombre_prod = $data['nombre_prod'];
-    $precio_prod = $data['precio_prod'];
-    $categoria_prod = $data['categoria_prod'];
-    $detalle_prod = $data['detalle_prod'];
-    $prod_disponible = $data['prod_disponible'];
-    $foto_prod = $files['foto_prod']['name'];
-    $est_baja_prod = $data['est_baja_prod'];
+    $cod_extra = $data['cod_extra'];
+    $nombre_extra = $data['nombre_extra'];
+    $precio_extra = $data['precio_extra'];
     $categ_extra = $data['categ_extra'];
-
-
+    $foto_extra = $data['foto_extra'];
+    $estado_extra = $data['estado_extra'];
   }
 
 }
@@ -126,7 +121,7 @@ if($result_query == 0){
       <div class="card-body">
         
         <form  method="post">
-                      <h3 class="text-sm-center">Datos del producto</h3>
+                      <h3 class="text-sm-center">Datos del extra</h3>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
 
@@ -135,14 +130,14 @@ if($result_query == 0){
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="hidden" class="form-control"  id="cod_prod" name="cod_prod" value=<?php echo $cod_prod; ?>>
+                            <input type="hidden" class="form-control"  id="cod_extra" name="cod_extra" value=<?php echo $cod_extra; ?>>
                         </div>
 
                         <label for="formFile " class="form-label text-dark ">Producto</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_prod" name="nombre_prod" value=<?php echo $nombre_prod; ?>  autofocus required>
+                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_extra" name="nombre_extra" value=<?php echo $nombre_extra; ?>  autofocus required>
                         </div>
                         <br>
 
@@ -150,13 +145,13 @@ if($result_query == 0){
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="number" step="0.01" min="0" class="form-control" placeholder="Precio" name="precio_prod" id="precio_prod" value=<?php echo $precio_prod; ?> autofocus required>
+                            <input type="number" step="0.01" min="0" class="form-control" placeholder="Precio" name="precio_extra" id="precio_extra" value=<?php echo $precio_extra; ?> autofocus required>
                         </div>
                         <br>
 
-                        <label for="formFile" class="form-label text-dark" name="categoria_prod" id="categoria_prod" value=<?php echo $categoria_prod; ?>>Categoría del producto </label>
-                        <select class="form-select" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
-                            <option value= <?php $categoria_prod; ?>><?php echo $categoria_prod; ?></option>
+                        <label for="formFile" class="form-label text-dark" name="categ_extra" id="categ_extra" value=<?php echo $categ_extra; ?>>Categoría del extra </label>
+                        <select class="form-select" name="categ_extra" id="categ_extra"  aria-label="Default select example">
+                            <option value= <?php $categ_extra; ?>><?php echo $categ_extra; ?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -166,65 +161,26 @@ if($result_query == 0){
                         <br>
 
                         
-
-                        <label for="formFile " class="form-label text-dark " >Detalle del producto</label>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                            </div>
-                            <input type="text" class="form-control" placeholder="Detalle del producto" id="detalle_prod " name="detalle_prod" value=<?php echo $detalle_prod; ?>  autofocus required>
-                        </div>
-                        <br>
-
-                        <label for="formFile" class="form-label text-dark" name="prod_disponible" id="prod_disponible" value=<?php echo $prod_disponible; ?>>Disponible </label>
-                        <select class="form-select" name="prod_disponible" id="prod_disponible"  aria-label="Default select example">
+                        <label for="formFile" class="form-label text-dark" name="estado_extra" id="estado_extra" value=<?php echo $estado_extra; ?>>Estado </label>
+                        <select class="form-select" name="estado_extra" id="estado_extra"  aria-label="Default select example">
                         <?php
                         //Este código de PHP es para definir que mostrar en el UPDATE
                         $showvalue= " ";
-                        if ($prod_disponible == 0){
-                          $showvalue = "NO";
-                        }else {
-                          $showvalue = "SI";
-                        }
-                        ?> 
-                            <option value= <?php $prod_disponible; ?>><?php echo $showvalue; ?></option>
-                            <option value="1">SI</option>
-                            <option value="0">NO</option>
-                          </select>
-                        <br>
-                        
-                        <label for="formFile" class="form-label text-dark" name="est_baja_prod" id="est_baja_prod" value=<?php echo $est_baja_prod; ?>>Estado </label>
-                        <select class="form-select" name="est_baja_prod" id="est_baja_prod"  aria-label="Default select example">
-                        <?php
-                        //Este código de PHP es para definir que mostrar en el UPDATE
-                        $showvalue= " ";
-                        if ($est_baja_prod == 0){
+                        if ($estado_extra == 0){
                           $showvalue = "INACTIVO";
                         }else {
                           $showvalue = "ACTIVO";
                         }
                         ?>
-                            <option value= <?php $est_baja_prod; ?>><?php echo $showvalue; ?></option>
+                            <option value= <?php $estado_extra; ?>><?php echo $showvalue; ?></option>
                             <option value="ACTIVO">ACTIVO</option>
                             <option value="INACTIVO">INACTIVO</option>
                           </select>
                         <br>
 
-                        
-
-                        <label for="formFile" class="form-label text-dark" name="categ_extra" id="categ_extra" value=<?php echo $categ_extra; ?>>Categoría extra: </label>
-                        <select class="form-select" name="categ_extra" id="categ_extra"  aria-label="Default select example">
-                            <option value=<?php $categ_extra; ?>><?php echo $categ_extra; ?></option> 
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                          </select>
-                        <br>
-
                         <div class="mb-3">
-                            <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
-                            <input class="form-control" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
+                            <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del producto - Formato jpg - Max: 10mb</label>
+                            <input class="form-control" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
                         </div>
 
                         <input type="submit" name="Actualizar" value="Actualizar" />

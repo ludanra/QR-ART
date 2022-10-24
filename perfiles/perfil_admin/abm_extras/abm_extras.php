@@ -94,9 +94,8 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <button class="btn btn-danger btn-lg" type="button">Mis Pedidos</button>
-        <button class="btn btn-danger btn-lg" type="button">Modificar Extras</button>
-        <button class="btn btn-danger btn-lg" type="button">Eliminar Extras</button>
+        <a href="./alta_extra.php" class="btn btn-danger btn-lg  text-light" type="button">Ingresar Extra</a>
+        <a href="./modificacion_extra.php" class="btn btn-danger btn-lg  text-light" type="button">Listado de Extras</a>
     </div>
 
 
