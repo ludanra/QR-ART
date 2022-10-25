@@ -50,7 +50,7 @@ if(!empty($_POST))
             }elseif ($data ['cod_perfil']==2){ //Mozo
             header("location:./perfiles/perfil_mozo/perfil_mozo.php");
             }elseif($data ['cod_perfil']==3){ //Caja
-            header("location:perfil_mozo.html");
+            header("location:./perfiles/perfil_caja/perfil_caja.php");
 
             }
        

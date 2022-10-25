@@ -34,7 +34,7 @@
 
 <body>
     <nav>
-        <h3 class="text-sm-center text-light">Adminsitración de Usuarios🙋🏻‍♂️</h3>
+        <h3 class="text-sm-center text-light">Administración de Usuarios🙋🏻‍♂️</h3>
     </nav>
 
 
