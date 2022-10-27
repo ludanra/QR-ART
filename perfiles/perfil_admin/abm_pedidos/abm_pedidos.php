@@ -29,19 +29,23 @@
 
 <body>
     <nav>
-        <h3 class="text-sm-center text-light">Administración De Pedidos🗒️</h3>
+        <h5 class="text-sm-center text-light">Administración De Pedidos🗒️</h5>
     </nav>
 
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4 ">
 
         <!-- Sidebar -->
-        <div class="sidebar ">
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-          
-          <a class="d-block "><?php echo $usuario;?></a>
-         </div>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            <div class="info ">
+           <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
+            
+              
+                
+            </div>
+        </div>
+
             <a href="../perfil_admin.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
@@ -91,14 +95,14 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <a href="./pedidos.php" button class="btn btn-success btn-lg" type="button">Mis Pedidos</a>
-        <a href="./modificarpedidos.php" button class="btn btn-success btn-lg" type="button">Modificar Pedido</a>
-        <a href="./eliminarpedido.php" class="btn btn-success btn-lg" type="button">Eliminar Pedido</a>
+        <a href="./pedidos.php" button class="btn btn-success btn-sm" type="button">Mis Pedidos</a>
+        <a href="./modificarpedidos.php" button class="btn btn-success btn-sm" type="button">Modificar Pedido</a>
+        <a href="./eliminarpedido.php" class="btn btn-success btn-sm" type="button">Eliminar Pedido</a>
     </div>
 
 
 
-    <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+    <footer class="py-2 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
      </footer>

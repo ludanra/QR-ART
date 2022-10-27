@@ -29,12 +29,12 @@
 </head>
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4 ">
+<aside class="main-sidebar sidebar-dark-primary elevation-2 ">
 
     <!-- Sidebar -->
     <div class="sidebar ">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+        <div class="user-panel mt-2 pb-2 sm-3 d-flex ">
             <div class="info ">
            <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
             <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
@@ -67,8 +67,8 @@
     <div class="content-header ">
         <div class="container-fluid ">
             <div class="row mb-2 ">
-                <div class="col-sm-7">
-                    <h1 class="text-right"><?php echo 'Bienvenid@ ' .$nombre." ". $apellido;?> </h1>
+                <div class="col-sm-12">
+                    <h4 class="text-center text-dark"><?php echo 'Bienvenid@ ' .$nombre." ". $apellido;?> </h4>
                 </div>
                 <!-- /.col -->
                 <!-- /.col -->
@@ -82,7 +82,7 @@
         <div class="container-fluid ">
             <!-- Small boxes (Stat box) -->
             <div class="row ">
-                <div class="col-lg-12 col-sm-10 ">
+                <div class="col-sm-2 col-sm-3 ">
                     <!-- small box -->
                     <a class="small-box bg-info " href="../perfil_admin/abm_user/abm_usuarios.php">
                         <div class="inner ">
@@ -92,7 +92,7 @@
                     </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-12 col-6 ">
+                <div class="col-sm-2 col-sm-3 ">
                     <!-- small box -->
                     <a class="small-box bg-success " href="../perfil_admin/abm_pedidos/abm_pedidos.php">
                         <div class="inner ">
@@ -102,7 +102,7 @@
                     </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-12 col-6 ">
+                <div class="col-sm-2 col-sm-3">
                     <!-- small box -->
                     <a class="small-box bg-warning " href="./abm_productos/abm_productos.php">
                         <div class="inner ">
@@ -115,7 +115,7 @@
                         </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-md-12 col-6 ">
+                <div class="col-sm-2 col-sm-3 ">
                     <!-- small box -->
                     <a class="small-box bg-danger " href="../perfil_admin/abm_extras/abm_extras.php">
                         <div class="inner ">
@@ -135,8 +135,8 @@
         <!-- /.card-body -->
 
 
-        <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
-            <p class="col-sm-15 mb-0 text-light text-center">QR-ARTⒸ2022</p>
+        <footer class="py-2 mt-2 border-top bg-dark fixed-bottom">
+            <p class="col-sm-7 mb-0 text-light text-right">QR-ARTⒸ2022</p>
 
         </footer>
 

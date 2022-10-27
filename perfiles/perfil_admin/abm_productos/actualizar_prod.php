@@ -110,7 +110,7 @@ if($result_query == 0){
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Listado de productos🍔</h4>
+      <h6 class="text-sm-center text-light">Listado de productos🍔</h6>
       
       
     </div>
@@ -121,12 +121,12 @@ if($result_query == 0){
 
 <div class="container">
   <div class="d-flex justify-content-center h-100">
-    <div class="card">
+    <div class="card" style="width: 28rem;">
       
       <div class="card-body">
         
         <form  method="post">
-                      <h3 class="text-sm-center">Datos del producto</h3>
+                      <h5 class="text-sm-center">Datos del producto</h5>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
 
@@ -139,23 +139,23 @@ if($result_query == 0){
                         </div>
 
                         <label for="formFile " class="form-label text-dark ">Producto</label>
-                        <div class="input-group form-group">
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
                             </div>
                             <input type="text" class="form-control" placeholder="Nombre" id="nombre_prod" name="nombre_prod" value=<?php echo $nombre_prod; ?>  autofocus required>
                         </div>
-                        <br>
+                      
 
                         <label for="formFile" class="form-label text-dark">Precio: $</label>
-                        <div class="input-group form-group">
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
                             </div>
                             <input type="number" step="0.01" min="0" class="form-control" placeholder="Precio" name="precio_prod" id="precio_prod" value=<?php echo $precio_prod; ?> autofocus required>
                         </div>
-                        <br>
+                      
 
                         <label for="formFile" class="form-label text-dark" name="categoria_prod" id="categoria_prod" value=<?php echo $categoria_prod; ?>>Categoría del producto </label>
-                        <select class="form-select" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
                             <option value= <?php $categoria_prod; ?>><?php echo $categoria_prod; ?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -163,11 +163,11 @@ if($result_query == 0){
                             <option value="4">4</option>
                             <option value="5">5</option>
                           </select>
-                        <br>
+                        
 
                         
 
-                        <label for="formFile " class="form-label text-dark " >Detalle del producto</label>
+                        <label for="exampleFormControlTextarea1"class="form-label text-dark " >Detalle del producto</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
@@ -176,7 +176,7 @@ if($result_query == 0){
                         <br>
 
                         <label for="formFile" class="form-label text-dark" name="prod_disponible" id="prod_disponible" value=<?php echo $prod_disponible; ?>>Disponible </label>
-                        <select class="form-select" name="prod_disponible" id="prod_disponible"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="prod_disponible" id="prod_disponible"  aria-label="Default select example">
                         <?php
                         //Este código de PHP es para definir que mostrar en el UPDATE
                         $showvalue= " ";
@@ -193,7 +193,7 @@ if($result_query == 0){
                         <br>
                         
                         <label for="formFile" class="form-label text-dark" name="est_baja_prod" id="est_baja_prod" value=<?php echo $est_baja_prod; ?>>Estado </label>
-                        <select class="form-select" name="est_baja_prod" id="est_baja_prod"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="est_baja_prod" id="est_baja_prod"  aria-label="Default select example">
                         <?php
                         //Este código de PHP es para definir que mostrar en el UPDATE
                         $showvalue= " ";
@@ -207,12 +207,12 @@ if($result_query == 0){
                             <option value=1>ACTIVO</option>
                             <option value=0>INACTIVO</option>
                           </select>
-                        <br>
+                        
 
                         
 
                         <label for="formFile" class="form-label text-dark" name="categ_extra" id="categ_extra" value=<?php echo $categ_extra; ?>>Categoría extra: </label>
-                        <select class="form-select" name="categ_extra" id="categ_extra"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra"  aria-label="Default select example">
                             <option value=<?php $categ_extra; ?>><?php echo $categ_extra; ?></option> 
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -226,11 +226,11 @@ if($result_query == 0){
 
                         
 
-                        <div class="mb-3">
+                        <div class="sm-3">
                             <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
                             <img style="border: 2px solid ; width: 150px" alt="" src="<?php echo "../../../imagenes/productos/".$foto_prod ?>">
-                            <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
-                            <input class="form-control" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
+                            <label for="formFile" class="form-label-sm" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
+                            <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
                         </div>
 
                         <input type="submit" name="Actualizar" value="Actualizar" />
@@ -243,7 +243,7 @@ if($result_query == 0){
 
 
             
-    <footer class="py-3 mt-6 border-top bg-dark fixed-bottom">
+    <footer class="py-2 mt-6 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>

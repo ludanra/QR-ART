@@ -34,7 +34,7 @@
 
 <body>
     <nav>
-        <h3 class="text-sm-center text-light">Administración de Usuarios🙋🏻‍♂️</h3>
+        <h5 class="text-sm-center text-light">Administración de Usuarios🙋🏻‍♂️</h5>
     </nav>
 
 
@@ -44,9 +44,13 @@
         <div class="sidebar ">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-          
-                <a class="d-block "><?php echo $usuario;?></a>
+            <div class="info ">
+           <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
             
+              
+                
+            </div>
         </div>
 
 
@@ -96,12 +100,12 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto ">
-        <a href="./formulario.php" button class="btn btn-info btn-lg text-light" type="button">Alta De Usuario</a>
-        <a href="./tablamodificacion.php" button class="btn btn-info btn-lg text-light" type="button"> Listado de Usuarios</a>
+        <a href="./formulario.php" button class="btn btn-info btn-sm text-light" type="button">Alta De Usuario</a>
+        <a href="./tablamodificacion.php" button class="btn btn-info btn-sm text-light" type="button"> Listado de Usuarios</a>
         
     </div>
     
-    <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+    <footer class="py-2 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
      </footer>

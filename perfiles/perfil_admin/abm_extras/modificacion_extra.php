@@ -14,14 +14,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <title>Modificacion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet " href="../../../assets/stylesnav.css">
+    <link rel="stylesheet " href="../../../assets/nav.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet " href="../../../assets/backp.css">
     <link rel="stylesheet " href="../../../assets/table.css">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-xl">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

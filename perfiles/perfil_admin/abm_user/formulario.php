@@ -11,10 +11,8 @@
 
 
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+
+  
 
     <!DOCTYPE html>
     <html>
@@ -50,11 +48,15 @@
             <div class="sidebar ">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            <div class="info ">
+           <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
+            
+              
+                
+            </div>
+        </div>
 
-                    <a class="d-block ">
-                        <?php echo $usuario;?>
-                    </a>
-                </div>
                 <a href="../perfil_admin.php" class="nav-link active ">
                     <i class="nav-icon fas fa-tachometer-alt "></i>
                     <p>
@@ -66,7 +68,7 @@
                 <a href="./tablamodificacion.php" class="nav-link active ">
                     <i class="nav-icon fas fa-tachometer-alt "></i>
                     <p>
-                        Modificacion de usuario
+                        Modificación De Usuario
                         <i class="right fas fa-angle-left "></i>
                     </p>
                 </a>
@@ -105,8 +107,6 @@
             </div>
         </aside>
 
-        <br>
-        <br>
 
         <?php
 
@@ -117,41 +117,45 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 ?>
 
 
-            <div class="container">
-                <div class="d-flex justify-content-center h-100">
-                    <div class="card">
 
+<div class="d-flex justify-content-center h-100">
+    <div class="row mb-2">
+        
+    <div class="card" style="width: 28rem;">
+ 
+                        
                         <div class="card-body">
-
-                            <h3 class="text-sm-center text-light">Alta de usuario🙋🏻‍♂️</h3>
-
-
+                            
+                            <h5 class="text-sm-center text-light" style="margin-bottom:1px">Alta de Usuario🙋🏻‍♂️</h5>
+                            
+                            
                             <form action="../../../php/insertar.php" method="post">
                                 <label for="formFile" class="form-label">Usuario</label>
+                                
+                                <div class="input-group-sm form-group">
+                                    <div class="input-group-prepend">
+                                        
+                                        </div>
 
-                                <div class="input-group form-group">
+                                        <input type="text" class="form-control" placeholder="Usuario" id="usuario" name="usuario" autofocus required>
+                                        
+                                        
+                                    </div>
+                                    <label for="formFile" class="form-label" style="margin-bottom:1px">Password</label>
+                                <div class="input-group-sm form-group">
                                     <div class="input-group-prepend">
 
+                                        </div>
+                                        
+                                        <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" autofocus required>
                                     </div>
-
-                                    <input type="text" class="form-control" placeholder="Usuario" id="usuario" name="usuario" autofocus required>
-
-
-                                </div>
-                                <label for="formFile" class="form-label">Password</label>
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-
-                                    </div>
-
-                                    <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena" autofocus required>
-                                </div>
-
-                                <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Perfil </label>
-
-                                <?php
+                                    
+                                    <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil" style="margin-bottom:1px">Perfil </label>
+   
+                                    
+                                    <?php
  
-                        $query_perfil = "SELECT * FROM perfiles ";
+ $query_perfil = "SELECT * FROM perfiles ";
                         $result = mysqli_query($conexion, $query_perfil);
                         $perfil_result= mysqli_num_rows($result);
 
@@ -160,7 +164,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
 
-                        <select class="form-select" name="cod_perfil" id="cod_perfil" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="cod_perfil" id="cod_perfil" aria-label="Default select example">
                          
                         <option value="xxx000">Seleccione Perfil</option>
 
@@ -189,9 +193,9 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
                         
                           </select>
-                                    <br>
-                                    <label for="formFile" class="form-label" name="estado" id="estado">Estado </label>
-                                    <select class="form-select" name="est_baja_usu">
+                                 
+                                    <label for="form-select form-select-sm" class="form-label" name="estado" id="estado">Estado </label>
+                                    <select class="form-select form-select-sm" name="est_baja_usu" >
 
                                     <option value="ACTIVO">ACTIVO</option>
                                 
@@ -199,17 +203,17 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                             
                            
                           </select>
-                                    <BR>
+                                    
                                     <label for="formFile" class="form-label">Nombre</label>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
+                                    <div class="input-group-sm form-group">
+                                        <div class="input-group-prepend-sm">
 
                                         </div>
 
                                         <input type="text" class="form-control" placeholder="Nombre" name="nombre_usu" id="nombre_usu" autofocus required>
                                     </div>
                                     <label for="formFile" class="form-label">Apellido</label>
-                                    <div class="input-group form-group">
+                                    <div class="input-group-sm form-group">
                                         <div class="input-group-prepend">
 
                                         </div>
@@ -217,8 +221,8 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                                         <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" autofocus required>
                                     </div>
                                     <label for="formFile" class="form-label">Email</label>
-                                    <div class="input-group form-group">
-                                        <div class="input-group-prepend">
+                                    <div class="input-group-sm form-group">
+                                        <div class="input-group-prepend-sm">
 
                                         </div>
 
@@ -231,8 +235,9 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                         <link rel="stylesheet" href="/php/insertar.php">
 
                     </div>
+                    </div>
 
-                    <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+                    <footer class="py-1 mt-5 border-top bg-dark fixed-bottom">
                         <p class="col-sm-15 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
                     </footer>

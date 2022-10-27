@@ -35,10 +35,16 @@
         <!-- Sidebar -->
         <div class="sidebar ">
             <!-- Sidebar user panel (optional) -->
-               <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-          
-          <a class="d-block "><?php echo $usuario;?></a>
-             </div>
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            <div class="info ">
+           <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
+            
+              
+                
+            </div>
+        </div>
+
 
             <a href="../perfil_admin.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
@@ -92,10 +98,10 @@
 
     <div class="container">
         <div class="d-flex justify-content-center h-0">
-            <div class="card">
-             <h3 class="text-sm-center">Alta de producto 🍔</h3>
+            <div class="card" style="width: 28rem;">
+             <h5 class="text-sm-center">Alta de producto 🍔</h5>
 
-                <div class="card-body">
+                <div class="card-body" >
                 <?php
                 include("funciones.php");
                 insertarprod();
@@ -105,7 +111,7 @@
                     <!--form action="insertar_producto.php" method="post">-->
                         <label for="formFile" class="form-label">Nombre del producto</label>
 
-                        <div class="input-group form-group">
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
@@ -115,7 +121,7 @@
 
                         </div>
                         <label for="formFile" class="form-label">Precio</label>
-                        <div class="input-group form-group">
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
@@ -124,7 +130,7 @@
                         </div>
 
                         <label for="formFile" class="form-label" name="categoria_prod" id="categoria_prod">Categoría</label>
-                        <select class="form-select" name="categoria_prod" id="categoria_prod" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod" aria-label="Default select example">
                             <option value="1">Categoría 1</option>
                             <option value="2">Categoría 2</option>
                             <option value="3">Categoría 3</option>
@@ -133,7 +139,7 @@
                           </select>
 
                         <label for="formFile" class="form-label" name="categ_extra" id="categ_extra">Categoría Extras</label>
-                        <select class="form-select" name="categ_extra" id="categ_extra" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra" aria-label="Default select example">
                             <option value="1">Categoría extras 1</option>
                             <option value="2">Categoría extras 2</option>
                             <option value="3">Categoría extras 3</option>
@@ -142,31 +148,31 @@
                           </select>
                    
                         <label for="formFile" class="form-label" name="prod_disponible" id="prod_disponible">Disponible</label>
-                        <select class="form-select" name="prod_disponible" id="prod_disponible" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="prod_disponible" id="prod_disponible" aria-label="Default select example">
                             <option value="NO">NO</option>
                           </select>
-                        <br>
+                   
 
                         <label for="formFile" class="form-label" name="est_baja_prod" id="est_baja_prod">Estado del producto</label>
-                        <select class="form-select" name="est_baja_prod" id="est_baja_prod" aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="est_baja_prod" id="est_baja_prod" aria-label="Default select example">
                             <option value="ACTIVO">ACTIVO</option>
                           </select>
-                        <br>
+                     
 
-                        <div class="mb-3">
+                        <div class="sm-3">
                             <label for="exampleFormControlTextarea1" class="form-label" name="detalle_prod" id="detalle_prod">Detalle del producto</label>
                             <textarea class="form-control" name="detalle_prod" id="detalle_prod" rows="3"></textarea>
 
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="sm-3">
                             <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
-                            <input class="form-control" type="file" name="foto_prod" id="foto_prod">
+                            <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod">
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
 
-                        <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto" />
+                        <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto"  class=sm/>
                 </div>
                 </form>
 
@@ -174,7 +180,7 @@
 
             
 
-        <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+        <footer class="py-1 sm-5 border-top bg-dark fixed-bottom">
             <p class="col-sm-15 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
         </footer>
