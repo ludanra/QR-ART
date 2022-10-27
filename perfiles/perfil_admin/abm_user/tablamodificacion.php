@@ -46,7 +46,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
             <li><a class="dropdown-item" href="../abm_extras/abm_extras.php">Administración De Extras🍟</a></li>
           </ul>
         </li>

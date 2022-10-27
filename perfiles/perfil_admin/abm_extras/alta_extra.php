@@ -73,7 +73,7 @@
             <a href="../abm_pedidos/abm_pedidos.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Administración De Pedidos🗒️
+                    Administración De Pedidos🍕
 
                     <i class="right fas fa-angle-left "></i>
                 </p>
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="d-flex justify-content-center h-100">
             <div class="card" style="width: 20rem;">
-             <h5 class="text-sm-center">Alta de extras 🍔</h5>
+             <h5 class="text-sm-center">Alta de extras 🍟</h5>
 
                 <div class="card-body">
                 <?php

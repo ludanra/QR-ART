@@ -97,7 +97,7 @@
                     <a class="small-box bg-success " href="../perfil_admin/abm_pedidos/abm_pedidos.php">
                         <div class="inner ">
 
-                            <p class="text-center">Administración De Pedidos <br>🗒️ </p>
+                            <p class="text-center">Administración De Pedidos <br>🍕 </p>
                         </div>                            
                     </a>
                 </div>

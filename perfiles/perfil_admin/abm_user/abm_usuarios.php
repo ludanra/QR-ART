@@ -66,7 +66,7 @@
             <a href="../abm_pedidos/abm_pedidos.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Administración De Pedidos🗒️
+                    Administración De Pedidos🍕
                     <i class="right fas fa-angle-left "></i>
                 </p>
             </a>

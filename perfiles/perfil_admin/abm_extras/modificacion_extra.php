@@ -38,15 +38,15 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_user/abm_usuarios.php">Administración De Usuarios🙋🏻‍♂️</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
-            <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍟</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
+            <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
           </ul>
         </li>
         
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Listado de extras</h4>
+      <h4 class="text-sm-center text-light">Listado de extras🍟</h4>
       
       
     </div>

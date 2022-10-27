@@ -29,7 +29,7 @@
 
 <body>
     <nav>
-        <h5 class="text-sm-center text-light">Administración De Pedidos🗒️</h5>
+        <h5 class="text-sm-center text-light">Administración De Pedidos🍕</h5>
     </nav>
 
 
