@@ -86,7 +86,7 @@
                     <!-- small box -->
                     <a class="small-box bg-info " href="../perfil_admin/abm_user/abm_usuarios.php">
                         <div class="inner ">
-                            <p class="text-center">Administración De Usuario </p>
+                            <p class="text-center">Administración De Usuario <br>🙋🏻‍♂️ </p>
                         </div>
                         
                     </a>
@@ -97,7 +97,7 @@
                     <a class="small-box bg-success " href="../perfil_admin/abm_pedidos/abm_pedidos.php">
                         <div class="inner ">
 
-                            <p class="text-center">Administración De Pedidos </p>
+                            <p class="text-center">Administración De Pedidos <br>🗒️ </p>
                         </div>                            
                     </a>
                 </div>
@@ -106,7 +106,7 @@
                     <!-- small box -->
                     <a class="small-box bg-warning " href="./abm_productos/abm_productos.php">
                         <div class="inner ">
-                            <p class="text-center">Administración De Productos</p>
+                            <p class="text-center">Administración De Productos <br>🍔</p>
                         </div>
                         <div class="icon ">
                             <i class="ion ion-person-add "></i>
@@ -120,7 +120,7 @@
                     <a class="small-box bg-danger " href="../perfil_admin/abm_extras/abm_extras.php">
                         <div class="inner ">
 
-                            <p class="text-center">Administración De Extras</p>
+                            <p class="text-center">Administración De Extras <br> 🍟</p>
                         </div>
                         <div class="icon ">
                             <i class="ion ion-pie-graph "></i>
