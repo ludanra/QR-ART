@@ -204,8 +204,8 @@ if($result_query == 0){
                         }
                         ?>
                             <option value= <?php $est_baja_prod; ?>><?php echo $showvalue; ?></option>
-                            <option value="ACTIVO">ACTIVO</option>
-                            <option value="INACTIVO">INACTIVO</option>
+                            <option value=1>ACTIVO</option>
+                            <option value=0>INACTIVO</option>
                           </select>
                         <br>
 
@@ -222,7 +222,13 @@ if($result_query == 0){
                           </select>
                         <br>
 
+                        
+
+                        
+
                         <div class="mb-3">
+                            <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
+                            <img style="border: 2px solid ; width: 150px" alt="" src="<?php echo "../../../imagenes/productos/".$foto_prod ?>">
                             <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
                             <input class="form-control" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
                         </div>

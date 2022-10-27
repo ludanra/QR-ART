@@ -179,6 +179,8 @@ if($result_query == 0){
                         <br>
 
                         <div class="mb-3">
+                            <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
+                            <img style="border: 2px solid ; width: 150px" alt="" src="<?php echo "../../../imagenes/extras/".$foto_extra ?>">
                             <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del producto - Formato jpg - Max: 10mb</label>
                             <input class="form-control" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
                         </div>

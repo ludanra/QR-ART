@@ -87,9 +87,9 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-light"><?php echo $mostrar['precio_prod'] ?></td>
                 <td class="text-light"><?php echo $mostrar['categoria_prod'] ?></td>
                 <td class="text-light"><?php echo $mostrar['detalle_prod'] ?></td>
-                <td class="text-light"><?php echo $mostrar['prod_disponible'] ?></td>
-                <td style="width: 10%;"><img id="image" name="image" style="border: 2px solid ; width: 100px; height: 60px;" alt="" src="<?php echo "../../../imagenes/productos/".$mostrar['foto_prod'] ?>"></td>
-                <td class="text-light"><?php echo $mostrar['est_baja_prod'] ?></td>
+                <td class="text-light"><?php if($mostrar['prod_disponible'] == 0){echo "NO";}else{echo "SI";} ?></td>
+                <td style="width: 10%;"><img id="image" name="image" style="border: 2px solid ; width: 100px;" alt="" src="<?php echo "../../../imagenes/productos/".$mostrar['foto_prod'] ?>"></td>
+                <td class="text-light"><?php if($mostrar['est_baja_prod'] == 0){echo "INACTIVO";}else{echo "ACTIVO";} ?></td>
                 <td class="text-light"><?php echo $mostrar['categ_extra'] ?></td>
                 <td>
                 <a class= "btn btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
