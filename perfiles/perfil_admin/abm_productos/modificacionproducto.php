@@ -65,6 +65,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <th class="text-light">Categoria</th>
                 <th class="text-light">Detalle</th>
                 <th class="text-light">Disponible</th>
+                <th class="text-light">Nombre de la imagen</th>
                 <th class="text-light">Foto</th>
                 <th class="text-light">Estado</th>
                 <th class="text-light">Categoria de Extra</th>
@@ -88,6 +89,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-light"><?php echo $mostrar['categoria_prod'] ?></td>
                 <td class="text-light"><?php echo $mostrar['detalle_prod'] ?></td>
                 <td class="text-light"><?php if($mostrar['prod_disponible'] == 0){echo "NO";}else{echo "SI";} ?></td>
+                <td class="text-light"><?php echo $mostrar['foto_prod'] ?></td>
                 <td style="width: 10%;"><img id="image" name="image" style="border: 2px solid ; width: 100px;" alt="" src="<?php echo "../../../imagenes/productos/".$mostrar['foto_prod'] ?>"></td>
                 <td class="text-light"><?php if($mostrar['est_baja_prod'] == 0){echo "INACTIVO";}else{echo "ACTIVO";} ?></td>
                 <td class="text-light"><?php echo $mostrar['categ_extra'] ?></td>

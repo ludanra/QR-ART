@@ -63,6 +63,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <th class="text-light">Nombre</th>
                 <th class="text-light">Precio</th>
                 <th class="text-light">Categoria</th>
+                <th class="text-light">Nombre de la imagen</th>
                 <th class="text-light">Foto</th>
                 <th class="text-light">Estado</th>
                 <th class="text-light">Editar</th>
@@ -83,6 +84,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-light"><?php echo $mostrar['nombre_extra'] ?></td>
                 <td class="text-light"><?php echo $mostrar['precio_extra'] ?></td>
                 <td class="text-light"><?php echo $mostrar['categ_extra'] ?></td>
+                <td class="text-light"><?php echo $mostrar['foto_extra'] ?></td>
                 <td style="width: 10%;"><img id="image" name="image" style="border: 2px solid ; width: 100px; height: 60px;" alt="" src="<?php echo "../../../imagenes/extras/".$mostrar['foto_extra'] ?>"></td>
                 <td class="text-light"><?php if($mostrar['estado_extra'] == 0){echo "INACTIVO";}else{echo "ACTIVO";} ?></td>
                 <td>
