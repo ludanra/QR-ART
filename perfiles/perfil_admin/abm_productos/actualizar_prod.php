@@ -135,9 +135,13 @@ if($result_query == 0){
     <div class="card" style="width: 28rem;">
       
       <div class="card-body">
+      <?php
+      include("funciones.php");
+      actualizarprod();
+      ?>
         
-        <form  method="post">
-                      <h5 class="text-sm-center">Datos del producto</h5>
+        <form  method="post" enctype="multipart/form-data">
+                      <h3 class="text-sm-center">Datos del producto</h3>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
 
@@ -166,7 +170,7 @@ if($result_query == 0){
                       
 
                         <label for="formFile" class="form-label text-dark" name="categoria_prod" id="categoria_prod" value=<?php echo $categoria_prod; ?>>Categoría del producto </label>
-                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
+                        <select class="form-select" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
                             <option value= <?php $categoria_prod; ?>><?php echo $categoria_prod; ?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -174,11 +178,11 @@ if($result_query == 0){
                             <option value="4">4</option>
                             <option value="5">5</option>
                           </select>
-                        
+                        <br>
 
                         
 
-                        <label for="exampleFormControlTextarea1"class="form-label text-dark " >Detalle del producto</label>
+                        <label for="formFile " class="form-label text-dark " >Detalle del producto</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
@@ -197,7 +201,7 @@ if($result_query == 0){
                           $showvalue = "SI";
                         }
                         ?> 
-                            <option value= <?php $prod_disponible; ?>><?php echo $showvalue; ?></option>
+                            <option value= <?php echo $prod_disponible; ?>><?php echo $showvalue; ?></option>
                             <option value="1">SI</option>
                             <option value="0">NO</option>
                           </select>
@@ -214,7 +218,7 @@ if($result_query == 0){
                           $showvalue = "ACTIVO";
                         }
                         ?>
-                            <option value= <?php $est_baja_prod; ?>><?php echo $showvalue; ?></option>
+                            <option value= <?php echo $est_baja_prod; ?>><?php echo $showvalue; ?></option>
                             <option value=1>ACTIVO</option>
                             <option value=0>INACTIVO</option>
                           </select>
@@ -224,7 +228,7 @@ if($result_query == 0){
 
                         <label for="formFile" class="form-label text-dark" name="categ_extra" id="categ_extra" value=<?php echo $categ_extra; ?>>Categoría extra: </label>
                         <select class="form-select form-select-sm" name="categ_extra" id="categ_extra"  aria-label="Default select example">
-                            <option value=<?php $categ_extra; ?>><?php echo $categ_extra; ?></option> 
+                            <option value=<?php echo $categ_extra; ?>><?php echo $categ_extra; ?></option> 
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -233,9 +237,6 @@ if($result_query == 0){
                           </select>
                         <br>
 
-                        
-
-                        
 
                         <div class="sm-3">
                             <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
