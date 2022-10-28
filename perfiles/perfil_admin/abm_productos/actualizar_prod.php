@@ -129,7 +129,7 @@ if($result_query == 0){
       actualizarprod();
       ?>
         
-        <form  method="post">
+        <form  method="post" enctype="multipart/form-data">
                       <h3 class="text-sm-center">Datos del producto</h3>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
@@ -159,7 +159,7 @@ if($result_query == 0){
                       
 
                         <label for="formFile" class="form-label text-dark" name="categoria_prod" id="categoria_prod" value=<?php echo $categoria_prod; ?>>Categoría del producto </label>
-                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
+                        <select class="form-select" name="categoria_prod" id="categoria_prod"  aria-label="Default select example">
                             <option value= <?php $categoria_prod; ?>><?php echo $categoria_prod; ?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
