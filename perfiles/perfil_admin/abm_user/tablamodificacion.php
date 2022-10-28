@@ -46,7 +46,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
             <li><a class="dropdown-item" href="../abm_extras/abm_extras.php">Administración De Extras🍟</a></li>
           </ul>
         </li>
@@ -55,15 +55,13 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
       </ul>
       
       
-      <h4 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h4>
+      <h6 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h6>
       
     </div>
   </div>
 </nav>
 
-<br>
-<br>
-   
+
 
     <table id="usuarios" name="usuarios" class="table table-striped" style="width:100%" class="text-light">
         <thead>
@@ -126,7 +124,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
     </table>
 
-    <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+    <footer class="py-1 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>

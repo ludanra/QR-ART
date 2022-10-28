@@ -43,7 +43,7 @@
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Mis modificar mis pedidos🗒️</h4>
+      <h4 class="text-sm-center text-light">Mis modificar mis pedidos🍕</h4>
       
     </div>
   </div>

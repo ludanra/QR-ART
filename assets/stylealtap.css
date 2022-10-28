@@ -1,24 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
-.container {
-    height: 35%;
-    align-content: center;
-}
-
 .card {
-    height: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
+    height: 1000px;
     width: 600px;
     background-color: #ffc107 !important;
-}
-
-input:focus {
-    outline: 0 0 0 0 !important;
-    box-shadow: 0 0 0 0 !important;
-}
-
-.links a {
-    margin-left: 4px;
 }
 
 form input[type="submit"] {

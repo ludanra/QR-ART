@@ -127,7 +127,7 @@ if($result_query == 0){
           <a class="nav-link active text-light" aria-current="page" href="../perfiles/perfil_admin/perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../perfiles/perfil_admin/abm_user/formulario.php">Alta de usuario</a>
+          <a class="nav-link text-light" href="../perfiles/perfil_admin/abm_user/formulario.php">Alta De Usuario</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="../perfiles/perfil_admin/abm_user/tablamodificacion.php">Lista de usuarios</a>
@@ -138,7 +138,7 @@ if($result_query == 0){
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
             <li><a class="dropdown-item" href="../abm_extras/abm_extras.php">Administración De Extras🍟</a></li>
           </ul>
         </li>
@@ -147,20 +147,18 @@ if($result_query == 0){
       </ul>
       
       
-      <h4 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h4>
+      <h6 class="text-sm-center text-light">Modificación de usuario🙋🏻‍♂️</h6>
       
     </div>
   </div>
 </nav>
 
-   <br>
-   <br>
-   <br>
+ 
 
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
-            <div class="card">
+            <div class="card" style="width: 28rem;">
 
                 <div class="card-body">
 
@@ -179,15 +177,15 @@ if($result_query == 0){
 
                         </div>
 
-                        <h4 class="text-sm-center">Datos del usuario</h4>
+                        <h5 class="text-sm-center">Datos Del Usuario</h5>
 
 
 
 
 
-                        <label for="formFile " class="form-label text-light " >Usuario</label>
+                        <label for="formFile " class="form-label" >Usuario</label>
 
-                        <div class="input-group form-group">
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
@@ -196,16 +194,16 @@ if($result_query == 0){
 
 
                         </div>
-                        <br>
-                        <label for="formFile" class="form-label text-light">Password</label>
-                        <div class="input-group form-group">
+                      
+                        <label for="formFile" class="form-label ">Password</label>
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
 
                             <input type="password" class="form-control" placeholder="Password" name="contrasena" id="contrasena"; readonly >
                         </div>
-                        <br>
+                    
 
                         <label for="formFile" class="form-label" name="cod_perfil" id="cod_perfil">Codigo del perfil </label>
 
@@ -220,7 +218,7 @@ if($result_query == 0){
 
 
 
-                        <select class="form-select" name="cod_perfil" id="cod_perfil"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="cod_perfil" id="cod_perfil"  aria-label="Default select example">
 
                         <?php
 
@@ -251,12 +249,12 @@ if($result_query == 0){
                           </select>
                           
 
-                          <br>
-                        <label for="formFile" class="form-label text-light" name="estado" id="estado">Estado </label>
+                       
+                        <label for="formFile" class="form-label " name="estado" id="estado">Estado </label>
 
 
 
-                        <select class="form-select" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
+                        <select class="form-select form-select-sm" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
                           <option value= <?php $est_baja_usu; ?>><?php echo $est_baja_usu; ?></option>
                           <option value="ACTIVO">ACTIVO</option>
                           <option value="INACTIVO">INACTIVO</option>
@@ -267,28 +265,28 @@ if($result_query == 0){
                         
                          
                           </select>
-                          <BR>
+                      
 
-                        <label for="formFile" class="form-label text-dark">Nombre</label>
-                        <div class="input-group form-group">
+                        <label for="formFile" class="form-label ">Nombre</label>
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
 
                             <input type="text" class="form-control text-dark" placeholder="Nombre" name="nombre_usu" id="nombre_usu" value=<?php echo $nombre_usu; ?> readonly>
                         </div>
-                        <br>
-                        <label for="formFile" class="form-label text-light">Apellido</label>
-                        <div class="input-group form-group">
+                      
+                        <label for="formFile" class="form-label ">Apellido</label>
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
-                            <br>
+                          
 
                             <input type="text" class="form-control" placeholder="Apellido" name="apellido_usu" id="apellido_usu" value=<?php echo $apellido_usu; ?> readonly>
                         </div>
-                        <label for="formFile" class="form-label text-light">Email</label>
-                        <div class="input-group form-group">
+                        <label for="formFile" class="form-label ">Email</label>
+                        <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
 
                             </div>
@@ -305,7 +303,7 @@ if($result_query == 0){
 
 
             
-    <footer class="py-3 mt-6 border-top bg-dark fixed-bottom">
+    <footer class="py-1 mt-6 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>
@@ -371,10 +369,6 @@ if($result_query == 0){
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
     
 

@@ -105,7 +105,7 @@ if($result_query == 0){
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Listado de productos🍔</h4>
+      <h4 class="text-sm-center text-light">Listado de Extras🍟</h4>
       
       
     </div>

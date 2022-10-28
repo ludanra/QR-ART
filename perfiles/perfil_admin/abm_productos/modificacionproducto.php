@@ -38,7 +38,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_user/abm_usuarios.php">Administración De Usuarios🙋🏻‍♂️</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
             <li><a class="dropdown-item" href="../abm_extras/abm_extras.php">Administración De Extras🍟</a></li>
           </ul>
         </li>
@@ -46,14 +46,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Listado de productos🍔</h4>
+      <h6 class="text-sm-center text-light">Listado de productos🍔</h6>
       
       
     </div>
   </div>
 </nav>
 
-  <br>
+
 
 
 
@@ -94,7 +94,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                 <td class="text-light"><?php if($mostrar['est_baja_prod'] == 0){echo "INACTIVO";}else{echo "ACTIVO";} ?></td>
                 <td class="text-light"><?php echo $mostrar['categ_extra'] ?></td>
                 <td>
-                <a class= "btn btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
+                <a class= "btn-sm btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_prod']?>" class="table__item__link" >Editar</a>       
                 </td>
 
  
@@ -117,7 +117,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     </script>
 
 
-<footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+<footer class="py-1 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>

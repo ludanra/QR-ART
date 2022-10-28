@@ -14,14 +14,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
     <title>Modificacion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet " href="../../../assets/stylesnav.css">
+    <link rel="stylesheet " href="../../../assets/nav.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet " href="../../../assets/backp.css">
     <link rel="stylesheet " href="../../../assets/table.css">
 </head>
 
 <body>
-<nav class="navbar navbar-expand-xl">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,15 +38,15 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../abm_user/abm_usuarios.php">Administración De Usuarios🙋🏻‍♂️</a></li>
-            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🗒️</a></li>
-            <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍟</a></li>
+            <li><a class="dropdown-item" href="../abm_pedidos/abm_pedidos.php">Administración De Pedidos 🍕</a></li>
+            <li><a class="dropdown-item" href="../abm_productos/abm_productos.php">Administración De Productos🍔</a></li>
           </ul>
         </li>
         
         
       </ul>
       
-      <h4 class="text-sm-center text-light">Listado de extras</h4>
+      <h4 class="text-sm-center text-light">Listado de extras🍟</h4>
       
       
     </div>

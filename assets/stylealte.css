@@ -1,24 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
-.container {
-    height: 200%;
-    align-content: center;
-}
-
 .card {
-    height: 600px;
-    margin-top: 1rem;
-    margin-bottom: 10rem;
+    height: 100px;
     width: 600px;
-    background-color: #539ae5 !important;
+    background-color: #fa3b0b !important;
 }
 
 form input[type="submit"] {
     width: 100%;
     padding: 8px 16px;
-    margin-top: 20px;
+    margin-top: 10px;
     border: 1px solid #000;
     border-radius: 5px;
     display: block;
     color: #fff;
-    background-color: rgb(77, 25, 221);
+    background-color: rgb(172, 168, 170);
 }
