@@ -122,12 +122,8 @@
 </svg></h5>
 
                 <div class="card-body" >
-                <?php
-                include("funciones.php");
-                insertarprod();
-                ?>
 
-                    <form method="post" enctype="multipart/form-data">
+                    <form action = insert_prod.php method="post" enctype="multipart/form-data">
                     <!--form action="insertar_producto.php" method="post">-->
                         <label for="formFile" class="form-label">Nombre del producto</label>
 

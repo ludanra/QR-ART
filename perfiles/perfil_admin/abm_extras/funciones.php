@@ -59,6 +59,7 @@ function insertarextra(){
                         Cargado correctamente
                         </div>
                         HERE;
+                        header("Refresh: 3; URL= modificacion_extra.php");
                     }else{
                         PRINT<<<HERE
                         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -68,6 +69,7 @@ function insertarextra(){
                         Se registró el extra, pero la imagen no pudo guardarse correctamente
                         </div>
                         HERE;
+                        header("Refresh: 3; URL= modificacion_extra.php");
                     }
                 }else {
                     PRINT<<<HERE
@@ -78,6 +80,7 @@ function insertarextra(){
                     ERROR: No fue posible cargar el extra. Intente nuevamente
                     </div>
                     HERE;
+                    header("Refresh: 3; URL= modificacion_extra.php");
                 }
             }
 

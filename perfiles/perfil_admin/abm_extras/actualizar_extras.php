@@ -120,7 +120,7 @@ if($result_query == 0){
       
       <div class="card-body">
         
-        <form  method="post">
+      <form  action = update_extra.php method="post" enctype="multipart/form-data">
                       <h3 class="text-sm-center">Datos del extra</h3>
                     <!--<form action="./../../php/procesar.php" method="post">-->
 
@@ -151,7 +151,7 @@ if($result_query == 0){
 
                         <label for="formFile" class="form-label text-dark" name="categ_extra" id="categ_extra" value=<?php echo $categ_extra; ?>>Categoría del extra </label>
                         <select class="form-select" name="categ_extra" id="categ_extra"  aria-label="Default select example">
-                            <option value= <?php $categ_extra; ?>><?php echo $categ_extra; ?></option>
+                            <option value= <?php echo $categ_extra; ?>><?php echo $categ_extra; ?></option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -172,17 +172,18 @@ if($result_query == 0){
                           $showvalue = "ACTIVO";
                         }
                         ?>
-                            <option value= <?php $estado_extra; ?>><?php echo $showvalue; ?></option>
-                            <option value="ACTIVO">ACTIVO</option>
-                            <option value="INACTIVO">INACTIVO</option>
+                            <option value= <?php echo $estado_extra; ?>><?php echo $showvalue; ?></option>
+                            <option value="1">ACTIVO</option>
+                            <option value="0">INACTIVO</option>
                           </select>
                         <br>
 
-                        <div class="mb-3">
+                        <div class="sm-3">
                             <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
                             <img style="border: 2px solid ; width: 150px" alt="" src="<?php echo "../../../imagenes/extras/".$foto_extra ?>">
-                            <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del producto - Formato jpg - Max: 10mb</label>
-                            <input class="form-control" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
+                            <br>
+                            <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del extra - Formato jpg - Max: 10mb</label>
+                            <input class="form-control-sm" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
                         </div>
 
                         <input type="submit" name="Actualizar" value="Actualizar" />

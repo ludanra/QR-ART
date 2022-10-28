@@ -120,12 +120,8 @@
 </svg></h5>
 
                 <div class="card-body">
-                <?php
-                include("funciones.php");
-                insertarextra();
-                ?>
 
-                    <form method="post" enctype="multipart/form-data">
+                    <form action = insert_extra.php method="post" enctype="multipart/form-data">
                         <label for="formFile" class="form-label">Nombre del extra</label>
 
                         <div class="input-group-sm form-group">
