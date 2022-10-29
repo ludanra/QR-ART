@@ -104,5 +104,6 @@ if(isset($_POST['Cancelar'])){
             }
 
         }
+    }
         
 }

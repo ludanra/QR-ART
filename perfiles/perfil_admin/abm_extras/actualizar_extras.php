@@ -185,9 +185,13 @@ if($result_query == 0){
                             <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del extra - Formato jpg - Max: 10mb</label>
                             <input class="form-control-sm" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
                         </div>
+                        <br>
+                        <br>
 
-                        <input type="submit" style="background-color:#2be01b" name="Actualizar" value="Actualizar" />
-                        <input type="submit" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
+                        <div class="col text-center">
+                        <button type="submit" class= "btn btn-primary"  id="boton" name="boton" value="0">Actualizar </button>
+                        <button type="submit" class= "btn btn-danger" id="boton" name="boton" value="1"> Cancelar </button>
+                        </div>
                 </div>
                 </form>
 

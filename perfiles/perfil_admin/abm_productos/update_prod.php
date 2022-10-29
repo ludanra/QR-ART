@@ -1,10 +1,10 @@
 <?php
 include ("base_de_datos.php");
 
-if(isset($_POST['Cancelar'])){
+$boton=$_POST ['boton'];
 
+if($boton==1){
     header("Refresh: 0; URL= modificacionproducto.php");
-
 }else{
 
     $cod_prod = $_POST ['cod_prod'];

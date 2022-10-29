@@ -1,12 +1,13 @@
 <?php
+
 include ("base_de_datos.php");
 
-if(isset($_POST['Cancelar'])){
+$boton=$_POST ['boton'];
 
+
+if($boton==1){
     header("Refresh: 0; URL= modificacion_extra.php");
-
 }else{
-
     $cod_extra = $_POST ['cod_extra'];
     $nombre_extra = $_POST ['nombre_extra'];
     $precio_extra = $_POST ['precio_extra'];
