@@ -186,7 +186,8 @@ if($result_query == 0){
                             <input class="form-control-sm" type="file" name="foto_extra" id="foto_extra" value=<?php echo $foto_extra; ?>>
                         </div>
 
-                        <input type="submit" name="Actualizar" value="Actualizar" />
+                        <input type="submit" style="background-color:#2be01b" name="Actualizar" value="Actualizar" />
+                        <input type="submit" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
                 </div>
                 </form>
 

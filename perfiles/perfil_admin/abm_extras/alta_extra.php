@@ -122,7 +122,7 @@
                 <div class="card-body">
 
                     <form action = insert_extra.php method="post" enctype="multipart/form-data">
-                        <label for="formFile" class="form-label">Nombre del extra</label>
+                        <label for="formFile" class="form-label">Nombre del extra *</label>
 
                         <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
@@ -130,37 +130,41 @@
                             <input type="text" class="form-control" placeholder="Nombre del extra" id="nombre_extra" name="nombre_extra" autofocus required>
                         </div>
 
-                        <label for="formFile" class="form-label">Precio</label>
+                        <label for="formFile" class="form-label">Precio *</label>
                         <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
                             </div>
                             <input type="number" class="form-control" placeholder="Precio" name="precio_extra" id="precio_extra" autofocus required>
                         </div>
 
-                        <label for="formFile" class="form-label" name="categ_extra" id="categ_extra">Categoría</label>
-                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra" aria-label="Default select example">
-                            <option value="1">Categoría 1</option>
+                        <label for="formFile" class="form-label" name="categ_extra" id="categ_extra">Categoría *</label>
+                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra" aria-label="Default select example" required>
+                            <option value="1" selected>Categoría 1</option>
                             <option value="2">Categoría 2</option>
                             <option value="3">Categoría 3</option>
                             <option value="4">Categoría 4</option>
                             <option value="5">Categoría 5</option>
-                          </select>
+                        </select>
+                        <br>
 
 
-                        <label for="formFile" class="form-label" name="estado_extra" id="estado_extra">Disponible</label>
-                        <select class="form-select form-select-sm" name="estado_extra" id="estado_extra" aria-label="Default select example">
-                            <option value="0">INACTIVO</option>
+                        <label for="formFile" class="form-label" name="estado_extra" id="estado_extra">Estado</label>
+                        <select class="form-select form-select-sm" name="estado_extra" id="estado_extra" aria-label="Default select example" required>
+                            <option value="0" selected>INACTIVO</option>
                           </select>
                         <br>
                         
                         <div class="mb-3">
-                            <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del extra - Formato jpg - Max: 10mb</label>
-                            <input class="form-control-sm" type="file" name="foto_extra" id="foto_extra">
+                            <label for="formFile" class="form-label" name="foto_extra" id="foto_extra">Foto del extra - Formato jpg - Max: 10mb *</label>
+                            <input class="form-control-sm" type="file" name="foto_extra" id="foto_extra" required>
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
 
-                        <input type="submit" name="Registrar" id="Registrar" value="Ingresar Extra" />
+                        <label>* Campos obligatorios</label>
+
+                        <input type="submit" style="background-color:#2be01b" name="Ingresar Extra" value="Ingresar Extra" />
+                        <input type="hidden" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
                 </div>
                 </form>
 

@@ -146,8 +146,8 @@
                         </div>
 
                         <label for="formFile" class="form-label" name="categoria_prod" id="categoria_prod">Categoría</label>
-                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod" aria-label="Default select example">
-                            <option value="1">Categoría 1</option>
+                        <select class="form-select form-select-sm" name="categoria_prod" id="categoria_prod" aria-label="Default select example" required>
+                            <option value="1" selected>Categoría 1</option>
                             <option value="2">Categoría 2</option>
                             <option value="3">Categoría 3</option>
                             <option value="4">Categoría 4</option>
@@ -155,8 +155,8 @@
                           </select>
 
                         <label for="formFile" class="form-label" name="categ_extra" id="categ_extra">Categoría Extras</label>
-                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra" aria-label="Default select example">
-                            <option value="1">Categoría extras 1</option>
+                        <select class="form-select form-select-sm" name="categ_extra" id="categ_extra" aria-label="Default select example" required>
+                            <option value="1" selected>Categoría extras 1</option>
                             <option value="2">Categoría extras 2</option>
                             <option value="3">Categoría extras 3</option>
                             <option value="4">Categoría extras 4</option>
@@ -164,31 +164,32 @@
                           </select>
                    
                         <label for="formFile" class="form-label" name="prod_disponible" id="prod_disponible">Disponible</label>
-                        <select class="form-select form-select-sm" name="prod_disponible" id="prod_disponible" aria-label="Default select example">
-                            <option value="NO">NO</option>
+                        <select class="form-select form-select-sm" name="prod_disponible" id="prod_disponible" aria-label="Default select example" required>
+                            <option value="0" selected>NO</option>
                           </select>
                    
 
                         <label for="formFile" class="form-label" name="est_baja_prod" id="est_baja_prod">Estado del producto</label>
-                        <select class="form-select form-select-sm" name="est_baja_prod" id="est_baja_prod" aria-label="Default select example">
-                            <option value="ACTIVO">ACTIVO</option>
+                        <select class="form-select form-select-sm" name="est_baja_prod" id="est_baja_prod" aria-label="Default select example" required>
+                            <option value="1" selected>ACTIVO</option>
                           </select>
                      
 
                         <div class="sm-3">
                             <label for="exampleFormControlTextarea1" class="form-label" name="detalle_prod" id="detalle_prod">Detalle del producto</label>
-                            <textarea class="form-control" name="detalle_prod" id="detalle_prod" rows="3"></textarea>
+                            <textarea class="form-control" name="detalle_prod" id="detalle_prod" rows="3" required></textarea>
 
                         </div>
                         
                         <div class="sm-3">
                             <label for="formFile" class="form-label" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
-                            <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod">
+                            <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod" required>
                             <!--Acá tenemos que hablar con Alfaro a ver como hacemos para que se suba un archivo, 
                             el mismo se pase al servidor, y luego se le modifique el nombre para poder mostrarlo en el front-->
                         </div>
 
-                        <input type="submit" name="Registrar" id="Registrar" value="Ingresar Producto"  class=sm/>
+                        <input type="submit" style="background-color:#2be01b" name="Registrar" id="Registrar" value="Ingresar Producto"  class=sm/>
+                        <input type="hidden" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
                 </div>
                 </form>
 

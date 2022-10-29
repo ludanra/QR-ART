@@ -199,9 +199,12 @@ if($result_query == 0){
                             <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
                         </div>
 
-                        <input type="submit" name="Actualizar" value="Actualizar" />
+                        <input type="submit" style="background-color:#2be01b" name="Actualizar" value="Actualizar" />
+                        <input type="submit" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
                 </div>
                 </form>
+
+                        
 
                 <link rel="stylesheet" href="">
 
