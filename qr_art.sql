@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2022 a las 14:54:28
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 7.4.22
+-- Tiempo de generación: 29-10-2022 a las 18:51:47
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ CREATE TABLE `extra` (
 
 INSERT INTO `extra` (`cod_extra`, `categ_extra`, `nombre_extra`, `precio_extra`, `foto_extra`, `estado_extra`) VALUES
 (1, '1', 'Cheddar', '200', 'chedar.jpg', 0),
-(2, '2', 'Bacon', '200', 'bacon.jpg', 1);
+(2, '2', 'Bacon', '200', 'bacon.jpg', 1),
+(3, '1', 'mayonesa', '200', 'chedar.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -124,9 +125,10 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_prod`, `detalle_prod`, `foto_prod`, `prod_disponible`, `requiere_cocina`, `est_baja_prod`, `categ_extra`) VALUES
 (4, '4', 'Prueba Foto', '540', 'Prueba de foto', 'ok.jpg', 0, 0, 0, '3'),
-(5, '1', 'prueba foto 2', '658', 'prueba foto 2', 'ok.jpg', 0, 0, 0, '1'),
-(7, '1', 'Hamburguesa 1', '980', 'Hamburguesa Clásica con lechuga, tomate y cheddar', 'Hamburguesa1.jpg', 0, 0, 0, '1'),
-(8, '3', 'Producto de prueba 24-10', '700', 'Producto de prueba', 'Hamburguesa2.jpg', 0, 0, 0, '3');
+(5, '4', 'prueba foto 2', '658', 'prueba foto 2', 'ok.jpg', 0, 0, 0, '1'),
+(7, '4', 'Hamburguesa 1', '980', 'Hamburguesa Clásica con lechuga, tomate y cheddar', 'Hamburguesa1.jpg', 0, 0, 0, '1'),
+(8, '4', 'Producto de prueba 24-10', '700', 'Producto de prueba', 'Hamburguesa2.jpg', 0, 0, 0, '3'),
+(9, '4', 'hamburguesa simple', '500', '', 'Hamburguesa1.jpg', 0, 0, 0, '1');
 
 -- --------------------------------------------------------
 
@@ -151,15 +153,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`, `token`) VALUES
-('Mia19', 'b59c67bf196a4758191e42f76670ceba', 2, 'Mia', 'fleita', '', 'miafleita12@gmail.com', 47, '633ed1bd2c1a2'),
-('antoo', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'antonella', 'alfonso', 'ACTIVO', 'antoo@gmail.com', 56, '634577ce44021'),
-('Marting', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Martin', 'fleita', 'INACTIVO', 'Martingerardo@gmail.com', 68, '63457003e3c65'),
-('Boca', 'b84bd99d065f6aab6fcd590ec1b5fe16', 3, 'Boca', 'Juniors', 'INACTIVO', 'bocajuniors@gmail.com', 70, ''),
-('nicole', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'nicole@gmail.com', 71, ''),
-('tana', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'tana@gmail.com', 72, ''),
-('pepe', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Nicole', 'fleita', 'ACTIVO', 'pepe@gmail.com', 73, ''),
-('tina', '4124bc0a9335c27f086f24ba207a4912', 3, 'aaaa', 'asss', 'ACTIVO', 'ssdfgt@sllslsl', 74, ''),
-('ludanra', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Luis Daniel', 'Ramos', 'ACTIVO', 'luidanramos@gmail.com', 75, '6356fecbc4d25');
+('ludanra', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Luis', 'Ramos', 'ACTIVO', 'luidanramos@gmail.com', 75, '6356fecbc4d25'),
+('alfonsoj', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Johanna', 'alfonso', 'ACTIVO', 'johannaalfonso93@yahoo.es', 76, '');
 
 --
 -- Índices para tablas volcadas
@@ -214,7 +209,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `extra`
 --
 ALTER TABLE `extra`
-  MODIFY `cod_extra` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cod_extra` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `perfiles`
@@ -226,13 +221,13 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Restricciones para tablas volcadas

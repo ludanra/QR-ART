@@ -227,8 +227,12 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
                                         </div>
 
                                         <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" autofocus required>
-                                    </div>
-                                    <input type="submit" name="Registrar" value="Registrar" />
+                                        <br>
+                          
+                        <div class="col text-center">
+                        <button type="submit" class= "btn btn-primary" id="boton" name="boton" value=0>Registrar</button>
+                        <button type="submit" class= "btn btn-danger"id="boton" name="boton" value=1>Cancelar</button>
+                    
                         </div>
                         </form>
 

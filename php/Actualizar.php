@@ -255,7 +255,7 @@ if($result_query == 0){
 
 
                         <select class="form-select form-select-sm" name="est_baja_usu" id="est_baja_usu"  aria-label="Default select example">
-                          <option value= <?php $est_baja_usu; ?>><?php echo $est_baja_usu; ?></option>
+                          <option value= <?php echo $est_baja_usu; ?>><?php echo $est_baja_usu; ?></option>
                           <option value="ACTIVO">ACTIVO</option>
                           <option value="INACTIVO">INACTIVO</option>
                        
@@ -291,10 +291,15 @@ if($result_query == 0){
 
                             </div>
 
-                            <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?> readonly>
+                            
+                           <input type="email" class="form-control" placeholder="Email" name="email_usu" id="email_usu" value=<?php echo $email_usu; ?> readonly>
+                          <br>
+                          
+                        <div class="col text-center">
+                        <button type="submit" class= "btn btn-primary" id="boton" name="boton" value=0>Actualizar</button>
+                        <button type="submit" class= "btn btn-danger"id="boton" name="boton" value=1>Cancelar</button>
+                    
                         </div>
-                        <input type="submit" name="Actualizar" value="Actualizar" />
-                </div>
                 </form>
 
                 <link rel="stylesheet" href="">
