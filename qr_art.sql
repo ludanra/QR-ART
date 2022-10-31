@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2022 a las 18:51:47
+-- Tiempo de generación: 31-10-2022 a las 18:30:10
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -43,7 +43,8 @@ CREATE TABLE `extra` (
 INSERT INTO `extra` (`cod_extra`, `categ_extra`, `nombre_extra`, `precio_extra`, `foto_extra`, `estado_extra`) VALUES
 (1, '1', 'Cheddar', '200', 'chedar.jpg', 0),
 (2, '2', 'Bacon', '200', 'bacon.jpg', 1),
-(3, '1', 'mayonesa', '200', 'chedar.jpg', 0);
+(3, '1', 'mayonesa', '200', 'chedar.jpg', 0),
+(4, '4', 'aceitunas', '200', 'descarga.jfif', 1);
 
 -- --------------------------------------------------------
 
@@ -124,11 +125,18 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_prod`, `detalle_prod`, `foto_prod`, `prod_disponible`, `requiere_cocina`, `est_baja_prod`, `categ_extra`) VALUES
-(4, '4', 'Prueba Foto', '540', 'Prueba de foto', 'ok.jpg', 0, 0, 0, '3'),
-(5, '4', 'prueba foto 2', '658', 'prueba foto 2', 'ok.jpg', 0, 0, 0, '1'),
-(7, '4', 'Hamburguesa 1', '980', 'Hamburguesa Clásica con lechuga, tomate y cheddar', 'Hamburguesa1.jpg', 0, 0, 0, '1'),
-(8, '4', 'Producto de prueba 24-10', '700', 'Producto de prueba', 'Hamburguesa2.jpg', 0, 0, 0, '3'),
-(9, '4', 'hamburguesa simple', '500', '', 'Hamburguesa1.jpg', 0, 0, 0, '1');
+(11, '1', 'BOMBA BAR', '850', '4 medallones,4 fetas de cheddar,4 fetas de dambo y manteca', 'burger1.jpg', 0, 0, 1, '1'),
+(12, '1', 'CHACO', '900', 'cheddar,panceta,cebolla,mayo parrillera', 'burger2.jpg', 0, 0, 1, '1'),
+(13, '1', 'TRIPLE', '1000', 'medallones,4 fetas de chedar,4 fetas de dambo y manteca', 'burger3.jpg', 0, 0, 1, '1'),
+(14, '1', 'Berni', '850', '2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa', 'burger4.jpg', 0, 0, 1, '1'),
+(15, '2', 'PAPAS CHEDDAR', '600', 'PAPAS CHEDDAR+PANCETA+VERDEO', 'papas1.jpg', 0, 0, 1, '2'),
+(16, '2', 'PAPAS HUEVO + JAMON', '600', 'PAPAS HUEVO + JAMON', 'papas2.jpg', 0, 0, 1, '2'),
+(17, '2', 'EMPANADAS FRITAS', '600', 'EMPANADAS FRITAS', 'empanadas.jpg', 0, 0, 1, '2'),
+(18, '2', 'NUGGETS', '600', 'NUGGETS', 'nugets.jpg', 0, 0, 1, '2'),
+(19, '3', 'MUZARELLA', '850', 'Grande:$850 / Indivi:$650', 'pizza1.jpg', 0, 0, 1, '1'),
+(20, '3', 'NAPOLITANA', '900', 'Grande:$900 / Indivi:$650', 'pizza2.jpg', 0, 0, 1, '3'),
+(21, '3', 'JAMON Y MORRON', '850', 'Grande:$850 / Indivi:$650 ', 'pizza3.jpg', 0, 0, 1, '4'),
+(22, '3', 'CALABRESA', '850', 'Grande:$850 / Indivi:$650', 'pizza4.jpg', 0, 0, 1, '3');
 
 -- --------------------------------------------------------
 
@@ -209,7 +217,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `extra`
 --
 ALTER TABLE `extra`
-  MODIFY `cod_extra` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cod_extra` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `perfiles`
@@ -221,13 +229,13 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- Restricciones para tablas volcadas
