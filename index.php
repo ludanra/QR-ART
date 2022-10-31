@@ -19,7 +19,6 @@
 
     <header class="bg-dark d-flex justify-content-center align-items-center py-3 text-light flex-column">
         <!-- logo del lugar -->
-        <img class="logo-custom" src="assets/img/pixlr-bg-result.png" alt="LogoNotFound">
         <h1> Menú</h1>
     </header>
     <!-- Swiper -->
@@ -28,7 +27,7 @@
 
     <div class="container mb-5">
 
-        <h2 class="my-4 display-5">Promos📢</h2>
+        <h5 class="my-4 display-5">Promos📢</h5>
         <div class="slider">
             <ul>
 
@@ -109,9 +108,10 @@
 
         <h2 class="my-4 display-5">Burger🍔</h2>
 
-        <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 20px;">
                    
-
+        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
+          <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
+             
 
                 <?php
 
@@ -129,9 +129,8 @@
 
                 ?>
 
-            <div class="card h-100"> 
-
-
+               <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
+               <div class="card h-100">
                  <img id="image" name="image"  style="border: 2px solid ; width: 150px;" alt="" src="<?php echo "imagenes/productos/".$fila['foto_prod'] ?>">
 
                 <div class="card-body">
@@ -143,7 +142,8 @@
                 <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
-            </div> 
+               </div>
+               </div> 
 
 
             <?php
@@ -154,6 +154,9 @@
 
 
             ?>
+          </div>
+
+        </div>
 
 
 
@@ -161,9 +164,7 @@
 
 
                   
-                
-        </div>
-
+       
 
 
 
