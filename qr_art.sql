@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2022 a las 18:58:43
+-- Tiempo de generación: 31-10-2022 a las 22:08:34
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 7.4.22
 
@@ -125,18 +125,18 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_prod`, `detalle_prod`, `foto_prod`, `prod_disponible`, `requiere_cocina`, `est_baja_prod`, `categ_extra`) VALUES
-(11, '1', 'BOMBA BAR', '850', '4 medallones,4 fetas de cheddar,4 fetas de dambo y manteca', 'burger1.jpg', 0, 0, 1, '1'),
-(12, '1', 'CHACO', '900', 'cheddar,panceta,cebolla,mayo parrillera', 'burger2.jpg', 0, 0, 1, '1'),
-(13, '1', 'TRIPLE', '1000', 'medallones,4 fetas de chedar,4 fetas de dambo y manteca', 'burger3.jpg', 0, 0, 1, '1'),
-(14, '1', 'Berni', '850', '2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa', 'burger4.jpg', 0, 0, 1, '1'),
-(15, '2', 'PAPAS CHEDDAR', '600', 'PAPAS CHEDDAR+PANCETA+VERDEO', 'papas1.jpg', 0, 0, 1, '2'),
-(16, '2', 'PAPAS HUEVO + JAMON', '600', 'PAPAS HUEVO + JAMON', 'papas2.jpg', 0, 0, 1, '2'),
-(17, '2', 'EMPANADAS FRITAS', '600', 'EMPANADAS FRITAS', 'empanadas.jpg', 0, 0, 1, '2'),
-(18, '2', 'NUGGETS', '600', 'NUGGETS', 'nugets.jpg', 0, 0, 1, '2'),
-(19, '3', 'MUZARELLA', '850', 'Grande:$850 / Indivi:$650', 'pizza1.jpg', 0, 0, 1, '1'),
-(20, '3', 'NAPOLITANA', '900', 'Grande:$900 / Indivi:$650', 'pizza2.jpg', 0, 0, 1, '3'),
-(21, '3', 'JAMON Y MORRON', '850', 'Grande:$850 / Indivi:$650 ', 'pizza3.jpg', 0, 0, 1, '4'),
-(22, '3', 'CALABRESA', '850', 'Grande:$850 / Indivi:$650', 'pizza4.jpg', 0, 0, 1, '3');
+(11, '1', 'BOMBA BAR', '850', '4 medallones,4 fetas de cheddar,4 fetas de dambo y mantec', 'burger1.jpg', 1, 0, 1, '1'),
+(12, '1', 'CHACO', '900', 'cheddar,panceta,cebolla,mayo parrillera', 'burger2.jpg', 1, 0, 1, '1'),
+(13, '1', 'TRIPLE', '1000', 'medallones,4 fetas de chedar,4 fetas de dambo y manteca', 'burger3.jpg', 1, 0, 1, '1'),
+(14, '1', 'Berni', '850', '2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa', 'burger4.jpg', 1, 0, 1, '1'),
+(15, '2', 'PAPAS CHEDDAR', '600', 'PAPAS CHEDDAR+PANCETA+VERDEO', 'papas1.jpg', 1, 0, 1, '2'),
+(16, '2', 'PAPAS HUEVO + JAMON', '600', 'PAPAS HUEVO + JAMON', 'papas2.jpg', 1, 0, 1, '2'),
+(17, '2', 'EMPANADAS FRITAS', '600', 'EMPANADAS FRITAS', 'empanadas.jpg', 1, 0, 1, '2'),
+(18, '2', 'NUGGETS', '600', 'NUGGETS', 'nugets.jpg', 1, 0, 1, '2'),
+(19, '3', 'MUZARELLA', '850', 'Grande', 'pizza1.jpg', 1, 0, 1, '1'),
+(20, '3', 'NAPOLITANA', '900', 'Grande', 'pizza2.jpg', 1, 0, 1, '3'),
+(21, '3', 'JAMON Y MORRON', '850', 'Grande', 'pizza3.jpg', 1, 0, 1, '4'),
+(22, '3', 'CALABRESA', '850', 'Grande', 'pizza4.jpg', 1, 0, 1, '3');
 
 -- --------------------------------------------------------
 
