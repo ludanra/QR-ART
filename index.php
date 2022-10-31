@@ -40,70 +40,6 @@
 
         </div>
 
-        <h2 class="my-4 display-5">Mas vendidos!</h2>
-
-
-        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
-            <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
-                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/burger1.jpg" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">BOMBA BAR</h5>
-                            <p class="card-text p">4 medallones,4 fetas de cheddar,4 fetas de dambo y manteca</p>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$850</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="2 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/burger2.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">CHACO</h5>
-                            <p class="card-text">cheddar,panceta,cebolla,mayo parrillera</p>
-
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$850</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="3 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/burger3.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">TRIPLE</h5>
-                            <p class="card-text">medallones,4 fetas de chedar,4 fetas de dambo y manteca</p>
-
-                        </div>
-                        <div class="justify-content-end align-content-end p-3">
-                            <p class="card-text">$850</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="4 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/burger4.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">Berni</h5>
-                            <p class="card-text">2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa</p>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$850</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <h2 class="my-4 display-5">Burger🍔</h2>
@@ -139,7 +75,7 @@
                 </div>
 
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo $fila['precio_prod'];?></p>
+                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
                 <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
@@ -194,7 +130,7 @@
                 </div>
 
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo $fila['precio_prod'];?></p>
+                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
                 <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
@@ -251,7 +187,7 @@
                 </div>
 
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo $fila['precio_prod'];?></p>
+                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
                 <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
