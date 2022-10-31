@@ -140,6 +140,7 @@ if($result_query == 0){
                             <div class="input-group-prepend">
                             </div>
 
+
           
 
                             <textarea type="text" class="form-control" placeholder="Detalle del producto" rows="3" id="detalle_prod " name="detalle_prod" value="<?php echo $detalle_prod; ?>"  autofocus required><?php echo $detalle_prod; ?></textarea>
