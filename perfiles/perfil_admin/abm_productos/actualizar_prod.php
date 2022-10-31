@@ -140,7 +140,7 @@ if($result_query == 0){
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Detalle del producto" id="detalle_prod " name="detalle_prod" value=<?php echo $detalle_prod; ?>  autofocus required>
+                            <textarea type="text" class="form-control" placeholder="Detalle del producto" id="detalle_prod " name="detalle_prod" value=  autofocus required><?php echo $detalle_prod; ?></textarea>
                         </div>
                         <br>
 
@@ -195,9 +195,13 @@ if($result_query == 0){
                         <div class="sm-3">
                             <label for="formFile " class="form-label text-dark ">Imagen actual: </label>
                             <img style="border: 2px solid ; width: 150px" alt="" src="<?php echo "../../../imagenes/productos/".$foto_prod ?>">
+                            <br>
+                            <br>
                             <label for="formFile" class="form-label-sm" name="foto_prod" id="foto_prod">Foto del producto - Formato jpg - Max: 10mb</label>
                             <input class="form-control-sm" type="file" name="foto_prod" id="foto_prod" value=<?php echo $foto_prod; ?>>
                         </div>
+                        <br>
+                        <br>
                         <br>
 
 
