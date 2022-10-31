@@ -113,7 +113,7 @@ if($result_query == 0){
                         <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_prod" name="nombre_prod" value=<?php echo $nombre_prod; ?>  autofocus required>
+                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_prod" name="nombre_prod" value="<?php echo $nombre_prod; ?>"  autofocus required>
                         </div>
                       
 
@@ -134,15 +134,13 @@ if($result_query == 0){
                             <option value="4">4</option>
                             <option value="5">5</option>
                           </select>
-                        <br>
 
                         <label for="formFile " class="form-label text-dark " >Detalle del producto</label>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Detalle del producto" id="detalle_prod " name="detalle_prod" value=<?php echo $detalle_prod; ?>  autofocus required>
+                            <textarea type="text" class="form-control" placeholder="Detalle del producto" rows="3" id="detalle_prod " name="detalle_prod" value="<?php echo $detalle_prod; ?>"  autofocus required><?php echo $detalle_prod; ?></textarea>
                         </div>
-                        <br>
 
                         <label for="formFile" class="form-label text-dark" name="prod_disponible" id="prod_disponible" value=<?php echo $prod_disponible; ?>>Disponible </label>
                         <select class="form-select form-select-sm" name="prod_disponible" id="prod_disponible"  aria-label="Default select example">
@@ -159,7 +157,6 @@ if($result_query == 0){
                             <option value="1">SI</option>
                             <option value="0">NO</option>
                           </select>
-                        <br>
                         
                         <label for="formFile" class="form-label text-dark" name="est_baja_prod" id="est_baja_prod" value=<?php echo $est_baja_prod; ?>>Estado </label>
                         <select class="form-select form-select-sm" name="est_baja_prod" id="est_baja_prod"  aria-label="Default select example">

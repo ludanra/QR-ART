@@ -178,7 +178,6 @@
                         <div class="sm-3">
                             <label for="exampleFormControlTextarea1" class="form-label" name="detalle_prod" id="detalle_prod">Detalle del producto</label>
                             <textarea class="form-control" name="detalle_prod" id="detalle_prod" rows="3" required></textarea>
-
                         </div>
                         
                         <div class="sm-3">
