@@ -189,7 +189,6 @@
                         </div>
 
                         <input type="submit" style="background-color:#2be01b" name="Registrar" id="Registrar" value="Ingresar Producto"  class=sm/>
-                        <input type="hidden" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
                 </div>
                 </form>
 

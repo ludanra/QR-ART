@@ -164,7 +164,7 @@
                         <label>* Campos obligatorios</label>
 
                         <input type="submit" style="background-color:#2be01b" name="Ingresar Extra" value="Ingresar Extra" />
-                        <input type="hidden" style="background-color:#fa0505" name="Cancelar" value="Cancelar" />
+                        
                 </div>
                 </form>
 
