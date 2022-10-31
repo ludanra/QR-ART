@@ -123,7 +123,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#productos').DataTable();
         });
     </script>
 
