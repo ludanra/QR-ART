@@ -72,7 +72,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
       
-        $sql="SELECT * from extra";
+        $sql="SELECT * from extra ORDER BY nombre_extra ASC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_extra'];
 

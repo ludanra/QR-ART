@@ -86,7 +86,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
       
-        $sql="SELECT * from productos";
+        $sql="SELECT * from productos ORDER BY nombre_prod ASC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_prod'];
 

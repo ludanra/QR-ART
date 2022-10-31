@@ -89,7 +89,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
 
-        $sql="SELECT u.apellido_usu, u.email_usu, u.est_baja_usu, u.id_usuario, u.nombre_usu, u.usuario, p.nombre_perfil FROM usuarios u INNER JOIN perfiles p ON u.cod_perfil = p.cod_perfil ";
+        $sql="SELECT u.apellido_usu, u.email_usu, u.est_baja_usu, u.id_usuario, u.nombre_usu, u.usuario, p.nombre_perfil FROM usuarios u INNER JOIN perfiles p ON u.cod_perfil = p.cod_perfil ORDER BY usuario ASC";
         $result=mysqli_query($conexion, $sql);
 
         $resultado=mysqli_num_rows( $result);
