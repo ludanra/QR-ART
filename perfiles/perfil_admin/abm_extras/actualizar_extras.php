@@ -137,7 +137,7 @@ if($result_query == 0){
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_extra" name="nombre_extra" value=<?php echo $nombre_extra; ?>  autofocus required>
+                            <input type="text" class="form-control" placeholder="Nombre" id="nombre_extra" name="nombre_extra" value="<?php echo $nombre_extra; ?>"  autofocus required>
                         </div>
                         <br>
 

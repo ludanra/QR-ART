@@ -118,7 +118,7 @@
                     $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-                    $consulta = "SELECT * FROM productos WHERE categoria_prod= 1";
+                    $consulta = "SELECT * FROM productos WHERE est_baja_prod= 1 AND prod_disponible= 1 AND categoria_prod= 1";
                     $result = mysqli_query($conexion, $consulta);
 
 
@@ -173,7 +173,7 @@
                     $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-                    $consulta = "SELECT * FROM productos WHERE categoria_prod= 2";
+                    $consulta = "SELECT * FROM productos WHERE est_baja_prod= 1 AND prod_disponible= 1 AND categoria_prod= 2";
                     $result = mysqli_query($conexion, $consulta);
 
 
@@ -229,7 +229,7 @@
                     $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-                    $consulta = "SELECT * FROM productos WHERE categoria_prod= 3";
+                    $consulta = "SELECT * FROM productos WHERE est_baja_prod= 1 AND prod_disponible= 1 AND categoria_prod= 3";
                     $result = mysqli_query($conexion, $consulta);
 
 
