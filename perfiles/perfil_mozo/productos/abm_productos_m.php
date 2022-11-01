@@ -1,3 +1,5 @@
+
+
 <?php
 
    session_start();
@@ -34,7 +36,9 @@
 
 <body>
     <nav>
-        <h3 class="text-sm-center text-light">Administración De Productos🍔</h3>
+        <h5 class="text-sm-center text-light">Administración De Productos <br><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
+  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
+</svg></h5>
     </nav>
 
 
@@ -44,23 +48,36 @@
         <div class="sidebar ">
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
-          
-          <a class="d-block "><?php echo $usuario;?></a>
-             </div>
+            <div class="info ">
+           <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Mesero";?></a>
+            
+              
+                
+            </div>
+        </div>
+
 
             <a href="../perfil_mozo.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Inicio
+                    Inicio <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25p%" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+</svg>
                     <i class="bi bi-house"></i>
                 </p>
             </a>
 
 
+        
             <a href="../pedidos/abm_pedidos_m.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Administración De Pedidos🗒️
+                    Administración De Pedidos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-fill" viewBox="0 0 16 16">
+  <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z"/>
+  <path d="M3.5 1h.585A1.498 1.498 0 0 0 4 1.5V2a1.5 1.5 0 0 0 1.5 1.5h5A1.5 1.5 0 0 0 12 2v-.5c0-.175-.03-.344-.085-.5h.585A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1Z"/>
+</svg>
 
                     <i class="right fas fa-angle-left "></i>
                 </p>
@@ -68,7 +85,9 @@
             <a href="../extras/abm_extras_m.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
-                    Administración De Extras🍟
+                    Administración De Extras<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M.11 3.187A.5.5 0 0 1 .5 3h13a.5.5 0 0 1 .488.608l-.22.991a3.001 3.001 0 0 1-1.3 5.854l-.132.59A2.5 2.5 0 0 1 9.896 13H4.104a2.5 2.5 0 0 1-2.44-1.958L.012 3.608a.5.5 0 0 1 .098-.42Zm12.574 6.288a2 2 0 0 0 .866-3.899l-.866 3.9Z"/>
+</svg>
                     <i class="right fas fa-angle-left "></i>
                 </p>
             </a>
@@ -78,7 +97,10 @@
 
             <a href="../../../login.php" class="nav-link active ">
                 <i class="far fa-circle nav-icon "></i>
-                <p>Cerrar Sesión</p>
+                <p>Cerrar Sesión <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+  <path d="M7.5 1v7h1V1h-1z"/>
+  <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+</svg></p>
             </a>
 
 
@@ -90,8 +112,8 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <a href="./altaproducto_m.php" class="btn btn-warning btn-lg  text-light" type="button">Ingresar Producto</a>
-        <a href="./modificacionproducto_m.php" class="btn btn-warning btn-lg  text-light" type="button">Listado de productos</a>
+    
+        <a href="./modificacionproducto_m.php" class="btn btn-warning btn-sm  text-light" type="button">Listado de productos</a>
     </div>
 
 
@@ -105,7 +127,7 @@
 
 
 
-    <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
+    <footer class="py-2 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>

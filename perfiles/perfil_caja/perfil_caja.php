@@ -35,7 +35,7 @@
         <div class="user-panel mt-2 pb-2 sm-3 d-flex ">
             <div class="info ">
            <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
-            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Caja";?></a>
             
               
                 
@@ -78,9 +78,9 @@
             <div class="row ">
                
                 <!-- ./col -->
-                <div class="col-sm-2 col-sm-3 " style="left:60px">
+                <div class="col-sm-2 col-sm-3 " style="left:370px">
                     <!-- small box -->
-                    <a class="small-box bg-success " href="../perfil_mozo/pedidos/abm_pedidos_m.php">
+                    <a class="small-box bg-success " href="./pedidos/abm_pedidos_p.php">
                         <div class="inner ">
 
                             <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-fill" viewBox="0 0 16 16">
@@ -91,34 +91,7 @@
                     </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-sm-2 col-sm-3" style="left:90px">
-                    <!-- small box -->
-                    <a class="small-box bg-warning " href="./productos/abm_productos_m.php">
-                        <div class="inner ">
-                            <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
-  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
-</svg> <br>Administración De Productos </p>
-                        </div>
-                        
-                        
-                        </a>
-                </div>
-                <!-- ./col -->
-                <div class="col-sm-2 col-sm-3 " style="left:130px">
-                    <!-- small box -->
-                    <a class="small-box bg-danger " href="./extras/abm_extras_m.php">
-                        <div class="inner ">
-
-                            <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M.11 3.187A.5.5 0 0 1 .5 3h13a.5.5 0 0 1 .488.608l-.22.991a3.001 3.001 0 0 1-1.3 5.854l-.132.59A2.5 2.5 0 0 1 9.896 13H4.104a2.5 2.5 0 0 1-2.44-1.958L.012 3.608a.5.5 0 0 1 .098-.42Zm12.574 6.288a2 2 0 0 0 .866-3.899l-.866 3.9Z"/>
-</svg><br>Administración De Extras  </p>
-                        </div>
-                        <div class="icon ">
-                            <i class="ion ion-pie-graph "></i>
-                        </div>
-                        </a>
-                </div>
-
+                
              
                 <!-- ./col -->
             </div>

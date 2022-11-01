@@ -49,7 +49,7 @@
             </div>
         </div>
 
-            <a href="../perfil_mozo.php" class="nav-link active ">
+            <a href="../perfil_caja.php" class="nav-link active ">
                 <i class="nav-icon fas fa-tachometer-alt "></i>
                 <p>
                     Inicio <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25p%" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
@@ -60,27 +60,7 @@
                 </p>
             </a>
 
-            <a href="../productos/abm_productos_m.php" class="nav-link active ">
-                <i class="nav-icon fas fa-tachometer-alt "></i>
-                <p>
-                    Administración De Productos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
-  <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
-</svg>
-
-                    <i class="right fas fa-angle-left "></i>
-                </p>
-            </a>
-            <a href="../extras/abm_extras_m.php" class="nav-link active ">
-                <i class="nav-icon fas fa-tachometer-alt "></i>
-                <p>
-                    Administración De Extras<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M.11 3.187A.5.5 0 0 1 .5 3h13a.5.5 0 0 1 .488.608l-.22.991a3.001 3.001 0 0 1-1.3 5.854l-.132.59A2.5 2.5 0 0 1 9.896 13H4.104a2.5 2.5 0 0 1-2.44-1.958L.012 3.608a.5.5 0 0 1 .098-.42Zm12.574 6.288a2 2 0 0 0 .866-3.899l-.866 3.9Z"/>
-</svg>
-                    <i class="right fas fa-angle-left "></i>
-                </p>
-            </a>
-
-
+     
        
 
             <a href="../../../login.php" class="nav-link active ">
@@ -100,8 +80,7 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <a href="./pedidos_m.php" button class="btn btn-success btn-sm" type="button">Mis Pedidos</a>
-        <a href="./modificarpedidos_m.php" button class="btn btn-success btn-sm" type="button">Modificar Pedido</a>
+        <a href="./pedidos_p.php" button class="btn btn-success btn-sm" type="button">Mis Pedidos</a>
        
     </div>
 
