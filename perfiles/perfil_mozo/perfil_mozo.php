@@ -35,7 +35,7 @@
         <div class="user-panel mt-2 pb-2 sm-3 d-flex ">
             <div class="info ">
            <a href="# " class="d-block "><?php echo "Usuario: "; echo $usuario;?></a>
-            <a href="# " class="d-block "><?php echo "Perfil: Administrador";?></a>
+            <a href="# " class="d-block "><?php echo "Perfil: Mesero";?></a>
             
               
                 
@@ -78,7 +78,7 @@
             <div class="row ">
                
                 <!-- ./col -->
-                <div class="col-sm-2 col-sm-3 " style="left:60px">
+                <div class="col-sm-2 col-sm-3 " style="left:60px;right: 120px;">
                     <!-- small box -->
                     <a class="small-box bg-success " href="../perfil_mozo/pedidos/abm_pedidos_m.php">
                         <div class="inner ">
@@ -104,7 +104,7 @@
                         </a>
                 </div>
                 <!-- ./col -->
-                <div class="col-sm-2 col-sm-3 " style="left:130px">
+                <div class="col-sm-2 col-sm-3 " style="left:120px">
                     <!-- small box -->
                     <a class="small-box bg-danger " href="./extras/abm_extras_m.php">
                         <div class="inner ">
