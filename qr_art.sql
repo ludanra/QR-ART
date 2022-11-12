@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2022 a las 22:08:34
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 7.4.22
+-- Tiempo de generación: 12-11-2022 a las 14:07:45
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `extra` (
 INSERT INTO `extra` (`cod_extra`, `categ_extra`, `nombre_extra`, `precio_extra`, `foto_extra`, `estado_extra`) VALUES
 (1, '1', 'Cheddar', '200', 'chedar.jpg', 0),
 (2, '2', 'Bacon', '200', 'bacon.jpg', 1),
-(3, '1', 'mayonesa', '200', 'chedar.jpg', 0),
+(3, '1', 'Mayonesa', '200', 'chedar.jpg', 0),
 (4, '4', 'aceitunas', '200', 'descarga.jfif', 1);
 
 -- --------------------------------------------------------
@@ -67,18 +67,16 @@ CREATE TABLE `mesa` (
 CREATE TABLE `pedidos` (
   `cod_pedido` int(11) NOT NULL,
   `estado_ped` text NOT NULL,
-  `cant_prod` int(2) NOT NULL,
+  ` nro_prod` int(2) NOT NULL,
   `fecha_hora_ped` datetime NOT NULL,
   `ult_act_ped` datetime NOT NULL,
   `forma_pago` text NOT NULL,
   `cod_pago_ped` int(20) NOT NULL,
   `cod_prod` int(6) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nro_item_ped` int(3) NOT NULL,
-  `cod_extra` int(6) NOT NULL,
+  `extra_prod` int(6) NOT NULL,
   `notas_ped` text NOT NULL,
-  `cod_mesa` int(2) NOT NULL,
-  `est_prod_ped` tinyint(1) NOT NULL
+  `cod_mesa` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -98,7 +96,7 @@ CREATE TABLE `perfiles` (
 
 INSERT INTO `perfiles` (`cod_perfil`, `nombre_perfil`) VALUES
 (1, 'Administador'),
-(2, 'Mesero'),
+(2, 'Mozo'),
 (3, 'Caja');
 
 -- --------------------------------------------------------
@@ -117,26 +115,27 @@ CREATE TABLE `productos` (
   `prod_disponible` tinyint(1) NOT NULL,
   `requiere_cocina` tinyint(1) NOT NULL,
   `est_baja_prod` tinyint(1) NOT NULL,
-  `categ_extra` text NOT NULL
+  `categ_extra` text NOT NULL,
+  `nota_prod` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_prod`, `detalle_prod`, `foto_prod`, `prod_disponible`, `requiere_cocina`, `est_baja_prod`, `categ_extra`) VALUES
-(11, '1', 'BOMBA BAR', '850', '4 medallones,4 fetas de cheddar,4 fetas de dambo y mantec', 'burger1.jpg', 1, 0, 1, '1'),
-(12, '1', 'CHACO', '900', 'cheddar,panceta,cebolla,mayo parrillera', 'burger2.jpg', 1, 0, 1, '1'),
-(13, '1', 'TRIPLE', '1000', 'medallones,4 fetas de chedar,4 fetas de dambo y manteca', 'burger3.jpg', 1, 0, 1, '1'),
-(14, '1', 'Berni', '850', '2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa', 'burger4.jpg', 1, 0, 1, '1'),
-(15, '2', 'PAPAS CHEDDAR', '600', 'PAPAS CHEDDAR+PANCETA+VERDEO', 'papas1.jpg', 1, 0, 1, '2'),
-(16, '2', 'PAPAS HUEVO + JAMON', '600', 'PAPAS HUEVO + JAMON', 'papas2.jpg', 1, 0, 1, '2'),
-(17, '2', 'EMPANADAS FRITAS', '600', 'EMPANADAS FRITAS', 'empanadas.jpg', 1, 0, 1, '2'),
-(18, '2', 'NUGGETS', '600', 'NUGGETS', 'nugets.jpg', 1, 0, 1, '2'),
-(19, '3', 'MUZARELLA', '850', 'Grande', 'pizza1.jpg', 1, 0, 1, '1'),
-(20, '3', 'NAPOLITANA', '900', 'Grande', 'pizza2.jpg', 1, 0, 1, '3'),
-(21, '3', 'JAMON Y MORRON', '850', 'Grande', 'pizza3.jpg', 1, 0, 1, '4'),
-(22, '3', 'CALABRESA', '850', 'Grande', 'pizza4.jpg', 1, 0, 1, '3');
+INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_prod`, `detalle_prod`, `foto_prod`, `prod_disponible`, `requiere_cocina`, `est_baja_prod`, `categ_extra`, `nota_prod`) VALUES
+(11, '1', 'BOMBA BAR', '850', '4 medallones,4 fetas de cheddar,4 fetas de dambo y manteca', 'burger1.jpg', 1, 0, 1, '1', ''),
+(12, '1', 'CHACO', '900', 'cheddar,panceta,cebolla,mayo parrillera', 'burger2.jpg', 1, 0, 1, '1', ''),
+(13, '1', 'TRIPLE', '1000', 'medallones,4 fetas de chedar,4 fetas de dambo y manteca', 'burger3.jpg', 1, 0, 1, '1', ''),
+(14, '1', 'Berni', '850', '2 medallones, 3 fetas de chedar, 2 fetas de panceta, pan de papa', 'burger4.jpg', 1, 0, 1, '1', ''),
+(15, '2', 'PAPAS CHEDDAR', '600', 'PAPAS CHEDDAR+PANCETA+VERDEO', 'papas1.jpg', 1, 0, 1, '2', ''),
+(16, '2', 'PAPAS HUEVO + JAMON', '600', 'PAPAS HUEVO + JAMON', 'papas2.jpg', 1, 0, 1, '2', ''),
+(17, '2', 'EMPANADAS FRITAS', '600', 'EMPANADAS FRITAS', 'empanadas.jpg', 1, 0, 1, '2', ''),
+(18, '2', 'NUGGETS', '600', 'NUGGETS', 'nugets.jpg', 1, 0, 1, '2', ''),
+(19, '3', 'MUZARELLA', '850', 'Grande:$850 / Indivi:$650', 'pizza1.jpg', 1, 0, 1, '1', ''),
+(20, '3', 'NAPOLITANA', '900', 'Grande:$900 / Indivi:$650', 'pizza2.jpg', 1, 0, 1, '3', ''),
+(21, '3', 'JAMON Y MORRON', '850', 'Grande:$850 / Indivi:$650 ', 'pizza3.jpg', 1, 0, 1, '4', ''),
+(22, '3', 'CALABRESA', '850', 'Grande:$850 / Indivi:$650', 'pizza4.jpg', 1, 0, 1, '3', '');
 
 -- --------------------------------------------------------
 
@@ -162,8 +161,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`, `token`) VALUES
 ('ludanra', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Luis', 'Ramos', 'ACTIVO', 'luidanramos@gmail.com', 75, '6356fecbc4d25'),
-('alfonsoj', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Johanna', 'alfonso', 'ACTIVO', 'johannaalfonso93@yahoo.es', 76, ''),
-('amartel', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Agustin', 'Martel', 'ACTIVO', 'amartel@gmail.com', 81, '');
+('alfonsoj', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Johanna', 'alfonso', 'ACTIVO', 'johannaalfonso93@yahoo.es', 76, '');
 
 --
 -- Índices para tablas volcadas
@@ -188,7 +186,7 @@ ALTER TABLE `pedidos`
   ADD KEY `cod_prod` (`cod_prod`),
   ADD KEY `usuario` (`id_usuario`),
   ADD KEY `cod_mesa` (`cod_mesa`),
-  ADD KEY `cod_extra` (`cod_extra`),
+  ADD KEY `cod_extra` (`extra_prod`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
@@ -236,7 +234,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- Restricciones para tablas volcadas

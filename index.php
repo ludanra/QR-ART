@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +80,7 @@
 
                 <div class="justify-content-end p-3">
                 <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
+                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
                </div>
@@ -131,7 +135,7 @@
 
                 <div class="justify-content-end p-3">
                 <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
+                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
                </div>
@@ -188,7 +192,7 @@
 
                 <div class="justify-content-end p-3">
                 <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
+                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
                 </div>
 
                </div>
@@ -222,7 +226,7 @@
                         </div>
                         <div class="justify-content-end p-3">
                             <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
+                            <a href="pedidos/detail.php" class="btn button-custom-secondary">Agregar al pedido</a>
                         </div>
                     </div>
                 </div>
@@ -261,7 +265,7 @@
                         </div>
                         <div class="justify-content-end p-3">
                             <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
+                            <a href="pedidos/detail.php" class="btn button-custom-secondary">Agregar al pedido</a>
                         </div>
                     </div>
                 </div>

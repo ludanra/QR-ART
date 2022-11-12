@@ -1,3 +1,44 @@
+<?php
+
+
+$conexion=mysqli_connect("localhost","root","","qr_art");
+if (isset($_GET['cod'])){
+
+  $consulta = "SELECT * FROM productos WHERE cod_prod=" .$_GET['cod'];
+
+  
+  $result = mysqli_query($conexion, $consulta);
+
+
+  
+  if(mysqli_num_rows($result)> 0){
+
+    $filas= mysqli_fetch_row($result);
+
+  }else{
+
+    header('location:../index.php');
+  
+  }  
+
+  
+}else{
+
+  header('location:../index.php');
+}
+
+
+
+
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +53,49 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../styles.css">
     <title>Detalle del producto</title>
+
+
+    
 </head>
 <body>
     <header class="header-custom">
       <nav class="navbar navbar-expand-sm fixed-top navbar-light">
           <div class="container">
-              <a class="display-2 m-2 text-light" href="../../index.html"><i class='bx bxs-left-arrow-circle'></i></a>
+              <a class="display-2 m-2 text-light" href="../../index.php"><i class='bx bxs-left-arrow-circle'></i></a>
               </div>
           </div>
       </nav>
+
+
+      
+    
     </header>
+  
+
     <div class="container">
+
       <div class="d-flex flex-column p-3">
+
+
+
+
+
+
         <div class="d-flex justify-content-between h1">
+
           <i class='bx bx-chevrons-down'></i><i class='bx bx-chevrons-down'></i><i class='bx bx-chevrons-down'></i>
+          
         </div>
-              <h1 class="display-5 m-3 text-center" style="font-weight:bold;">AMERICAN BURGUER</h1>
-               <p><small>Hamburguesa con rucula, tomate, cebolla y salsa especial</h3>
+
+        
+              <h1 class="display-5 m-3 text-center" style="font-weight:bold;"><?php echo $filas[2];?></h1>
+               <p><small><?php echo $filas[4];?></h3>
+
+
       </div>
+
+
+  
       <div class="card border-0">
           <h5 class="card-header h6 bg-dark text-white p-3">Unidades</h5>
           <div class="d-flex justify-content-between p-3">
@@ -39,9 +105,15 @@
               <p class="m-0 my-1">1</p>
               <a class="mx-3 my-1 text-decoration-none text-white">+</a>
             </div>
+    
           </div>
         </div>
+   
+       
+
       <hr>
+
+      
       <!-- accordion -->
 
       <div class="accordion" id="accordionExample">
@@ -51,28 +123,59 @@
               Extras
             </button>
           </h2>
+
+                <?php
+
+                    $conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+                    $extra="SELECT DISTINCT categ_extra FROM productos WHERE cod_prod=".$_GET['cod'];
+
+                    
+
+
+                    $consulta = "SELECT DISTINCT nombre_extra FROM extra WHERE categ_extra = '$extra'";
+
+                   
+                    $result = mysqli_query($conexion, $consulta);
+
+
+
+
+                 while($fila=mysqli_fetch_array($result)){
+
+                  
+            
+
+                ?>
+
+                 
+
+
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="card border-0">
                 <div class="d-flex justify-content-between p-3">
-                  <p class="mb-0 my-1"><small>Bacon</small></p>
+                  <p class="mb-0 my-1"><small><?php echo $fila['nombre_extra'];?></small></p>
                   <div class="d-flex rounded-pill bg-dark text-white">
                     <a class="mx-3 my-1 text-decoration-none text-white">-</a>
-                    <p class="m-0 my-1">0</p>
+                    <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                     <a class="mx-3 my-1 text-decoration-none text-white">+</a>
                   </div>
                 </div>
-                <div class="d-flex justify-content-between p-3">
-                  <p class="mb-0 my-1"><small>Salsa bigMac</small></p>
-                  <div class="d-flex rounded-pill bg-dark text-white">
-                    <a class="mx-3 my-1 text-decoration-none text-white">-</a>
-                    <p class="m-0 my-1">0</p>
-                    <a class="mx-3 my-1 text-decoration-none text-white">+</a>
-                  </div>
-                </div>
-              </div>
+    
             </div>
           </div>
+
+          
+            <?php
+
+            } 
+
+
+
+
+            ?>
         </div>
       </div>
 
@@ -83,16 +186,22 @@
           <h5 class="card-header bg-dark text-light h6 p-3">Notas</h5>
           <p class="m-3"><small>Una nota para el cocinero...</small></p>
           <div class=" mx-3 mb-3 w-75 mb-5">
-            <input type="text" class="form-control" placeholder="Sin sal, Sin cebolla, etc" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text"  class="form-control" placeholder="Sin sal, Sin cebolla, etc" aria-label="Username" aria-describedby="basic-addon1">
           </div>
         </div>
         <!-- Button to the cart -->
         <div class="d-flex justify-content-center m-3  mb-5">
-          <a href="./cart.html" class="button-custom-secondary p-3 w-100 mb-5 text-dark text-decoration-none">Pedir</i></a>
+        <p><a href="cart.php?cod=<?php echo $filas[0]?>" class="btn button-custom-secondary">Pedir</a></p>     
         </div>
       </div>
 
+  
       
+
+
+
+
+
     <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
       <p class="col-md-12 mb-0 text-light text-center">Sistema creado y distribuido por <a target="_blank" class="text-decoration-none text-light" href="https://practienda.com/">Prac<span class="text-success">tienda</span>.com©</a></p>
 

@@ -142,7 +142,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
 
-    <!---Modal---->
+   
 
   
    
