@@ -5,12 +5,12 @@ $array = $_SESSION['carrito'];
 
 for($i=0;$i<count($array);$i++){
 
-    if($array[$i]['cod_prod'] != $_POST['cod']){
+    if($array[$i]['cod'] != $_POST['cod']){
 
         $arraynuevo[]=array(
 
 
-            'cod'=>$array[$i]['cod_prod'],
+            'cod'=>$array[$i]['cod'],
             'nombre'=>$array[$i]['nombre'],
             'precio'=>$array[$i]['precio'],
             'foto'=>$array[$i]['foto'],

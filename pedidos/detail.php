@@ -61,7 +61,7 @@ if (isset($_GET['cod'])){
     <header class="header-custom">
       <nav class="navbar navbar-expand-sm fixed-top navbar-light">
           <div class="container">
-              <a class="display-2 m-2 text-light" href="../../index.php"><i class='bx bxs-left-arrow-circle'></i></a>
+              <a class="display-2 m-2 text-light" href="./../index.php"><i class='bx bxs-left-arrow-circle'></i></a>
               </div>
           </div>
       </nav>
@@ -100,11 +100,16 @@ if (isset($_GET['cod'])){
           <h5 class="card-header h6 bg-dark text-white p-3">Unidades</h5>
           <div class="d-flex justify-content-between p-3">
             <p class="mb-0 my-1"><small>Selecciona la cantidad</small></p>
-            <div class="d-flex rounded-pill bg-dark text-white">
-              <a class="mx-3 my-1 text-decoration-none text-white">-</a>
-              <p class="m-0 my-1">1</p>
-              <a class="mx-3 my-1 text-decoration-none text-white">+</a>
-            </div>
+           
+                <div class="input-group mb-3" style="max-width: 120px;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                        </div>
+                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                        </div>
+                      </div></td>
     
           </div>
         </div>
@@ -129,12 +134,20 @@ if (isset($_GET['cod'])){
                     $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-                    $extra="SELECT DISTINCT categ_extra FROM productos WHERE cod_prod=".$_GET['cod'];
+                    
 
                     
 
 
-                    $consulta = "SELECT DISTINCT nombre_extra FROM extra WHERE categ_extra = '$extra'";
+                    $consulta = "SELECT (p.categ_extra) as categ_extra, (e.nombre_extra) as nombre_extra
+                    FROM productos p 
+                    INNER JOIN extra e 
+                    on p.categ_extra = e.categ_extra 
+                    WHERE cod_prod =" .$_GET['cod'];
+                    
+                    
+                    
+                   
 
                    
                     $result = mysqli_query($conexion, $consulta);
@@ -157,11 +170,15 @@ if (isset($_GET['cod'])){
               <div class="card border-0">
                 <div class="d-flex justify-content-between p-3">
                   <p class="mb-0 my-1"><small><?php echo $fila['nombre_extra'];?></small></p>
-                  <div class="d-flex rounded-pill bg-dark text-white">
-                    <a class="mx-3 my-1 text-decoration-none text-white">-</a>
-                    <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <a class="mx-3 my-1 text-decoration-none text-white">+</a>
-                  </div>
+                  <div class="input-group mb-3" style="max-width: 120px;">
+                        <div class="input-group-prepend">
+                          <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                        </div>
+                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                        </div>
+                      </div></td>
                 </div>
     
             </div>
@@ -181,7 +198,7 @@ if (isset($_GET['cod'])){
 
       <hr>
       <!-- notas -->
-    
+
         <div class="card border-0">
           <h5 class="card-header bg-dark text-light h6 p-3">Notas</h5>
           <p class="m-3"><small>Una nota para el cocinero...</small></p>
@@ -191,7 +208,7 @@ if (isset($_GET['cod'])){
         </div>
         <!-- Button to the cart -->
         <div class="d-flex justify-content-center m-3  mb-5">
-        <p><a href="cart.php?cod=<?php echo $filas[0]?>" class="btn button-custom-secondary">Pedir</a></p>     
+        <p><a href="cart.php?cod=<?php echo $filas[0]?>" class= "btn btn-warning">Pedir</a></p>     
         </div>
       </div>
 
@@ -203,7 +220,7 @@ if (isset($_GET['cod'])){
 
 
     <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
-      <p class="col-md-12 mb-0 text-light text-center">Sistema creado y distribuido por <a target="_blank" class="text-decoration-none text-light" href="https://practienda.com/">Prac<span class="text-success">tienda</span>.com©</a></p>
+    <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
   </footer>
 

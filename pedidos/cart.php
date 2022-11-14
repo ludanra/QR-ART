@@ -5,8 +5,14 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
 if(isset($_SESSION['carrito'])){
 
+  
+
+  
+
   if(isset($_GET['cod'])){
 
+
+    
     $array=$_SESSION['carrito'];
 
     $encontro= false;
@@ -21,7 +27,7 @@ if(isset($_SESSION['carrito'])){
       }
     }
 
-    if($encontro==true){
+    if($encontro == true){
       $array[$numero]['cantidad']=$array[$numero]['cantidad'] +1;
 
       $_SESSION['carrito']=$array;
@@ -165,12 +171,15 @@ if(isset($_SESSION['carrito'])){
 
         <?php
         
+        $total=0;
 
         if(isset($_SESSION['carrito'])){
 
+         
+
             for($i=0;$i<count($_SESSION['carrito']);$i++){
 
-            
+            $total= $total + ($_SESSION['carrito'][$i]['precio'] * $_SESSION['carrito'][$i] ['cantidad']);
 
 
           
@@ -181,11 +190,11 @@ if(isset($_SESSION['carrito'])){
 
             <tr>
                 <td class="text-dark" ><?php echo $_SESSION['carrito'][$i] ['nombre'] ?></td>
-                <td class="text-dark"><?php echo $_SESSION['carrito'][$i] ['precio'] * $_SESSION['carrito'][$i] ['cantidad']?></td>
+                <td class="text-dark"><?php echo '$'; echo $_SESSION['carrito'][$i] ['precio'] * $_SESSION['carrito'][$i] ['cantidad']?></td>
                 <td class="text-dark"><?php echo $_SESSION['carrito'][$i] ['foto'] ?></td>
                 <td class="text-dark"><?php echo $_SESSION['carrito'][$i] ['cantidad'] ?></td>
                 <td><a href="#" class="btn btn-danger btn-sm btnEliminar" data-cod=<?php echo $_SESSION['carrito'][$i] ['cod'];?>>X</a></td>
-                
+              
             
               
                
@@ -211,15 +220,33 @@ if(isset($_SESSION['carrito'])){
         
 
     </table>
-
     <div class="col-md-6 pl-5">
             <div class="row justify-content-end">
               <div class="col-md-7">
                 <div class="row">
                   <div class="col-md-12 text-right border-bottom mb-5">
-                    <h3 class="text-black h4 text-uppercase">Total</h3>
+                    <h3 class="text-black h4 text-uppercase">Subtotal</h3>
                   </div>
                 </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <span class="text-black">Subtotal</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-black"><?php echo '$'; echo $total; ?> </strong>
+                  </div>
+                </div>
+                </div>
+                
+               <!-- Button to the cart -->
+        <div class="d-flex justify-content-center m-3  mb-5">
+          <a href="./../index.php" class= "btn btn-primary" >Seguir pidiendo</i></a>
+          
+          <a href="./../index.php" class= "btn btn-warning" >Pedir</i></a>
+        </div>
+      </div>
+      
+
 
     <footer class="py-0 mt-5 border-top bg-dark fixed-bottom">
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
@@ -258,13 +285,15 @@ if(isset($_SESSION['carrito'])){
 
             data:{
 
-              cod_prod:cod
+              cod:cod
             }
 
 
           }).done(function(respuesta){
 
             boton.parent('td').parent('tr').remove();
+
+            
             
             
 
