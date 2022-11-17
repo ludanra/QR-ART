@@ -130,7 +130,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#pedidos').DataTable();
         });
     </script>
 

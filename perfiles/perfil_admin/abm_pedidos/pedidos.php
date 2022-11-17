@@ -87,7 +87,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
       
-        $sql="SELECT DISTINCT cod_pedido from pedidos ORDER BY estado_ped ASC";
+        $sql="SELECT * from pedidos ORDER BY estado_ped ASC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
 
@@ -98,8 +98,8 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
             <tr>
                 <td class="text-light"><?php echo $mostrar['cod_pedido'] ?></td>
                 <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
-                <td class="text-light"><?php echo $mostrar['fecha_hora_cr'] ?></td>
-                <td class="text-light"><?php echo $mostrar['fecha_hora_upd'] ?></td>
+                <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
+                <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
                 <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
                 <td class="text-light">$ <?php echo $mostrar['total_ped'] ?></td>
                 <td>
