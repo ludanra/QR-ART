@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2022 a las 14:07:45
+-- Tiempo de generación: 20-11-2022 a las 14:18:19
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -68,7 +68,7 @@ CREATE TABLE `pedidos` (
   `cod_pedido` int(11) NOT NULL,
   `estado_ped` text NOT NULL,
   ` nro_prod` int(2) NOT NULL,
-  `fecha_hora_ped` datetime NOT NULL,
+  `fecha_hora_ped` timestamp NOT NULL DEFAULT current_timestamp(),
   `ult_act_ped` datetime NOT NULL,
   `forma_pago` text NOT NULL,
   `cod_pago_ped` int(20) NOT NULL,
@@ -76,7 +76,43 @@ CREATE TABLE `pedidos` (
   `id_usuario` int(11) NOT NULL,
   `extra_prod` int(6) NOT NULL,
   `notas_ped` text NOT NULL,
-  `cod_mesa` int(2) NOT NULL
+  `cod_mesa` int(2) NOT NULL,
+  `total_pedido` int(11) NOT NULL,
+  `nro_pedido` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos_solic`
+--
+
+CREATE TABLE `pedidos_solic` (
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedidos_solic`
+--
+
+INSERT INTO `pedidos_solic` (`fecha`) VALUES
+('2022-11-18 11:39:06'),
+('2022-11-18 11:39:06');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos_solicitados`
+--
+
+CREATE TABLE `pedidos_solicitados` (
+  `id_ped_sol` int(11) NOT NULL,
+  `nro_pedido` varchar(20) NOT NULL,
+  `cantidad` int(20) NOT NULL,
+  `nombre_prod` varchar(100) NOT NULL,
+  `precio_prod` int(20) NOT NULL,
+  `total` int(20) NOT NULL,
+  `fecha_ped` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -160,7 +196,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `cod_perfil`, `nombre_usu`, `apellido_usu`, `est_baja_usu`, `email_usu`, `id_usuario`, `token`) VALUES
-('ludanra', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Luis', 'Ramos', 'ACTIVO', 'luidanramos@gmail.com', 75, '6356fecbc4d25'),
+('ludanra', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Luis', 'Ramos', 'ACTIVO', 'luidanramos@gmail.com', 75, ''),
 ('alfonsoj', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Johanna', 'alfonso', 'ACTIVO', 'johannaalfonso93@yahoo.es', 76, '');
 
 --
@@ -183,11 +219,18 @@ ALTER TABLE `mesa`
 -- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`cod_pedido`),
   ADD KEY `cod_prod` (`cod_prod`),
   ADD KEY `usuario` (`id_usuario`),
   ADD KEY `cod_mesa` (`cod_mesa`),
   ADD KEY `cod_extra` (`extra_prod`),
   ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Indices de la tabla `pedidos_solicitados`
+--
+ALTER TABLE `pedidos_solicitados`
+  ADD PRIMARY KEY (`id_ped_sol`);
 
 --
 -- Indices de la tabla `perfiles`
@@ -219,6 +262,18 @@ ALTER TABLE `extra`
   MODIFY `cod_extra` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `cod_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11138;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos_solicitados`
+--
+ALTER TABLE `pedidos_solicitados`
+  MODIFY `id_ped_sol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
 -- AUTO_INCREMENT de la tabla `perfiles`
 --
 ALTER TABLE `perfiles`
@@ -235,17 +290,6 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `pedidos`
---
-ALTER TABLE `pedidos`
-  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`cod_mesa`) REFERENCES `mesa` (`cod_mesa`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

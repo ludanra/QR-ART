@@ -71,16 +71,18 @@ include("modal_cart.php");
 
 <div class="center mt-5">
     <div class="card pt-3" >
-            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Mi pedido</p>
+            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Modificar mi pedido</p>
         <div class="container-fluid p-2">
 <table class="table">
 <thead>
 <tr>
 <th scope="col">#</th>
 <th scope="col">Cantidad</th>
+<th scope="col">Cantidad Actual</th>
 <th scope="col">Producto</th>
 <th scope="col">Precio</th>
 <th scope="col">Total</th>
+<th scope="col">Borrar</th>
 </tr>
 </thead>
 <tbody>
@@ -98,22 +100,38 @@ include("modal_cart.php");
  if(isset($carrito_mio[$i])){
  if($carrito_mio[$i]!=NULL){
  ?>
-
+<?php if ($carrito_mio[$i]['cod_prod'] != 'portes'){ ?>
 <tr>
 <th scope="row" style="vertical-align: middle;"><?php echo $i; ?></th>
 
+<td style="vertical-align: middle;">
+<form id="form2" name="form1" method="post" action="cart.php">
+          <input name="id" type="hidden" id="id" value="<?php print $i;   ?>" class="align-middle" />
+          <input  name="cantidad" type="text" id="cantidad" style="width:50px;" class="align-middle text-center"   value="<?php print $carrito_mio[$i]['cantidad'];   ?>" size="1" maxlength="4"  />
+          <input  type="image" name="actua" src="../imagenes/actua.png" value="" class="btn btn-sm btn-primary btn-rounded" />
+          </form>   
+</td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['nombre_prod'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio_prod'] ?>$</td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']; ?>$</td>
+<td style="vertical-align: middle;">
+<form id="form3" name="form2" method="post" action="cart.php">
+          <input name="id2" type="hidden" id="id2" value="<?php print $i;   ?>" />
+          <button type="image" name="imageField3"class="btn-lg bg-danger text-white " style="border:0px;" data-toggle="tooltip" data-placement="top"
+                title="Remove item"><i class="fas fa-trash-alt"></i> Borrar
+              </button>
+        </form>
+</td>
 </tr>    
 <?php } ?>
 <?php
+		
                  $total=$total + ($carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']);
                  }
                  }
                  }
-                 
+                 }
                  ?>
 
 </tbody>
@@ -137,9 +155,16 @@ include("modal_cart.php");
 
 
 
+
+
+
+
+
+
  </div>
 </div>
-<a type="button" class="btn btn-success my-4" href="Editar-BorrrarPedido.php">Continuar pedido</a>
+<a type="button" class="btn btn-primary my-4"  href="../index.php">Volver</a>
+<a type="button" class="btn btn-success my-4" href="Pagar.php">Pagar</a>
 </div>
 </div>
 

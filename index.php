@@ -1,4 +1,16 @@
 
+<?php
+
+session_start();
+
+$conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+
+
+
+?>
+
 
 
 
@@ -17,9 +29,34 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/styles.css">
     <title>Menu de bar</title>
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+
+      <!-- importante -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+
+
+  
+<!---navbar --->
+
+
+<?php
+
+include("pedidos/nav-cart.php");
+include("pedidos/modal_cart.php");
+
+
+?>
+
 
     <header class="bg-dark d-flex justify-content-center align-items-center py-3 text-light flex-column">
         <!-- logo del lugar -->
@@ -64,29 +101,40 @@
 
 
 
-                 while($fila=mysqli_fetch_array($result)){
+                 while($resultado=mysqli_fetch_assoc($result)){
               
 
                 ?>
 
                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
                <div class="card h-100">
-                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$fila['foto_prod'] ?>">
+                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$resultado['foto_prod'] ?>">
 
                 <div class="card-body">
-                <h6 class="card-title"><?php echo $fila['nombre_prod'];?></h6>
-                <p class="card-text"><?php echo $fila['detalle_prod'];?></p>
+                <h6 class="card-title"><?php echo $resultado['nombre_prod'];?></h6>
+
+
+                
+              <form id="formulario" name="formulario" method="post" action="pedidos/cart.php">
+              
+              <input name="cod_prod" type="hidden" id="cod_prod" value="<?php echo $resultado["cod_prod"]; ?>" />                           
+              <input name="precio_prod" type="hidden" id="precio_prod" value="<?php echo $resultado["precio_prod"]; ?>" />
+              <input name="nombre_prod" type="hidden" id="nombre_prod" value="<?php echo $resultado["nombre_prod"]; ?>" />
+              <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+          
+      
+                <p class="card-text"><?php echo $resultado['detalle_prod'];?></p>
                 </div>
 
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
+                <p class="card-text"><?php echo "$"; echo $resultado['precio_prod'];?></p>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </div>
 
                </div>
                </div> 
 
-
+            </form>
             <?php
 
             } 
@@ -119,28 +167,40 @@
 
 
 
-                 while($fila=mysqli_fetch_array($result)){
+                 while($resultado=mysqli_fetch_assoc($result)){
               
 
                 ?>
 
+               
+
                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
                <div class="card h-100">
-                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$fila['foto_prod'] ?>">
+                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$resultado['foto_prod'] ?>">
 
                 <div class="card-body">
-                <h6 class="card-title"><?php echo $fila['nombre_prod'];?></h6>
+                <h6 class="card-title"><?php echo $resultado['nombre_prod'];?></h6>
                 
                 </div>
 
+        <form id="formulario" name="formulario" method="post" action="pedidos/cart.php">
+              
+        <input name="cod_prod" type="hidden" id="cod_prod" value="<?php echo $resultado["cod_prod"]; ?>" />                           
+        <input name="precio_prod" type="hidden" id="precio_prod" value="<?php echo $resultado["precio_prod"]; ?>" />
+        <input name="nombre_prod" type="hidden" id="nombre_prod" value="<?php echo $resultado["nombre_prod"]; ?>" />
+        <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+    
+
+
+
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
+                <p class="card-text"><?php echo "$"; echo $resultado['precio_prod'];?></p>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </div>
 
                </div>
                </div> 
-
+            </form>
 
             <?php
 
@@ -175,29 +235,40 @@
 
 
 
-                 while($fila=mysqli_fetch_array($result)){
+                 while($resultado=mysqli_fetch_assoc($result)){
               
 
                 ?>
 
+               
+
                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
                <div class="card h-100">
-                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$fila['foto_prod'] ?>">
+                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$resultado['foto_prod'] ?>">
 
                 <div class="card-body">
-                <h6 class="card-title"><?php echo $fila['nombre_prod'];?></h6>
-                <p class="card-text"><?php echo $fila['detalle_prod'];?></p>
-               
+                <h6 class="card-title"><?php echo $resultado['nombre_prod'];?></h6>
+                
                 </div>
 
+        <form id="formulario" name="formulario" method="post" action="pedidos/cart.php">
+              
+        <input name="cod_prod" type="hidden" id="cod_prod" value="<?php echo $resultado["cod_prod"]; ?>" />                           
+        <input name="precio_prod" type="hidden" id="precio_prod" value="<?php echo $resultado["precio_prod"]; ?>" />
+        <input name="nombre_prod" type="hidden" id="nombre_prod" value="<?php echo $resultado["nombre_prod"]; ?>" />
+        <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+    
+
+
+
                 <div class="justify-content-end p-3">
-                <p class="card-text"><?php echo "$"; echo $fila['precio_prod'];?></p>
-                <a href="pedidos/detail.php?cod=<?php echo $fila['cod_prod']?>" class="btn button-custom-secondary">Agregar al pedido</a>
+                <p class="card-text"><?php echo "$"; echo $resultado['precio_prod'];?></p>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </div>
 
                </div>
                </div> 
-
+            </form>
 
             <?php
 
@@ -210,7 +281,6 @@
           </div>
 
         </div>
-
 
 
         <h2 class="my-4 display-5">Cervezas🍻</h2>
@@ -403,6 +473,9 @@
 
     <!-- Initialize Swiper -->
     <script src="assets/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
 
 
 </body>
