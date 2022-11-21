@@ -83,7 +83,7 @@ include("pedidos/modal_cart.php");
 
 
 
-        <h2 class="my-4 display-5">Burger🍔</h2>
+        <h2 class="my-4 display-5">Burger</h2>
 
                    
         <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
@@ -150,7 +150,7 @@ include("pedidos/modal_cart.php");
 
 
 
-        <h2 class="my-4 display-5">Para Picar🍟</h2>
+        <h2 class="my-4 display-5">Para Picar</h2>
 
         <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
           <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
@@ -216,7 +216,7 @@ include("pedidos/modal_cart.php");
 
 
 
-        <h2 class="my-4 display-5">Pizzas🍕</h2>
+        <h2 class="my-4 display-5">Pizzas</h2>
 
 
 

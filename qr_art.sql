@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2022 a las 14:18:19
+-- Tiempo de generación: 21-11-2022 a las 23:59:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -67,37 +67,25 @@ CREATE TABLE `mesa` (
 CREATE TABLE `pedidos` (
   `cod_pedido` int(11) NOT NULL,
   `estado_ped` text NOT NULL,
-  ` nro_prod` int(2) NOT NULL,
   `fecha_hora_ped` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ult_act_ped` datetime NOT NULL,
+  `ult_act_ped` timestamp NOT NULL DEFAULT current_timestamp(),
   `forma_pago` text NOT NULL,
   `cod_pago_ped` int(20) NOT NULL,
-  `cod_prod` int(6) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `extra_prod` int(6) NOT NULL,
-  `notas_ped` text NOT NULL,
   `cod_mesa` int(2) NOT NULL,
   `total_pedido` int(11) NOT NULL,
   `nro_pedido` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `pedidos_solic`
+-- Volcado de datos para la tabla `pedidos`
 --
 
-CREATE TABLE `pedidos_solic` (
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `pedidos_solic`
---
-
-INSERT INTO `pedidos_solic` (`fecha`) VALUES
-('2022-11-18 11:39:06'),
-('2022-11-18 11:39:06');
+INSERT INTO `pedidos` (`cod_pedido`, `estado_ped`, `fecha_hora_ped`, `ult_act_ped`, `forma_pago`, `cod_pago_ped`, `id_usuario`, `cod_mesa`, `total_pedido`, `nro_pedido`) VALUES
+(11138, 'Falta de pago', '2022-11-20 22:12:35', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 1800, 'YqlGL'),
+(11139, 'Falta de pago', '2022-11-21 21:24:32', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 850, 'nqDQi'),
+(11140, 'Falta de pago', '2022-11-21 22:08:21', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 850, 'gFNcA'),
+(11141, 'Falta de pago', '2022-11-21 22:44:13', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 2300, 'Bo8gj');
 
 -- --------------------------------------------------------
 
@@ -112,8 +100,23 @@ CREATE TABLE `pedidos_solicitados` (
   `nombre_prod` varchar(100) NOT NULL,
   `precio_prod` int(20) NOT NULL,
   `total` int(20) NOT NULL,
-  `fecha_ped` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
+  `fecha_ped` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
+  `nom_ext` text NOT NULL,
+  `notas_ped` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedidos_solicitados`
+--
+
+INSERT INTO `pedidos_solicitados` (`id_ped_sol`, `nro_pedido`, `cantidad`, `nombre_prod`, `precio_prod`, `total`, `fecha_ped`, `nom_ext`, `notas_ped`) VALUES
+(52, 'YqlGL', 1, 'CHACO', 900, 900, '2022-11-20 22:12:35.586572', '', ''),
+(53, 'YqlGL', 1, 'NAPOLITANA', 900, 900, '2022-11-20 22:12:35.602358', '', ''),
+(54, 'nqDQi', 1, 'MUZARELLA', 850, 850, '2022-11-21 21:24:32.301771', '', ''),
+(55, 'gFNcA', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:08:21.381774', '', ''),
+(56, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.159807', '', ''),
+(57, 'Bo8gj', 1, 'NUGGETS', 600, 600, '2022-11-21 22:44:13.166517', '', ''),
+(58, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.170517', '', '');
 
 -- --------------------------------------------------------
 
@@ -220,10 +223,8 @@ ALTER TABLE `mesa`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`cod_pedido`),
-  ADD KEY `cod_prod` (`cod_prod`),
   ADD KEY `usuario` (`id_usuario`),
   ADD KEY `cod_mesa` (`cod_mesa`),
-  ADD KEY `cod_extra` (`extra_prod`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
@@ -265,13 +266,13 @@ ALTER TABLE `extra`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `cod_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11138;
+  MODIFY `cod_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11142;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos_solicitados`
 --
 ALTER TABLE `pedidos_solicitados`
-  MODIFY `id_ped_sol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_ped_sol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `perfiles`

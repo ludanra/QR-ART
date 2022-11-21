@@ -87,6 +87,10 @@ if(isset($_SESSION['carrito'])){
 
 
 
+
+
+
+
 ?>
 
 
