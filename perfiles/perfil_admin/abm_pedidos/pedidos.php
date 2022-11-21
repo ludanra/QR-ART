@@ -86,32 +86,32 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
         </thead>
 
         <?php
-      
+        $control="";
         $sql="SELECT * from pedidos ORDER BY estado_ped ASC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
 
         while($mostrar=mysqli_fetch_array($result)){
-        ?>
-
+          if ($control != $mostrar['cod_pedido']){
+          ?>
         <tbody>
-            <tr>
-                <td class="text-light"><?php echo $mostrar['cod_pedido'] ?></td>
-                <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
-                <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
-                <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
-                <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
-                <td class="text-light">$ <?php echo $mostrar['total_ped'] ?></td>
-                <td>
-                <a class= "btn-sm btn-primary" href="actualizar_prod.php?id=<?php echo $mostrar['cod_pedido']?>" class="table__item__link" >Editar</a>       
-                </td>
-
- 
-            </tr>
+          <tr>
+            <td class="text-light"><?php echo $mostrar['cod_pedido'] ?></td>
+            <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
+            <td class="text-light">$ <?php echo $mostrar['total_ped'] ?></td>
+            <td>
+              <a class= 'btn-sm btn-primary' href="act_pedido.php?id=<?php echo $mostrar['cod_pedido']?>" class="table__item__link" >Editar</a>       
+            </td>
+          </tr>
         </tbody>
         <?php
         }
-        ?>
+        $control = $mostrar['cod_pedido'];
+      }  
+      ?>
 
         <tfoot>
             <tr>
