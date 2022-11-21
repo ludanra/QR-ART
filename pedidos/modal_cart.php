@@ -27,7 +27,7 @@
 									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['nombre_prod']; // echo substr($carrito_mio[$i]['titulo'],0,10); echo utf8_decode($titulomostrado)."..."; ?></h6>
 									</div>
 									<div class="col-6 p-0"  style="text-align: right; color: #000000;" >
-									<span class="text-muted"  style="text-align: right; color: #000000;"><?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad'];    ?> $</span>
+									<span class="text-muted"  style="text-align: right; color: #000000;"> $ <?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad'];    ?> </span>
 									</div>
 								</div>
 							</li>
@@ -50,7 +50,7 @@
                             }
 							}}}
                             if(!isset($total)){$total = '0';}else{ $total = $total;}
-							echo $total; ?> $ </strong>
+							echo $total; ?>  </strong>
 							</li>
 						</ul>
 					</div>

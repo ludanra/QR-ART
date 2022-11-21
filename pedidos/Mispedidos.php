@@ -98,7 +98,7 @@ $busqueda=mysqli_query($conexion,"SELECT * FROM pedidos");
                                                         <td></td>
                                                         <td><?php echo $resultado["nro_pedido"]; ?></td>
                                                         <td><?php echo $resultado["fecha_hora_ped"]; ?></td>
-                                                        <td><?php echo $resultado["total_pedido"]; ?> $</td>
+                                                        <td > $ <?php echo $resultado["total_pedido"]; ?> </td>
                                                         <td><?php echo $resultado["estado_ped"]; ?></td>
                                                         <td><?php echo $resultado["forma_pago"]; ?></td>
                                                         </tr>    
