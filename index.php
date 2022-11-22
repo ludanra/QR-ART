@@ -68,20 +68,7 @@ include("pedidos/modal_cart.php");
 
     <div class="container mb-5">
 
-        <h5 class="my-4 display-5">Promos📢</h5>
-        <div class="slider">
-            <ul>
-
-                <li> <img src="assets/img/promo1.PNG " class="card-img-top" style="max-height: 150px;" alt=""></li>
-                <li> <img src="assets/img/promo2.PNG" class="card-img-top" style="max-height: 150px;" alt=""></li>
-                <li> <img src="assets/img/promo3.PNG" class="card-img-top" style="max-height: 150px;" alt=""></li>
-                <li> <img src="assets/img/promo4.PNG" class="card-img-top" style="max-height: 150px;" alt=""></li>
-
-            </ul>
-
-        </div>
-
-
+        
 
         <h2 class="my-4 display-5">Burger</h2>
 
@@ -271,195 +258,132 @@ include("pedidos/modal_cart.php");
             </form>
 
             <?php
-
             } 
-
-
-
-
             ?>
           </div>
 
         </div>
 
 
-        <h2 class="my-4 display-5">Cervezas🍻</h2>
+        <h2 class="my-4 display-5">Cervezas</h2>
+
+        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
+          <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
+             
+
+                <?php
+
+                    $conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+                    $consulta = "SELECT * FROM productos WHERE est_baja_prod= 1 AND prod_disponible= 1 AND categoria_prod= 4";
+                    $result = mysqli_query($conexion, $consulta);
+
+
+
+
+                 while($resultado=mysqli_fetch_assoc($result)){
+              
+
+                ?>
+
+               
+
+               <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
+               <div class="card h-100">
+                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$resultado['foto_prod'] ?>">
+
+                <div class="card-body">
+                <h6 class="card-title"><?php echo $resultado['nombre_prod'];?></h6>
+                
+                </div>
+
+        <form id="formulario" name="formulario" method="post" action="pedidos/cart.php">
+              
+        <input name="cod_prod" type="hidden" id="cod_prod" value="<?php echo $resultado["cod_prod"]; ?>" />                           
+        <input name="precio_prod" type="hidden" id="precio_prod" value="<?php echo $resultado["precio_prod"]; ?>" />
+        <input name="nombre_prod" type="hidden" id="nombre_prod" value="<?php echo $resultado["nombre_prod"]; ?>" />
+        <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+    
+
+
+
+                <div class="justify-content-end p-3">
+                <p class="card-text"><?php echo "$"; echo $resultado['precio_prod'];?></p>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                </div>
+
+               </div>
+               </div> 
+            </form>
+
+            <?php
+            } 
+            ?>
+          </div>
+
+        </div>
+
+        <h2 class="my-4 display-5">Tragos</h2>
 
 
         <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
-            <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
-                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/Cerveza1.PNG" class="card-img-top" style="min-height: 150px; max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">GOLDEN</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="pedidos/detail.php" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
+          <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
+             
+
+                <?php
+
+                    $conexion=mysqli_connect("localhost","root","","qr_art");
+
+
+                    $consulta = "SELECT * FROM productos WHERE est_baja_prod= 1 AND prod_disponible= 1 AND categoria_prod= 5";
+                    $result = mysqli_query($conexion, $consulta);
+
+
+
+
+                 while($resultado=mysqli_fetch_assoc($result)){
+              
+
+                ?>
+
+               
+
+               <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
+               <div class="card h-100">
+                 <img id="image" name="image"  class="card-img-top" style="max-height: 150px;" alt="imageNotFound" src="<?php echo "imagenes/productos/".$resultado['foto_prod'] ?>">
+
+                <div class="card-body">
+                <h6 class="card-title"><?php echo $resultado['nombre_prod'];?></h6>
+                
                 </div>
 
-                <div class="swiper-slide" role="group" aria-label="2 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/cerveza2.PNG" class="card-img-top" style="min-height: 150px; max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">HONEY</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
+        <form id="formulario" name="formulario" method="post" action="pedidos/cart.php">
+              
+        <input name="cod_prod" type="hidden" id="cod_prod" value="<?php echo $resultado["cod_prod"]; ?>" />                           
+        <input name="precio_prod" type="hidden" id="precio_prod" value="<?php echo $resultado["precio_prod"]; ?>" />
+        <input name="nombre_prod" type="hidden" id="nombre_prod" value="<?php echo $resultado["nombre_prod"]; ?>" />
+        <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+    
+
+
+
+                <div class="justify-content-end p-3">
+                <p class="card-text"><?php echo "$"; echo $resultado['precio_prod'];?></p>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </div>
 
-                <div class="swiper-slide" role="group" aria-label="3 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/cerveza3.PNG" class="card-img-top" style="min-height: 150px; max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">SCOTTISH</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
+               </div>
+               </div> 
+            </form>
 
-                <div class="swiper-slide" role="group" aria-label="4 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/cerveza4.PNG" class="card-img-top" style="min-height: 150px; max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">IPA</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="pedidos/detail.php" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            } 
+            ?>
+          </div>
 
         </div>
-        <h2 class="my-4 display-5">Tragos🍹</h2>
-
-
-        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
-            <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
-                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/fernet.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">FERNET</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="2 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/campari.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">CAMPARI</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="3 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/gancia.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">GANCIA</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="4 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/jagger.PNG" class="card-img-top" style="max-height: 150px; min-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">JAGGER</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <h2 class="my-4 display-5">Cafeteria☕</h2>
-
-
-        <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden mb-5">
-            <div class="swiper-wrapper" id="swiper-wrapper-de426edc421108aa6" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-294px, 0px, 0px);">
-                <div class="swiper-slide" role="group" aria-label="1 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/cafe.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">CAFE CORTADO</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="2 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/jugo.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">JUGO DE NARANJA</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="3 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/tostado.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">TOSTADO JYQ</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide" role="group" aria-label="4 / 9" style=" margin-right: 30px;">
-                    <div class="card h-100">
-                        <img src="assets/img/medialunas.PNG" class="card-img-top" style="max-height: 150px;" alt="imageNotFound">
-                        <div class="card-body">
-                            <h5 class="card-title">MEDIALUNAS</h5>
-                        </div>
-                        <div class="justify-content-end p-3">
-                            <p class="card-text">$390</p>
-                            <a href="assets/pages/detail.html" class="btn button-custom-secondary">Agregar al pedido</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        
     </div>
     </div>
 
