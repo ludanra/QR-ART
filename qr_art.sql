@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2022 a las 23:59:27
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 22-11-2022 a las 23:52:25
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 7.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,8 +70,8 @@ CREATE TABLE `pedidos` (
   `fecha_hora_ped` timestamp NOT NULL DEFAULT current_timestamp(),
   `ult_act_ped` timestamp NOT NULL DEFAULT current_timestamp(),
   `forma_pago` text NOT NULL,
-  `cod_pago_ped` int(20) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
+  `cod_pago_ped` varchar(20) NOT NULL,
+  `usuario` varchar(11) NOT NULL,
   `cod_mesa` int(2) NOT NULL,
   `total_pedido` int(11) NOT NULL,
   `nro_pedido` varchar(20) NOT NULL
@@ -81,11 +81,11 @@ CREATE TABLE `pedidos` (
 -- Volcado de datos para la tabla `pedidos`
 --
 
-INSERT INTO `pedidos` (`cod_pedido`, `estado_ped`, `fecha_hora_ped`, `ult_act_ped`, `forma_pago`, `cod_pago_ped`, `id_usuario`, `cod_mesa`, `total_pedido`, `nro_pedido`) VALUES
-(11138, 'Falta de pago', '2022-11-20 22:12:35', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 1800, 'YqlGL'),
-(11139, 'Falta de pago', '2022-11-21 21:24:32', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 850, 'nqDQi'),
-(11140, 'Falta de pago', '2022-11-21 22:08:21', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 850, 'gFNcA'),
-(11141, 'Falta de pago', '2022-11-21 22:44:13', '0000-00-00 00:00:00', 'Tarjeta bancaria', 0, 0, 0, 2300, 'Bo8gj');
+INSERT INTO `pedidos` (`cod_pedido`, `estado_ped`, `fecha_hora_ped`, `ult_act_ped`, `forma_pago`, `cod_pago_ped`, `usuario`, `cod_mesa`, `total_pedido`, `nro_pedido`) VALUES
+(11138, 'Cancelado', '2022-11-20 22:12:35', '2022-11-22 22:36:29', 'Tarjeta bancaria', '0', 'ludanra', 1, 1800, 'YqlGL'),
+(11139, 'Entregado', '2022-11-21 21:24:32', '2022-11-22 21:07:06', 'Debito', '548', 'ludanra', 3, 850, 'nqDQi'),
+(11140, 'Abonado', '2022-11-21 22:08:21', '2022-11-22 22:42:58', 'Efectivo', '659875', 'ludanra', 5, 850, 'gFNcA'),
+(11141, 'Abonado', '2022-11-21 22:44:13', '2022-11-22 22:51:52', 'Tarjeta bancaria', '0', 'ludanra', 8, 2300, 'Bo8gj');
 
 -- --------------------------------------------------------
 
@@ -102,6 +102,7 @@ CREATE TABLE `pedidos_solicitados` (
   `total` int(20) NOT NULL,
   `fecha_ped` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
   `nom_ext` text NOT NULL,
+  `precio_extra` int(11) NOT NULL,
   `notas_ped` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -109,14 +110,14 @@ CREATE TABLE `pedidos_solicitados` (
 -- Volcado de datos para la tabla `pedidos_solicitados`
 --
 
-INSERT INTO `pedidos_solicitados` (`id_ped_sol`, `nro_pedido`, `cantidad`, `nombre_prod`, `precio_prod`, `total`, `fecha_ped`, `nom_ext`, `notas_ped`) VALUES
-(52, 'YqlGL', 1, 'CHACO', 900, 900, '2022-11-20 22:12:35.586572', '', ''),
-(53, 'YqlGL', 1, 'NAPOLITANA', 900, 900, '2022-11-20 22:12:35.602358', '', ''),
-(54, 'nqDQi', 1, 'MUZARELLA', 850, 850, '2022-11-21 21:24:32.301771', '', ''),
-(55, 'gFNcA', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:08:21.381774', '', ''),
-(56, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.159807', '', ''),
-(57, 'Bo8gj', 1, 'NUGGETS', 600, 600, '2022-11-21 22:44:13.166517', '', ''),
-(58, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.170517', '', '');
+INSERT INTO `pedidos_solicitados` (`id_ped_sol`, `nro_pedido`, `cantidad`, `nombre_prod`, `precio_prod`, `total`, `fecha_ped`, `nom_ext`, `precio_extra`, `notas_ped`) VALUES
+(52, 'YqlGL', 1, 'CHACO', 900, 900, '2022-11-20 22:12:35.586572', '', 0, ''),
+(53, 'YqlGL', 1, 'NAPOLITANA', 900, 900, '2022-11-20 22:12:35.602358', '', 0, ''),
+(54, 'nqDQi', 1, 'MUZARELLA', 850, 850, '2022-11-21 21:24:32.301771', '', 0, ''),
+(55, 'gFNcA', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:08:21.381774', '', 0, ''),
+(56, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.159807', '', 0, ''),
+(57, 'Bo8gj', 1, 'NUGGETS', 600, 600, '2022-11-21 22:44:13.166517', '', 0, ''),
+(58, 'Bo8gj', 1, 'BOMBA BAR', 850, 850, '2022-11-21 22:44:13.170517', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,15 @@ INSERT INTO `productos` (`cod_prod`, `categoria_prod`, `nombre_prod`, `precio_pr
 (19, '3', 'MUZARELLA', '850', 'Grande:$850 / Indivi:$650', 'pizza1.jpg', 1, 0, 1, '1', ''),
 (20, '3', 'NAPOLITANA', '900', 'Grande:$900 / Indivi:$650', 'pizza2.jpg', 1, 0, 1, '3', ''),
 (21, '3', 'JAMON Y MORRON', '850', 'Grande:$850 / Indivi:$650 ', 'pizza3.jpg', 1, 0, 1, '4', ''),
-(22, '3', 'CALABRESA', '850', 'Grande:$850 / Indivi:$650', 'pizza4.jpg', 1, 0, 1, '3', '');
+(22, '3', 'CALABRESA', '850', 'Grande:$850 / Indivi:$650', 'pizza4.jpg', 1, 0, 1, '3', ''),
+(23, '4', 'GOLDEN', '390', 'GOLDEN', 'golden.jpg', 1, 0, 1, '5', ''),
+(24, '4', 'HONEY', '390', 'HONEY', 'honey.jpg', 1, 0, 1, '5', ''),
+(25, '4', 'SCOTTISH', '390', 'SCOTTISH', 'scottish.jpg', 1, 0, 1, '1', ''),
+(26, '4', 'IPA', '390', 'IPA', 'IPA.jpg', 1, 0, 1, '5', ''),
+(27, '5', 'FERNET', '490', 'FERNET', 'fernet.jpg', 1, 0, 1, '5', ''),
+(28, '5', 'CAMPARI', '490', 'CAMPARI', 'Campari.jpg', 1, 0, 1, '1', ''),
+(29, '5', 'GANCIA', '490', 'GANCIA', 'Gancia.jfif', 1, 0, 1, '5', ''),
+(30, '5', 'JAGGER', '690', 'JAGGER', 'jagger.jpg', 1, 0, 1, '5', '');
 
 -- --------------------------------------------------------
 
@@ -223,9 +232,9 @@ ALTER TABLE `mesa`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`cod_pedido`),
-  ADD KEY `usuario` (`id_usuario`),
+  ADD KEY `usuario` (`usuario`),
   ADD KEY `cod_mesa` (`cod_mesa`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `id_usuario` (`usuario`);
 
 --
 -- Indices de la tabla `pedidos_solicitados`
@@ -284,7 +293,7 @@ ALTER TABLE `perfiles`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cod_prod` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
