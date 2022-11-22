@@ -1,7 +1,7 @@
 <?php session_start();
 
 
-//aqui empieza el carrito
+//empieza el carrito
 if(isset($_SESSION['carrito']) || isset($_POST['nombre_prod'])){
 	if(isset($_SESSION['carrito'])){
 		$carrito_mio=$_SESSION['carrito'];

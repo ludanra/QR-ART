@@ -113,8 +113,8 @@ include("modal_cart.php");
 </td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['nombre_prod'] ?></td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio_prod'] ?>$</td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']; ?>$</td>
+<td style="vertical-align: middle;">$<?php echo $carrito_mio[$i]['precio_prod'] ?></td>
+<td style="vertical-align: middle;"> $<?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']; ?></td>
 <td style="vertical-align: middle;">
 <form id="form3" name="form2" method="post" action="cart.php">
           <input name="id2" type="hidden" id="id2" value="<?php print $i;   ?>" />
@@ -150,7 +150,7 @@ include("modal_cart.php");
                  }
                  }}}
                  if(!isset($total)){$total = '0';}else{ $total = $total;}
-                 echo number_format($total, 2, ',', '.');  ?> $</strong>
+                 echo number_format($total, 2, ',', '.');  ?> </strong>
                  </li>
 
 
