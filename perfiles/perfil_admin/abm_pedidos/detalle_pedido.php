@@ -112,7 +112,7 @@ if($result_query == 0){
                 <th class="text-light">Producto</th>
                 <th class="text-light">Precio</th>
                 <th class="text-light">Extras</th>
-                <th class="text-light">Notas</th>
+                <th class="text-light">Precio extras</th>
                 <th class="text-light">Total</th>
                 <th class="text-light">Acciones</th>
             </tr>
@@ -134,7 +134,7 @@ if($result_query == 0){
             <td class="text-light"><?php echo $mostrar['nombre_prod'] ?></td>
             <td class="text-light">$<?php echo $mostrar['precio_prod'] ?></td>
             <td class="text-light"><?php echo $mostrar['nom_ext'] ?></td>
-            <td class="text-light"><?php echo $mostrar['notas_ped'] ?></td>
+            <td class="text-light">$<?php echo $mostrar['precio_extra'] ?></td>
             <td class="text-light">$<?php echo $mostrar['total'] ?></td>
             <td>
             <?php
