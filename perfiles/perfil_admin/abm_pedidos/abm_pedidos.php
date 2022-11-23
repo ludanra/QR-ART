@@ -8,6 +8,7 @@
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,11 +113,11 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <a href="./pedidos.php" button class="btn btn-secondary btn-sm" type="button">Mis Pedidos</a>
-        <a href="./filtrados.php?id=Cancelado" button class="btn btn-danger btn-sm" type="button">Pedidos Cancelados</a>
+        <a href="./pedidos.php" button class="btn btn-secondary btn-sm" type="button">Listado de  Pedidos</a>
+        <!--<a href="./filtrados.php?id=Cancelado" button class="btn btn-danger btn-sm" type="button">Pedidos Cancelados borrar</a>-->
         <a href="./filtrados.php?id=Pte de Pago" button class="btn btn-primary btn-sm" type="button">Pedidos Ptes de pago</a>
-        <a href="./filtrados.php?id=Abonado" button class="btn btn-info btn-sm" type="button">Pedidos Abonados</a>
-        <a href="./filtrados.php?id=Entregado" button class="btn btn-success btn-sm" type="button">Pedidos Entregados</a>
+        <a href="./filtrados.php?id=Abonado" button class="btn btn-info btn-sm" type="button">Pedidos Abonados borrar</a>
+        <!--<a href="./filtrados.php?id=Entregado" button class="btn btn-success btn-sm" type="button">Pedidos borrar Entregados</a>-->
     </div>
     <br>
     <br>
@@ -133,7 +134,7 @@
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control"  id="cod_mesa" name="cod_mesa" value=1 required>
+                            <input type="text" class="form-control"  id="cod_mesa" name="cod_mesa">
                         </div>
                         <br>
 

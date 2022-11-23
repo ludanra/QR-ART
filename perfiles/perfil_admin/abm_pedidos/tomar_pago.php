@@ -127,7 +127,7 @@ if($result_query == 0){
                         </div>
                         <br>
 
-                        <label for="formFile" class="form-label text-dark" name="forma_pago" id="forma_pago" value=<?php echo $forma_pago; ?>>forma de pago </label>
+                        <label for="formFile" class="form-label text-dark" name="forma_pago" id="forma_pago" value=<?php echo $forma_pago; ?>>Forma de pago </label>
                         <select class="form-select" name="forma_pago" id="forma_pago"  aria-label="Default select example">
                             <option value= <?php echo $forma_pago; ?>><?php echo $forma_pago; ?></option>
                             <option value="Efectivo">Efectivo</option>

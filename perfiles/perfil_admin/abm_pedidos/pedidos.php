@@ -3,6 +3,10 @@
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 ?>
+<?php
+header("Refresh:5");
+date('H:i:s Y-m-d');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
