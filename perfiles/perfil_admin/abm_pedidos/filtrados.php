@@ -1,26 +1,8 @@
 <?php
-include ("base_de_datos.php");
+
 $conexion=mysqli_connect("localhost","root","","qr_art");
 $id= $_GET['id'];
-
-$query="SELECT * FROM pedidos WHERE nro_pedido='$id'";
-$sql="SELECT * FROM pedidos WHERE nro_pedido='$id'";
-$result=mysqli_query($conexion, $sql);
-$result_query=mysqli_num_rows($result);
-if($result_query == 0){
-  header('location:pedidos.php');
-}else{
-  while($data=mysqli_fetch_array($result)) {
-    $nro_pedido = $data['nro_pedido'];
-    $cod_mesa = $data['cod_mesa'];
-    $fecha_pedido=$data['fecha_hora_ped'];
-    $estado_ped=$data['estado_ped'];
-  }
-}
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,12 +12,17 @@ if($result_query == 0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificacion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="Datatables/datatables.min.css">
     <link rel="stylesheet " href="../../assets/adminlte.css">
     <link rel="stylesheet " href="../../../assets/stylesnav.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet " href="../../../assets/table.css">
     <link rel="stylesheet " href="../../../assets/backpedi.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -49,7 +36,7 @@ if($result_query == 0){
           <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
+          <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
         </li>
      
         <li class="nav-item dropdown">
@@ -84,35 +71,24 @@ if($result_query == 0){
 </nav>
 <br>
 
-<div class="content-header ">
-        <div class="container-fluid ">
-            <div class="row mb-2 ">
-                <div class="col-sm-12">
-                    <h4 class="text-center text-light">Detalles de pedido: <?php echo $id ?> </h4>
-                    <h4 class="text-center text-light">Mesa: <?php echo $cod_mesa ?> </h4>
-                    <h4 class="text-center text-light">Fecha pedido: <?php echo $fecha_pedido ?> </h4>
-                    <h4 class="text-center text-light">Estado pedido: <?php echo $estado_ped ?> </h4>
-                </div>
-                <!-- /.col -->
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-</div>
-  
+    
+    
 
-    <table id="pedidos_solicitados" name="pedidos_solicitados" class="table table-striped" style="width:100%">
+    
 
 
+
+    <table id="pedidos" name="pedidos" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th class="text-light">ID_producto</th>
-                <th class="text-light">Cantidad</th>
-                <th class="text-light">Producto</th>
-                <th class="text-light">Precio</th>
-                <th class="text-light">Extras</th>
-                <th class="text-light">Precio extras</th>
+                <th class="text-light">Código de Pedido</th>
+                <th class="text-light">Estado</th>
+                <th class="text-light">Creacion</th>
+                <th class="text-light">Utima actualización</th>
+                <th class="text-light">Usuario Act</th>
+                <th class="text-light">Mesa</th>
+                <th class="text-light">Forma de pago</th>
+                <th class="text-light">Código Pago</th>
                 <th class="text-light">Total</th>
                 <th class="text-light">Acciones</th>
             </tr>
@@ -120,41 +96,52 @@ if($result_query == 0){
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos_solicitados WHERE nro_pedido='$id' ORDER BY id_ped_sol ASC";
+        $sql="SELECT * from pedidos WHERE estado_ped ='$id' ORDER BY fecha_hora_ped DESC";
         $result=mysqli_query($conexion, $sql);
-        $id=['nro_pedido'];
+        $id=['cod_pedido'];
 
         while($mostrar=mysqli_fetch_array($result)){
-          
-        ?>
+          if ($control != $mostrar['cod_pedido']){
+          ?>
         <tbody>
           <tr>
-            <td class="text-light"><?php echo $mostrar['id_ped_sol'] ?></td>
-            <td class="text-light"><?php echo $mostrar['cantidad'] ?></td>
-            <td class="text-light"><?php echo $mostrar['nombre_prod'] ?></td>
-            <td class="text-light">$<?php echo $mostrar['precio_prod'] ?></td>
-            <td class="text-light"><?php echo $mostrar['nom_ext'] ?></td>
-            <td class="text-light">$<?php echo $mostrar['precio_extra'] ?></td>
-            <td class="text-light">$<?php echo $mostrar['total'] ?></td>
+            <td class="text-light"><?php echo $mostrar['nro_pedido'] ?></td>
+            <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
+            <td class="text-light"><?php echo $mostrar['usuario'] ?></td>
+            <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
+            <td class="text-light"><?php echo $mostrar['forma_pago'] ?></td>
+            <td class="text-light"><?php echo $mostrar['cod_pago_ped'] ?></td>
+            <td class="text-light">$ <?php echo $mostrar['total_pedido'] ?></td>
             <td>
-            <?php
-            if ($estado_ped=="Pte de pago"){
-                ?>
-                <a class= 'btn btn-danger' href="elimina_producto.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Eliminar Producto</a >
-            <?php
-            }else{
-            ?>
-                <a class= 'btn btn-light' href="" class="table__item__link" >Sin acciones disponibles</a>
-            <?php
-            }
-            ?>
+              <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
+              <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
+              <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Tomar Pago</a>       
+              <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
             </td>
           </tr>
         </tbody>
         <?php
-        }  
-        ?>
+        }
+        $control = $mostrar['cod_pedido'];
+      }  
+      ?>
 
+        <tfoot>
+            <tr>
+                <th class="text-light">Código de Pedido</th>
+                <th class="text-light">Estado</th>
+                <th class="text-light">Creacion</th>
+                <th class="text-light">Utima actualización</th>
+                <th class="text-light">Usuario Act</th>
+                <th class="text-light">Mesa</th>
+                <th class="text-light">Forma de pago</th>
+                <th class="text-light">Código Pago</th>
+                <th class="text-light">Total</th>
+                <th class="text-light">Acciones</th>
+            </tr>
+        </tfoot>
     </table>
 
     <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
@@ -162,13 +149,10 @@ if($result_query == 0){
 
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <script>
         $(document).ready(function() {
-            $('#pedidos').DataTable();
+            $('#a').DataTable();
         });
     </script>
 

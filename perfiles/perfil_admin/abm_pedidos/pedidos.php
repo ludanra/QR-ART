@@ -36,7 +36,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
           <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="./modificarpedidos.php">Modificar Pedidos</a>
+        <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
         </li>
      
         <li class="nav-item dropdown">
@@ -96,9 +96,10 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos ORDER BY estado_ped ASC";
+        $sql="SELECT * from pedidos ORDER BY fecha_hora_ped DESC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
+
 
         while($mostrar=mysqli_fetch_array($result)){
           if ($control != $mostrar['cod_pedido']){
