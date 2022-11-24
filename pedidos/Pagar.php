@@ -63,8 +63,8 @@ if(isset($_SESSION['carrito'])){
 
 
             $nro_pedido = $nro_pedido;
-            $estado_ped = 'Falta de pago';
-            $forma_pago= 'Tarjeta bancaria';
+            $estado_ped = 'Pte de pago';
+            $forma_pago= 'Sin definir';
             $total_pedido = $total;
             
             $query = "INSERT INTO pedidos (nro_pedido,estado_ped,forma_pago,total_pedido)
