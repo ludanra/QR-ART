@@ -56,7 +56,7 @@ $conexion=mysqli_connect("localhost","root","","qr_art");
 <?php
 
 include("nav-cart.php");
-include("modal_cart.php");
+include("modal_cart2.php");
 
 
 ?>
@@ -81,8 +81,13 @@ include("modal_cart.php");
 <th scope="col">Cantidad Actual</th>
 <th scope="col">Producto</th>
 <th scope="col">Precio</th>
+<th scope="col">Extras</th>
+<th scope="col">Precio_extra</th>
 <th scope="col">Total</th>
 <th scope="col">Borrar</th>
+<th scope="col">Opciones</th>
+
+
 </tr>
 </thead>
 <tbody>
@@ -121,8 +126,18 @@ include("modal_cart.php");
           <button type="image" name="imageField3"class="btn-lg bg-danger text-white " style="border:0px;" data-toggle="tooltip" data-placement="top"
                 title="Remove item"><i class="fas fa-trash-alt"></i> Borrar
               </button>
+           
         </form>
 </td>
+
+<td style="vertical-align: middle;">
+<form id="notas" name="notas" method="post" action="Extra.php">
+<a type="button" class="btn btn-success my-4" href="Extra.php?cod_prod=<?php echo $carrito_mio[$i]['cod_prod']?>">Personalizar</a>
+           
+        </form>
+</td>
+
+
 </tr>    
 <?php } ?>
 <?php
@@ -163,17 +178,24 @@ include("modal_cart.php");
 
  </div>
 </div>
+
+
+
+
+
+
+
 <a type="button" class="btn btn-primary my-4"  href="../index.php">Volver</a>
 <a type="button" class="btn btn-success my-4" href="Pagar.php">Pagar</a>
+
+
+
 </div>
 </div>
 
 
 
-<footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
-        <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
-    </footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>

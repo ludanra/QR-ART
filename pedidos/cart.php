@@ -20,6 +20,8 @@ if(isset($_SESSION['carrito']) || isset($_POST['nombre_prod'])){
 			if($donde != -1){
 				$cuanto=$carrito_mio[$donde]['cantidad'] + $cantidad;
 				$carrito_mio[$donde]=array("nombre_prod"=>$nombre_prod,"precio_prod"=>$precio_prod,"cantidad"=>$cuanto,"cod_prod"=>$cod_prod);
+
+			      
 			}else{
 				$carrito_mio[]=array("nombre_prod"=>$nombre_prod,"precio_prod"=>$precio_prod,"cantidad"=>$cantidad,"cod_prod"=>$cod_prod);
 			}
@@ -31,6 +33,10 @@ if(isset($_SESSION['carrito']) || isset($_POST['nombre_prod'])){
 			$cod_prod=$_POST['cod_prod'];
 		$carrito_mio[]=array("nombre_prod"=>$nombre_prod,"precio_prod"=>$precio_prod,"cantidad"=>$cantidad,"cod_prod"=>$cod_prod);	
 	}
+
+
+	//Actualiza y borra
+	
 	if(isset($_POST['cantidad'])){
 		$id=$_POST['id'];
 		$cuantos=$_POST['cantidad'];

@@ -80,11 +80,12 @@ include("nav-cart.php");
                                                 <th scope="col">Total</th>
                                                 <th scope="col">Estado</th>
                                                 <th scope="col">Forma de Pago</th>
+                                                <th scope="col">Notas</th>
                                         </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-$busqueda=mysqli_query($conexion,"SELECT * FROM pedidos"); 
+$busqueda=mysqli_query($conexion,"SELECT * FROM pedidos "); 
                                 $numero = mysqli_num_rows($busqueda); ?>
                                         <h5 class="card-tittle">Resultados (<?php echo $numero; ?>)</h5>
                                         <div class="container_card">
@@ -101,6 +102,7 @@ $busqueda=mysqli_query($conexion,"SELECT * FROM pedidos");
                                                         <td > $ <?php echo $resultado["total_pedido"]; ?> </td>
                                                         <td><?php echo $resultado["estado_ped"]; ?></td>
                                                         <td><?php echo $resultado["forma_pago"]; ?></td>
+                                                        <td><?php echo $resultado["notas_ped"]; ?></td>
                                                         </tr>    
 
                                                 <?php } ?>
