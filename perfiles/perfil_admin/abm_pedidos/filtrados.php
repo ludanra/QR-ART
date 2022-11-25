@@ -1,7 +1,7 @@
 <?php
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
-
+$id= $_GET['id'];
 ?>
 <?php
 header("Refresh:5");
@@ -40,7 +40,7 @@ date('H:i:s Y-m-d');
           <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
+          <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
         </li>
      
         <li class="nav-item dropdown">
@@ -100,10 +100,9 @@ date('H:i:s Y-m-d');
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos ORDER BY fecha_hora_ped DESC";
+        $sql="SELECT * from pedidos WHERE estado_ped ='$id' ORDER BY fecha_hora_ped DESC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
-
 
         while($mostrar=mysqli_fetch_array($result)){
           if ($control != $mostrar['cod_pedido']){

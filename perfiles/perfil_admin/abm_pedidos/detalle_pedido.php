@@ -1,10 +1,10 @@
 <?php
 include ("base_de_datos.php");
 $conexion=mysqli_connect("localhost","root","","qr_art");
-$id= $_GET['id'];
+$nro_pedido= $_GET['id'];
 
-$query="SELECT * FROM pedidos WHERE nro_pedido='$id'";
-$sql="SELECT * FROM pedidos WHERE nro_pedido='$id'";
+$query="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
+$sql="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
 $result=mysqli_query($conexion, $sql);
 $result_query=mysqli_num_rows($result);
 if($result_query == 0){
@@ -15,6 +15,8 @@ if($result_query == 0){
     $cod_mesa = $data['cod_mesa'];
     $fecha_pedido=$data['fecha_hora_ped'];
     $estado_ped=$data['estado_ped'];
+    $notas_ped=$data['notas_ped'];
+    $total_pedido=$data['total_pedido'];
   }
 }
 
@@ -49,7 +51,7 @@ if($result_query == 0){
           <a class="nav-link active text-light" aria-current="page" href="../perfil_admin.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="./modificarpedidos.php">Modificar Pedidos</a>
+        <a class="nav-link text-light" href="./abm_pedidos.php">Administración de Pedidos</a>
         </li>
      
         <li class="nav-item dropdown">
@@ -88,11 +90,21 @@ if($result_query == 0){
         <div class="container-fluid ">
             <div class="row mb-2 ">
                 <div class="col-sm-12">
-                    <h4 class="text-center text-light">Detalles de pedido: <?php echo $id ?> </h4>
+                    <h4 class="text-center text-light">Detalles de pedido: <?php echo $nro_pedido ?> </h4>
                     <h4 class="text-center text-light">Mesa: <?php echo $cod_mesa ?> </h4>
                     <h4 class="text-center text-light">Fecha pedido: <?php echo $fecha_pedido ?> </h4>
                     <h4 class="text-center text-light">Estado pedido: <?php echo $estado_ped ?> </h4>
+                    <h4 class="text-center text-light">Total: $<?php echo $total_pedido ?> </h4>
+                    <h4 class="text-center text-light">Notas: <?php echo $notas_ped ?> </h4>
                 </div>
+                <?php
+                if ($estado_ped=="Pte de pago"){
+                    ?>
+                    <a class= 'btn btn-success' href="agrega_producto.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Agregar Producto</a >
+                <?php
+                }
+                ?>
+
                 <!-- /.col -->
                 <!-- /.col -->
             </div>
@@ -120,7 +132,7 @@ if($result_query == 0){
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos_solicitados WHERE nro_pedido='$id' ORDER BY id_ped_sol ASC";
+        $sql="SELECT * from pedidos_solicitados WHERE nro_pedido='$nro_pedido' ORDER BY id_ped_sol ASC";
         $result=mysqli_query($conexion, $sql);
         $id=['nro_pedido'];
 
@@ -140,7 +152,7 @@ if($result_query == 0){
             <?php
             if ($estado_ped=="Pte de pago"){
                 ?>
-                <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Eliminar Producto</a >
+                <a class= 'btn btn-danger' href="elimina_producto.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Eliminar Producto</a >
             <?php
             }else{
             ?>
@@ -161,6 +173,8 @@ if($result_query == 0){
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"></script>

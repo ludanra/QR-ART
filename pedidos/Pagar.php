@@ -69,7 +69,7 @@ if(isset($_SESSION['carrito'])){
 
             $nro_pedido = $nro_pedido;
             $estado_ped = 'Pte de pago';
-            $forma_pago= 'Pendiente';
+            $forma_pago= 'Sin definir';
             $total_pedido = $total;
             
             

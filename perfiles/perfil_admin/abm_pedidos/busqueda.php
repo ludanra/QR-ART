@@ -1,12 +1,26 @@
 <?php
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
+$boton=$_POST ['boton'];
+if($boton==1){
+    header("Refresh: 0; URL= pedidos.php");
+}else{
+    $cod_mesa = $_POST ['cod_mesa'];
+    $estado_ped = $_POST ['estado_ped'];
+}
+if($cod_mesa=="" && $estado_ped==""){
+    PRINT<<<HERE
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="alert alert-danger" role="alert">
+    Debe ingresar al menos un parámetro de búsqueda
+    </div>
+    HERE;
+    header("Refresh: 2; URL= pedidos.php");
+}else{
+?>
 
-?>
-<?php
-header("Refresh:5");
-date('H:i:s Y-m-d');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,10 +114,9 @@ date('H:i:s Y-m-d');
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos ORDER BY fecha_hora_ped DESC";
+        $sql="SELECT * from pedidos WHERE cod_mesa LIKE '%$cod_mesa%' AND estado_ped LIKE '%$estado_ped%'  ORDER BY fecha_hora_ped DESC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
-
 
         while($mostrar=mysqli_fetch_array($result)){
           if ($control != $mostrar['cod_pedido']){
@@ -143,7 +156,7 @@ date('H:i:s Y-m-d');
                 <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
                 <?php
               }
-            ?>
+              ?>
             </td>
           </tr>
         </tbody>
@@ -186,3 +199,6 @@ date('H:i:s Y-m-d');
 </body>
 
 </html>
+<?php  
+}
+?>

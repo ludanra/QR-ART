@@ -8,6 +8,7 @@
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,10 +113,56 @@
     <br>
 
     <div class="d-grid gap-4 col-6 mx-auto">
-        <a href="./pedidos.php" button class="btn btn-success btn-sm" type="button">Mis Pedidos</a>
-        <a href="./modificarpedidos.php" button class="btn btn-success btn-sm" type="button">Modificar Pedido</a>
-       
+        <a href="./pedidos.php" button class="btn btn-secondary btn-sm" type="button">Listado de  Pedidos</a>
+        <!--<a href="./filtrados.php?id=Cancelado" button class="btn btn-danger btn-sm" type="button">Pedidos Cancelados borrar</a>-->
+        <a href="./filtrados.php?id=Pte de Pago" button class="btn btn-primary btn-sm" type="button">Pedidos Ptes de pago</a>
+        <a href="./filtrados.php?id=Abonado" button class="btn btn-info btn-sm" type="button">Pedidos Abonados</a>
+        <!--<a href="./filtrados.php?id=Entregado" button class="btn btn-success btn-sm" type="button">Pedidos borrar Entregados</a>-->
     </div>
+    <br>
+    <br>
+
+    <div class="container">
+    <div class="d-flex justify-content-center h-100">
+    <div class="card" style="width: 28rem; height: 40rem">
+    <div class="card-body">
+        <form  action = busqueda.php method="post" enctype="multipart/form-data">
+                      <h3 class="text-sm-center">Busqueda personalizada:</h3>
+                    <!--<form action="./../../php/procesar.php" method="post">-->
+
+                        <label for="formFile " class="form-label text-dark ">Mesa</label>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                            </div>
+                            <input type="text" class="form-control"  id="cod_mesa" name="cod_mesa">
+                        </div>
+                        <br>
+
+                        <label for="formFile" class="form-label text-dark" name="estado_ped" id="estado_ped">Estado del pedido </label>
+                        <select class="form-select" name="estado_ped" id="estado_ped"  aria-label="Default select example">
+                            <option value="Pte de pago">Pte de pago</option>
+                            <option value="Abonado">Abonado</option>
+                            <option value="Entregado">Entregado</option>
+                            <option value="Cancelado">Cancelado</option>
+                            <option value="">Todos</option>
+                        </select>
+                        <br>
+
+
+
+
+                        <div class="col text-center">
+                        <button type="submit" class= "btn btn-primary"  id="boton" name="boton" value="0">Búsqueda </button>
+                        <button type="submit" class= "btn btn-danger" id="boton" name="boton" value="1"> Cancelar </button>
+                        </div>
+                </div>
+                </form>
+
+                        
+
+                <link rel="stylesheet" href="">
+
+            </div>
 
 
 
