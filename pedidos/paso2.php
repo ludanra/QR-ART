@@ -1,8 +1,8 @@
 <?php
-include ("base_de_datos.php");
-$conexion=mysqli_connect("localhost","root","","qr_art");
 $nro_pedido= $_GET['id'];
 
+include ("base_de_datos.php");
+$conexion=mysqli_connect("localhost","root","","qr_art");
 $query="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
 $sql="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
 $result=mysqli_query($conexion, $sql);
@@ -19,8 +19,6 @@ if($result_query == 0){
     $total_pedido=$data['total_pedido'];
   }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -90,20 +88,14 @@ if($result_query == 0){
         <div class="container-fluid ">
             <div class="row mb-2 ">
                 <div class="col-sm-12">
-                    <h4 class="text-center text-light">Detalles de pedido: <?php echo $nro_pedido ?> </h4>
-                    <h4 class="text-center text-light">Mesa: <?php echo $cod_mesa ?> </h4>
-                    <h4 class="text-center text-light">Fecha pedido: <?php echo $fecha_pedido ?> </h4>
-                    <h4 class="text-center text-light">Estado pedido: <?php echo $estado_ped ?> </h4>
-                    <h4 class="text-center text-light">Total: $<?php echo $total_pedido ?> </h4>
-                    <h4 class="text-center text-light">Notas: <?php echo $notas_ped ?> </h4>
+                    <h4 class="text-center text-dark">Detalles de pedido: <?php echo $nro_pedido ?> </h4>
+                    <h4 class="text-center text-dark">Estado pedido: <?php echo $estado_ped ?> </h4>
+                    <h4 class="text-center text-dark">Total pedido: $<?php echo $total_pedido ?> </h4>
                 </div>
                 <?php
                 if ($estado_ped=="Pte de pago"){
                     ?>
-                    <div class="col-sm-12">
                     <a class= 'btn btn-success' href="agrega_producto.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Agregar Producto</a >
-                    <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Tomar Pago</a>
-                    </div>
                 <?php
                 }
                 ?>
@@ -122,15 +114,13 @@ if($result_query == 0){
 
         <thead>
             <tr>
-                <th class="text-light">ID_producto</th>
-                <th class="text-light">Cantidad</th>
-                <th class="text-light">Producto</th>
-                <th class="text-light">Precio</th>
-                <th class="text-light">Extras</th>
-                <th class="text-light">Acciones</th>
-                <th class="text-light">Precio extras</th>
-                <th class="text-light">Total</th>
-                <th class="text-light">Acciones</th>
+                <th class="text-dark">ID_producto</th>
+                <th class="text-dark">Producto</th>
+                <th class="text-dark">Precio producto</th>
+                <th class="text-dark">Extras</th>
+                <th class="text-dark">Acciones</th>
+                <th class="text-dark">Precio extras</th>
+                <th class="text-dark">Total</th>
             </tr>
         </thead>
 
@@ -145,58 +135,37 @@ if($result_query == 0){
         ?>
         <tbody>
           <tr>
-            <td class="text-light"><?php echo $mostrar['id_ped_sol'] ?></td>
-            <td class="text-light"><?php echo $mostrar['cantidad'] ?></td>
-            <td class="text-light"><?php echo $mostrar['nombre_prod'] ?></td>
-            <td class="text-light">$<?php echo $mostrar['precio_prod'] ?></td>
-            <td class="text-light"><?php echo $mostrar['nom_ext'] ?></td>
+            <td class="text-dark"><?php echo $mostrar['id_ped_sol'] ?></td>
+            <td class="text-dark"><?php echo $mostrar['nombre_prod'] ?></td>
+            <td class="text-dark">$<?php echo $mostrar['precio_prod'] ?></td>
+            <td class="text-dark"><?php echo $mostrar['nom_ext'] ?>
             <td>
             <?php
-            if ($estado_ped=="Pte de pago" || $estado_ped=="En proceso"){
-              if ($mostrar['nom_ext']==""){
+            if ($mostrar['nom_ext']=="" || $mostrar['nom_ext']=="Sin extras"){
                 ?>
-                <a class= "btn btn-success" href="selecciona_extras.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Agrega Extra</a>
+                <a class= "btn-sm btn-primary" href="agrega_extras.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Agrega Extra</a>
                 <?php
-              }else{?>
-                  <a class= 'btn btn-danger' href="delete_extra.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Elimina Extra</a>
-                  </td>
-              <?php
-              }
-            }else{
-              ?>
-                  <a class= 'btn btn-light' class="table__item__link" >Sin acciones disponibles</a>
-                  </td>
-              <?php
-            }
-            
-            ?>
-            </td>
-            <td class="text-light">$<?php echo $mostrar['precio_extra'] ?></td>
-            <td class="text-light">$<?php echo $mostrar['total'] ?></td>
-            <td>
-            <?php
-            if ($estado_ped=="Pte de pago" || $estado_ped=="En proceso"){
-                ?>
-                <a class= 'btn btn-danger' href="elimina_producto.php?id=<?php echo $mostrar['id_ped_sol']?>" class="table__item__link" >Eliminar Producto</a >
-            <?php
-            }else{
-            ?>
-                <a class= 'btn btn-light' class="table__item__link" >Sin acciones disponibles</a>
+            }else{?>
+                <a class= "btn-sm btn-primary" href="elimina_extra_pedido.php?id1=<?php echo $mostrar['id_ped_sol']?>&id2=<?php echo $total_pedido?>&id3=<?php echo $nro_pedido?>" class="table__item__link" >Elimina Extra</a>
+                </td>
             <?php
             }
             ?>
             </td>
+            <td class="text-dark">$<?php echo $mostrar['precio_extra'] ?></td>
+            <td class="text-dark">$<?php echo $mostrar['total'] ?>
           </tr>
         </tbody>
         <?php
         }  
         ?>
 
+<a class= "btn-sm btn-primary" href="emite_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Avanzar</a>
+
+
     </table>
-
     <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
-            <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
-
+        <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
     </footer>
 
 

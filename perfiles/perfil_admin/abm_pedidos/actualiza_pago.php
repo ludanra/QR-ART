@@ -45,7 +45,9 @@ if($boton==1){
             El código de pago no puede quedar en blanco. Reintente
             </div>
             HERE;
-            header("Refresh: 2; URL= pedidos.php");
+            ?>
+            <a class= "btn-sm btn-primary" href="tomar_pago.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+            <?php
         }
         $abonar= "UPDATE pedidos SET estado_ped='$estado_ped', ult_act_ped='$hoy', usuario='$usuario', forma_pago='$forma_pago', cod_pago_ped='$cod_pago_ped' WHERE nro_pedido='$nro_pedido'";
         $resultado = mysqli_query($conexion, $abonar);
@@ -58,7 +60,9 @@ if($boton==1){
             Pago registrado correctamente
             </div>
             HERE;
-            header("Refresh: 2; URL= pedidos.php");
+            ?>
+            <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+            <?php
         }else{
             PRINT<<<HERE
             <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -68,7 +72,9 @@ if($boton==1){
             El pago no pudo registrarse
             </div>
             HERE;
-            header("Refresh: 2; URL= pedidos.php");
+            ?>
+            <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+            <?php
 
         }
 

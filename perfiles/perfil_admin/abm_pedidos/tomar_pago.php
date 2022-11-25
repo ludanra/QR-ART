@@ -94,7 +94,7 @@ if($result_query == 0){
 
 <div class="container">
   <div class="d-flex justify-content-center h-100">
-    <div class="card" style="width: 28rem; height: 40rem">
+    <div class="card" style="width: 28rem; height: 41rem">
       
       <div class="card-body">
         <form  action = actualiza_pago.php method="post" enctype="multipart/form-data">
@@ -141,7 +141,7 @@ if($result_query == 0){
                         <div class="input-group-sm form-group">
                             <div class="input-group-prepend">
                             </div>
-                            <input type="text" class="form-control" placeholder="Código de pago" id="cod_pago_ped" name="cod_pago_ped" value="<?php echo $cod_pago_ped; ?>"  autofocus required>
+                            <input type="text" class="form-control" placeholder="Código de pago" id="cod_pago_ped" name="cod_pago_ped" value="<?php echo $cod_pago_ped; ?>"  autofocus>
                         </div>
                         <br>
                       
@@ -156,10 +156,10 @@ if($result_query == 0){
 
                         <div class="col text-center">
                         <button type="submit" class= "btn btn-primary"  id="boton" name="boton" value="0">Registrar pago </button>
-                        <button type="submit" class= "btn btn-danger" id="boton" name="boton" value="1"> Cancelar </button>
                         </div>
                 </div>
                 </form>
+                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al detalle del pedido</a >
 
                         
 
