@@ -121,7 +121,7 @@ date('H:i:s Y-m-d');
             <td class="text-light">$ <?php echo $mostrar['total_pedido'] ?></td>
             <td>
             <?php
-              if($mostrar['estado_ped'] == "Pte de pago"){
+              if($mostrar['estado_ped'] == "Pte de pago" || $mostrar['estado_ped'] == "En proceso"){
                 ?>
                 <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
                 <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
