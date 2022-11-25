@@ -119,10 +119,30 @@ date('H:i:s Y-m-d');
             <td class="text-light"><?php echo $mostrar['cod_pago_ped'] ?></td>
             <td class="text-light">$ <?php echo $mostrar['total_pedido'] ?></td>
             <td>
-              <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
-              <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
-              <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Tomar Pago</a>       
-              <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+            <?php
+              if($mostrar['estado_ped'] == "Pte de pago"){
+                ?>
+                <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
+                <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
+                <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Tomar Pago</a>       
+                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                <?php
+              }elseif($mostrar['estado_ped'] == "Abonado"){
+                ?>
+                <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
+                <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
+                <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
+                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                <?php
+              }else{
+                ?>
+                <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
+                <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
+                <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
+                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                <?php
+              }
+            ?>
             </td>
           </tr>
         </tbody>
