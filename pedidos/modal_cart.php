@@ -1,3 +1,11 @@
+<?php
+
+
+$id= $_REQUEST['id'];
+
+
+
+?>
 
 <!-- MODAL CARRITO -->
 <div class="modal fade" id="modal_cart" tabindex="-1"  aria-hidden="true">
@@ -64,7 +72,7 @@
      
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <a type="button" class="btn btn-primary" href="pedidos/borrarcarro.php">Vaciar carrito</a>
-        <a type="button" class="btn btn-success" href="pedidos/Editar-BorrrarPedido.php">Continuar pedido</a>
+        <a type="button" class="btn btn-success" href="pedidos/Editar-BorrrarPedido.php?id=<?php echo $id ?>">Continuar pedido</a>
       </div>
     </div>
   </div>

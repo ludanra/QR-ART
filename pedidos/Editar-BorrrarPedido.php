@@ -6,7 +6,7 @@ session_start();
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-
+$id= $_REQUEST['id'];
 
 
 ?>
@@ -77,15 +77,10 @@ include("modal_cart2.php");
 <thead>
 <tr>
 <th scope="col">#</th>
-<th scope="col">Cantidad</th>
-<th scope="col">Cantidad Actual</th>
 <th scope="col">Producto</th>
 <th scope="col">Precio</th>
-<th scope="col">Extras</th>
-<th scope="col">Precio_extra</th>
 <th scope="col">Total</th>
 <th scope="col">Borrar</th>
-<th scope="col">Opciones</th>
 
 
 </tr>
@@ -109,14 +104,8 @@ include("modal_cart2.php");
 <tr>
 <th scope="row" style="vertical-align: middle;"><?php echo $i; ?></th>
 
-<td style="vertical-align: middle;">
-<form id="form2" name="form1" method="post" action="cart.php">
-          <input name="id" type="hidden" id="id" value="<?php print $i;   ?>" class="align-middle" />
-          <input  name="cantidad" type="text" id="cantidad" style="width:50px;" class="align-middle text-center"   value="<?php print $carrito_mio[$i]['cantidad'];   ?>" size="1" maxlength="4"  />
-          <input  type="image" name="actua" src="../imagenes/actua.png" value="" class="btn btn-sm btn-primary btn-rounded" />
-          </form>   
-</td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
+
+<td style="visibility:collapse; display:none;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['nombre_prod'] ?></td>
 <td style="vertical-align: middle;">$<?php echo $carrito_mio[$i]['precio_prod'] ?></td>
 <td style="vertical-align: middle;"> $<?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']; ?></td>
@@ -130,12 +119,6 @@ include("modal_cart2.php");
         </form>
 </td>
 
-<td style="vertical-align: middle;">
-<form id="notas" name="notas" method="post" action="Extra.php">
-<a type="button" class="btn btn-success my-4" href="Extra.php?cod_prod=<?php echo $carrito_mio[$i]['cod_prod']?>">Personalizar</a>
-           
-        </form>
-</td>
 
 
 </tr>    
@@ -186,7 +169,7 @@ include("modal_cart2.php");
 
 
 <a type="button" class="btn btn-primary my-4"  href="../index.php">Volver</a>
-<a type="button" class="btn btn-success my-4" href="Pagar.php">Pagar</a>
+<a type="button" class="btn btn-success my-4" href="Pagar.php?id=<?php echo $id ?>">Pagar</a>
 
 
 

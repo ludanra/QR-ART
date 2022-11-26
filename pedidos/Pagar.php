@@ -74,7 +74,16 @@ $result = mysqli_query($conexion,$query);
     
 unset( $_SESSION["carrito"] );
 
+
+
+echo "<center>";
+
+
 PRINT<<<HERE
+     
+
+
+
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -90,9 +99,14 @@ PRINT<<<HERE
     Queres agregar algún extra a tus productos o preferis avanzar?.</br>
     </div>
     HERE;
+
+    
 ?>
 <br>
 <br>
+
+
 <a class= "btn-sm btn-primary" href="paso2.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Agregar extras</a>
+
 <a class= "btn-sm btn-primary" href="emite_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Avanzar</a>
 
