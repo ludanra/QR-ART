@@ -62,8 +62,8 @@ include("pedidos/modal_cart.php");
 
 <header class="bg-white d-flex justify-content-center align-items-center py-3 text-light flex-column">
     <!-- logo del lugar -->
-    <img class="logo-custom" src="assets/img/pixlr-bg-result.png" alt="LogoNotFound">
-    <h1 > Menú</h1>
+    <img class="logo-custom" src="assets/img/pixlr-bg-result.png" alt="LogoNotFound" style="margin-top: 50px;">
+    <h1 class="text-dark" > Menú</h1>
 </header>
 <!-- Swiper -->
 
