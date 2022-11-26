@@ -1,6 +1,9 @@
 <?php
 
 $conexion=mysqli_connect("localhost","root","","qr_art");
+include ("base_de_datos.php");
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
 
 ?>
 <?php

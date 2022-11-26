@@ -6,9 +6,6 @@ session_start();
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-
-
-
 ?>
 
 
@@ -75,7 +72,7 @@ include("pedidos/modal_cart.php");
 
         
 
-        <h2 class="my-4 display-5">Burger</h2>
+        <h2 class="my-4 display-5">Burger </h2>
 
                    
         <div class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden ">
