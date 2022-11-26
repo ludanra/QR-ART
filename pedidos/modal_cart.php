@@ -24,11 +24,18 @@
 							?>
 							<li class="list-group-item d-flex justify-content-between lh-condensed">
 								<div class="row col-12" >
-									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['nombre_prod']; // echo substr($carrito_mio[$i]['titulo'],0,10); echo utf8_decode($titulomostrado)."..."; ?></h6>
+								
+								    
+									
+									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['nombre_prod']; // echo substr($carrito_mio[$i]['titulo'],0,10); echo utf8_decode($titulomostrado)."..."; ?> <br><br><span class="text-muted"  style="text-align: right; color: #000000;"> $ <?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad'];    ?> </span></h6>
+									
+									
 									</div>
 									<div class="col-6 p-0"  style="text-align: right; color: #000000;" >
-									<span class="text-muted"  style="text-align: right; color: #000000;"> $ <?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad'];    ?> </span>
+									
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-left: 120px;"></button>
 									</div>
+									
 								</div>
 							</li>
 							<?php
