@@ -1,7 +1,13 @@
 <?php
 
 
-$id= $_REQUEST['id'];
+
+
+$id= rand(1,10);
+
+
+
+
 
 
 

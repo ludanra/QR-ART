@@ -112,6 +112,9 @@ if($result_query == 0){
     <table id="pedidos_solicitados" name="pedidos_solicitados" class="table table-striped" style="width:100%">
 
 
+
+
+    
         <thead>
             <tr>
                 <th class="text-dark">ID_producto</th>
@@ -160,9 +163,13 @@ if($result_query == 0){
         }  
         ?>
 
+
+
+
 <a class= "btn-sm btn-primary" href="emite_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Avanzar</a>
 
 
+  
     </table>
     <footer class="py-3 mt-5 border-top bg-dark fixed-bottom">
         <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>

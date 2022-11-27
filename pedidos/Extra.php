@@ -205,7 +205,7 @@ if (isset($_GET['cod_prod'])){
         </div>
         <!-- Button to the cart -->
         <div class="d-flex justify-content-center m-3  mb-5">
-        <p><a href="cart.php?cod=<?php echo $filas[0]?>" class= "btn btn-warning">Agregar</a></p>     
+        <p><a href="" class= "btn btn-warning">Agregar</a></p>     
         </div>
       </div>
 

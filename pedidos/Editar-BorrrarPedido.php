@@ -169,7 +169,7 @@ include("modal_cart2.php");
 
 
 <a type="button" class="btn btn-primary my-4"  href="../index.php">Volver</a>
-<a type="button" class="btn btn-success my-4" href="Pagar.php?id=<?php echo $id ?>">Pagar</a>
+<a type="button" class="btn btn-success my-4" href="Pagar.php?id=<?php echo $id ?>">Terminar pedido</a>
 
 
 
