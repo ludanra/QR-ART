@@ -65,67 +65,24 @@ if($estado_ped=="Pte de pago"){
         $act_total= "UPDATE pedidos SET total_pedido='$nuevo_total', ult_act_ped='$hoy', usuario='$usuario' WHERE nro_pedido='$nro_pedido'";
         $resultado2 = mysqli_query($conexion, $act_total);
         if($resultado2){
-            PRINT<<<HERE
-            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <div class="alert alert-success" role="alert">
-            Producto agregado correctamente
-            </div>
-            HERE;
-            ?>
-            <div class="col-sm-12">
-                <h4 class="text-center text-dark">Detalles de pedido: <?php echo $nro_pedido ?> </h4>
-                <h4 class="text-center text-dark">Mesa: <?php echo $cod_mesa ?> </h4>
-                <h4 class="text-center text-dark">Fecha pedido: <?php echo $fecha_pedido ?> </h4>
-                <h4 class="text-center text-dark">Estado pedido: <?php echo $estado_ped ?> </h4>
-                <h4 class="text-center text-dark">Total: $<?php echo $nuevo_total ?> </h4>
-                <h4 class="text-center text-dark">Notas: <?php echo $notas_ped ?> </h4>
-                <a class= "btn-sm btn-primary" href="agrega_producto.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Agregar mas productos al pedido</a>
-                <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Ir al detalle del pedido</a>
-                <br>
-                <br>
-            </div>
-            <table id="pedidos_solicitados" name="pedidos_solicitados" class="table table-striped" style="width:100%">
-
-
-              <thead>
-                  <tr>
-                      <th class="text-dark">ID_producto</th>
-                      <th class="text-dark">Cantidad</th>
-                      <th class="text-dark">Producto</th>
-                      <th class="text-dark">Precio</th>
-                      <th class="text-dark">Extras</th>
-                      <th class="text-dark">Precio extras</th>
-                      <th class="text-dark">Total</th>
-                  </tr>
-              </thead>
-
-              <?php
-              $control="";
-              $sql="SELECT * from pedidos_solicitados WHERE nro_pedido='$nro_pedido' ORDER BY id_ped_sol ASC";
-              $result=mysqli_query($conexion, $sql);
-              $id=['nro_pedido'];
-
-              while($mostrar=mysqli_fetch_array($result)){
-                
-              ?>
-              <tbody>
-                <tr>
-                  <td class="text-dark"><?php echo $mostrar['id_ped_sol'] ?></td>
-                  <td class="text-dark"><?php echo $mostrar['cantidad'] ?></td>
-                  <td class="text-dark"><?php echo $mostrar['nombre_prod'] ?></td>
-                  <td class="text-dark">$<?php echo $mostrar['precio_prod'] ?></td>
-                  <td class="text-dark"><?php echo $mostrar['nom_ext'] ?></td>
-                  <td class="text-dark">$<?php echo $mostrar['precio_extra'] ?></td>
-                  <td class="text-dark">$<?php echo $mostrar['total'] ?></td>
-                </tr>
-              </tbody>
-              <?php
-              }  
-              ?>
-            
-            <?php
+          PRINT<<<HERE
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        
+          <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/>
+          </svg>
+          <div>
+          ¡El producto se agregó correctamente!</br>
+          </div>
+          <br>
+          HERE;
+          ?>
+          <br>
+          <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+          <?php
         }
     }
 

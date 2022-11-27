@@ -73,7 +73,7 @@ if($cod_mesa == ""){
             <link rel="stylesheet " href="../../../assets/table.css">
             <link rel="stylesheet " href="../../../assets/backpedi.css">
             </head>
-        <a class= "btn-sm btn-primary" href="../index.php" class="table__item__link" >Hacer otro pedido</a>
+        <a class= "btn-sm btn-primary" href="../index1.php" class="table__item__link" >Hacer otro pedido</a>
         <?php
         
     }else{
