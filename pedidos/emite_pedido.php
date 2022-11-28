@@ -3,6 +3,8 @@ include ("base_de_datos.php");
 $conexion=mysqli_connect("localhost","root","","qr_art");
 $nro_pedido= $_GET['id'];
 
+
+
 $query="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
 $sql="SELECT * FROM pedidos WHERE nro_pedido='$nro_pedido'";
 $result=mysqli_query($conexion, $sql);
@@ -12,7 +14,7 @@ if($result_query == 0){
 }else{
   while($data=mysqli_fetch_array($result)) {
     $nro_pedido = $data['nro_pedido'];
-    $cod_mesa = $data['cod_mesa'];
+    $id= $data['cod_mesa'];
     $fecha_pedido=$data['fecha_hora_ped'];
     $estado_ped=$data['estado_ped'];
     $notas_ped=$data['notas_ped'];
@@ -44,7 +46,7 @@ if($result_query == 0){
     <div class="container">
         <div class="d-flex justify-content-center h-0">
             <div class="card" style="width: 28rem;">
-             <h5 class="text-sm-center">Emitir pedido <?php echo $nro_pedido; ?>. Total: $<?php echo $total_pedido; ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
+             <h5 class="text-sm-center">Emitir pedido <?php echo $nro_pedido; ?></br> Total: $<?php echo $total_pedido; ?> </br> Mesa <?php echo $id; ?> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
                 <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
                 </svg>
             </h5>
@@ -74,14 +76,9 @@ if($result_query == 0){
                             <input type="text" class="form-control" placeholder="Decinos tu nombre por favor" id="nombre_pedido" name="nombre_pedido" autofocus>
 
 
-                        </div>
-                        <label for="formFile" class="form-label">Decinos a que mesa llevamos tu pedido</label>
-                        <div class="input-group-sm form-group">
-                            <div class="input-group-prepend">
+                      
 
-                            </div>
-
-                            <input type="number" class="form-control" placeholder="Mesa" name="cod_mesa" id="cod_mesa" autofocus required>
+                            <input type="hidden" class="form-control" placeholder="Mesa" name="cod_mesa" id="cod_mesa" value=<?php echo $id; ?>>
                         </div>
                      
 

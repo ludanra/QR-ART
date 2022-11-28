@@ -4,7 +4,7 @@ session_start();
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-
+$id= $_REQUEST['cod_mesa'];
 
 
 //creamos referencia de pedido
@@ -68,8 +68,8 @@ $forma_pago= 'Sin definir';
 $total_pedido = $total;
 
 
-$query = "INSERT INTO pedidos (nro_pedido,estado_ped,forma_pago,total_pedido)
-VALUES ('$nro_pedido', '$estado_ped', '$forma_pago', '$total_pedido')";
+$query = "INSERT INTO pedidos (nro_pedido,estado_ped,forma_pago,total_pedido, cod_mesa)
+VALUES ('$nro_pedido', '$estado_ped', '$forma_pago', '$total_pedido', '$id')";
 $result = mysqli_query($conexion,$query);
     
 unset( $_SESSION["carrito"] );
@@ -95,8 +95,8 @@ PRINT<<<HERE
     <div>
     ¡Tu pedido ya casi está completo!</br>
     Su número de pedido es <strong>$nro_pedido</strong></br>
-    El total es $ <strong>$total_pedido</strong>
-    Queres agregar algún extra a tus productos o preferis avanzar?.</br>
+    El total es $ <strong>$total_pedido</strong></br>
+    ¿Querés agregar algún extra a tus productos o preferís avanzar?.</br>
     </div>
     HERE;
 
@@ -108,6 +108,6 @@ PRINT<<<HERE
 <a class= "btn-sm btn-primary" href="paso2.php?id=<?php echo $nro_pedido?>" >Agregar extras</a></br>
 
 </br>
-<a class= "btn-sm btn-primary" href="emite_pedido.php?id=<?php echo $nro_pedido?>" >Avanzar</a>
+<a class= "btn-sm btn-primary" href="emite_pedido.php?id=<?php echo $nro_pedido?>&cod_mesa=<?php echo $id?>" >Avanzar</a>
 
 </div>
