@@ -56,5 +56,5 @@ $forma_pago = "Sin definir";
 
   ?>
 
-        <a class= "btn-sm btn-primary" href="../index.php" >Hacer otro pedido</a>
+        <a class= "btn-sm btn-primary" href="../index1.php" >Hacer otro pedido</a>
 
