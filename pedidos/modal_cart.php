@@ -2,12 +2,7 @@
 
 
 
-
-$id= rand(1,10);
-
-
-
-
+$id= $_REQUEST['cod_mesa'];
 
 
 
