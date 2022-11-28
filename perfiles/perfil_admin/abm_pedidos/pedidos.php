@@ -144,9 +144,12 @@ date('H:i:s Y-m-d');
                 <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
                 <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
                 <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+               
                 <?php
               }
             ?>
+            <div><a class='btn btn-warning' href="../../../pedidos/reportes.php" >Imprimir</a></div>
+             
             </td>
           </tr>
         </tbody>
