@@ -16,7 +16,6 @@ ob_start();
 <body>
 <?php
 include ("base_de_datos.php");
-require('../../../fpdf/fpdf.php');
 $conexion=mysqli_connect("localhost","root","","qr_art");
 $nro_pedido= $_GET['id'];
 
