@@ -60,11 +60,16 @@ if($resultado){
   <div>
   ¡El extra se agregó correctamente!</br>
   </div>
-  <br>
+  
   HERE;
   ?>
-  <br>
-  <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+  </br>
+
+  </div>
+ 
+  </br><a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+
+  </div>
   <?php
   }
 }

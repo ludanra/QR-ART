@@ -85,7 +85,7 @@ $id= rand(1,10);
      
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <a type="button" class="btn btn-primary" href="pedidos/borrarcarro.php">Vaciar carrito</a>
-        <a type="button" class="btn btn-success" href="pedidos/Editar-BorrrarPedido.php?id=<?php echo $id ?>">Continuar pedido</a>
+        <a type="button" class="btn btn-success" href="pedidos/Editar-BorrrarPedido.php?cod_mesa=<?php echo $id ?>">Continuar pedido</a>
       </div>
     </div>
   </div>
