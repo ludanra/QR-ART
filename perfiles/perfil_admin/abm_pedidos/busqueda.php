@@ -114,56 +114,59 @@ if($cod_mesa=="" && $estado_ped==""){
 
         <?php
         $control="";
+        
         $sql="SELECT * from pedidos WHERE cod_mesa LIKE '%$cod_mesa%' AND estado_ped LIKE '%$estado_ped%'  ORDER BY fecha_hora_ped DESC";
-        $result=mysqli_query($conexion, $sql);
-        $id=['cod_pedido'];
-
-        while($mostrar=mysqli_fetch_array($result)){
-          if ($control != $mostrar['cod_pedido']){
-          ?>
-        <tbody>
-          <tr>
-            <td class="text-light"><?php echo $mostrar['nro_pedido'] ?></td>
-            <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
-            <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
-            <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
-            <td class="text-light"><?php echo $mostrar['usuario'] ?></td>
-            <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
-            <td class="text-light"><?php echo $mostrar['forma_pago'] ?></td>
-            <td class="text-light"><?php echo $mostrar['cod_pago_ped'] ?></td>
-            <td class="text-light">$ <?php echo $mostrar['total_pedido'] ?></td>
-            <td>
-            <?php
-              if($mostrar['estado_ped'] == "Pte de pago"){
-                ?>
-                <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
-                <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
-                <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Tomar Pago</a>       
-                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
-                <?php
-              }elseif($mostrar['estado_ped'] == "Abonado"){
-                ?>
-                <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
-                <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
-                <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
-                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
-                <?php
-              }else{
-                ?>
-                <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
-                <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
-                <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
-                <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
-                <?php
-              }
+        if($result=mysqli_query($conexion, $sql)){
+          $id=['cod_pedido'];
+          while($mostrar=mysqli_fetch_array($result)){
+            if ($control != $mostrar['cod_pedido']){
+            ?>
+          <tbody>
+            <tr>
+              <td class="text-light"><?php echo $mostrar['nro_pedido'] ?></td>
+              <td class="text-light"><?php echo $mostrar['estado_ped'] ?></td>
+              <td class="text-light"><?php echo $mostrar['fecha_hora_ped'] ?></td>
+              <td class="text-light"><?php echo $mostrar['ult_act_ped'] ?></td>
+              <td class="text-light"><?php echo $mostrar['usuario'] ?></td>
+              <td class="text-light"><?php echo $mostrar['cod_mesa'] ?></td>
+              <td class="text-light"><?php echo $mostrar['forma_pago'] ?></td>
+              <td class="text-light"><?php echo $mostrar['cod_pago_ped'] ?></td>
+              <td class="text-light">$ <?php echo $mostrar['total_pedido'] ?></td>
+              <td>
+              <?php
+                if($mostrar['estado_ped'] == "Pte de pago" || $mostrar['estado_ped'] == "En proceso"){
+                  ?>
+                  <a class= 'btn btn-danger' href="cancela_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Cancelar Pedido</a>
+                  <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
+                  <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Tomar Pago</a>       
+                  <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                  <?php
+                }elseif($mostrar['estado_ped'] == "Abonado"){
+                  ?>
+                  <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
+                  <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
+                  <a class= 'btn btn-light' href="editar_pago.php?id=<?php echo $mostrar['nro_pedido']?>"class="table__item__link" >Editar Pago</a>       
+                  <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                  <?php
+                }else{
+                  ?>
+                  <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
+                  <a class= 'btn btn-primary' class="table__item__link" >Marcar Entregado</a>
+                  <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
+                  <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
+                  <?php
+                }
               ?>
-            </td>
-          </tr>
-        </tbody>
-        <?php
+              </td>
+            </tr>
+          </tbody>
+          <?php
+          }
+          $control = $mostrar['cod_pedido'];
+        }  
+
         }
-        $control = $mostrar['cod_pedido'];
-      }  
+
       ?>
 
         <tfoot>
@@ -186,13 +189,6 @@ if($cod_mesa=="" && $estado_ped==""){
             <p class="col-md-12 mb-0 text-light text-center">QR-ARTⒸ2022</p>
 
     </footer>
-
-    
-    <script>
-        $(document).ready(function() {
-            $('#a').DataTable();
-        });
-    </script>
 
 
 

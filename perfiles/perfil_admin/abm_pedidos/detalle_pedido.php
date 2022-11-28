@@ -17,6 +17,8 @@ if($result_query == 0){
     $estado_ped=$data['estado_ped'];
     $notas_ped=$data['notas_ped'];
     $total_pedido=$data['total_pedido'];
+    $cod_pago_ped=$data['cod_pago_ped'];
+    $forma_pago=$data['forma_pago'];
   }
 }
 
@@ -96,13 +98,35 @@ if($result_query == 0){
                     <h4 class="text-center text-light">Estado pedido: <?php echo $estado_ped ?> </h4>
                     <h4 class="text-center text-light">Total: $<?php echo $total_pedido ?> </h4>
                     <h4 class="text-center text-light">Notas: <?php echo $notas_ped ?> </h4>
+                    <?php
+                    if($estado_ped == "Abonado" || $estado_ped == "Entregado"){
+                      ?>
+                      <h4 class="text-center text-light">Forma de pago: <?php echo $forma_pago ?> </h4>
+                      <h4 class="text-center text-light">Código de pago: <?php echo $cod_pago_ped ?> </h4>
+                      <?php
+                    }
+                    ?>
                 </div>
                 <?php
-                if ($estado_ped=="Pte de pago"){
+                if ($estado_ped=="Pte de pago" || $estado_ped=="En proceso"){
                     ?>
                     <div class="col-sm-12">
                     <a class= 'btn btn-success' href="agrega_producto.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Agregar Producto</a >
                     <a class= 'btn btn-light' href="tomar_pago.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Tomar Pago</a>
+                    <a class= 'btn btn-info' class="table__item__link" >Comanda no disponible</a>
+                    </div>
+                <?php
+                }elseif($estado_ped=="Abonado"){
+                  ?>
+                    <div class="col-sm-12">
+                    <a class= 'btn btn-light' href="editar_pago.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Editar Pago</a>
+                    <a class= 'btn btn-info' href="comanda.php?id=<?php echo $nro_pedido?>" target="_blank" class="table__item__link" >Imprimir comanda</a>
+                    </div>
+                <?php
+                }else{
+                  ?>
+                    <div class="col-sm-12">
+                    <a class= 'btn btn-info' href="comanda.php?id=<?php echo $nro_pedido?>" target="_blank" class="table__item__link" >Imprimir comanda</a>
                     </div>
                 <?php
                 }
