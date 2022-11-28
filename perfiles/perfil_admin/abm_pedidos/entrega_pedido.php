@@ -33,7 +33,9 @@ if ($estado_ped=="Cancelado" || $estado_ped=="Entregado" || $estado_ped=="Pte de
   El pedido no puede marcarse como entregado de acuerdo a su estado actual
   </div>
   HERE;
-  header("Refresh: 2; URL= pedidos.php");
+  ?>
+  <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+  <?php
 }else{
   $estado_ped = "Entregado";
   $hoy = date("Y-m-d H:i:s");
@@ -48,7 +50,9 @@ if ($estado_ped=="Cancelado" || $estado_ped=="Entregado" || $estado_ped=="Pte de
     Pedido marcado como entregado correctamente
     </div>
     HERE;
-    header("Refresh: 2; URL= pedidos.php");
+    ?>
+    <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+    <?php
   }else{
     PRINT<<<HERE
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -58,6 +62,8 @@ if ($estado_ped=="Cancelado" || $estado_ped=="Entregado" || $estado_ped=="Pte de
     El pedido no pudo marcarse como entregado. Pongase en contacto con el administrador
     </div>
     HERE;
-    header("Refresh: 2; URL= pedidos.php");
+    ?>
+    <a class= "btn-sm btn-primary" href="detalle_pedido.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Volver al pedido</a>
+    <?php
   }
 }

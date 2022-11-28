@@ -121,6 +121,7 @@ if($result_query == 0){
                     <div class="col-sm-12">
                     <a class= 'btn btn-light' href="editar_pago.php?id=<?php echo $nro_pedido?>" class="table__item__link" >Editar Pago</a>
                     <a class= 'btn btn-info' href="comanda.php?id=<?php echo $nro_pedido?>" target="_blank" class="table__item__link" >Imprimir comanda</a>
+                    <a class= 'btn btn-success' href="entrega_pedido.php?id=<?php echo $nro_pedido?>" target="_blank" class="table__item__link" >Marcar entregado</a>
                     </div>
                 <?php
                 }else{
