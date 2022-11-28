@@ -103,7 +103,7 @@ date('H:i:s Y-m-d');
 
         <?php
         $control="";
-        $sql="SELECT * from pedidos ORDER BY fecha_hora_ped DESC";
+        $sql="SELECT * from pedidos WHERE estado_ped <> 'En proceso' ORDER BY fecha_hora_ped DESC";
         $result=mysqli_query($conexion, $sql);
         $id=['cod_pedido'];
 
@@ -135,7 +135,7 @@ date('H:i:s Y-m-d');
                 ?>
                 <a class= 'btn btn-danger' class="table__item__link" >Cancelar Pedido</a>
                 <a class= 'btn btn-primary' href="entrega_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Marcar Entregado</a>
-                <a class= 'btn btn-light' class="table__item__link" >Tomar Pago</a>       
+                <a class= 'btn btn-light' href="editar_pago.php?id=<?php echo $mostrar['nro_pedido']?>"class="table__item__link" >Editar Pago</a>       
                 <a class= 'btn btn-success' href="detalle_pedido.php?id=<?php echo $mostrar['nro_pedido']?>" class="table__item__link" >Mas</a>
                 <?php
               }else{
