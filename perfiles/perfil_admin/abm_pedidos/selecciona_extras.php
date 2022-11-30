@@ -151,7 +151,7 @@ if($result_query == 0){
                 <td style="width: 10%;"><img id="image" name="image" style="border: 2px solid ; width: 100px; height: 60px;" alt="" src="<?php echo "../../../imagenes/extras/".$mostrar['foto_extra'] ?>"></td>
                 <td class="text-light"><?php if($mostrar['estado_extra'] == 0){echo "INACTIVO";}else{echo "ACTIVO";} ?></td>
                 <td>
-                <a class= "btn-sm btn-primary" href="insert_extra.php?id1=<?php echo $mostrar['nombre_extra']?>&id2=<?php echo $id_ped_sol?>&id3=<?php echo $mostrar['precio_extra']?>" class="table__item__link" >Agregar a pedido</a>       
+                <a class= "btn-sm btn-primary" href="insert_extra.php?id1=<?php echo $mostrar['nombre_extra']?>&id2=<?php echo $id_ped_sol?>&id3=<?php echo $mostrar['precio_extra']?>" >Agregar a pedido</a>       
                 </td>
 
  

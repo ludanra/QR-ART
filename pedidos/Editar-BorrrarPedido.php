@@ -6,7 +6,7 @@ session_start();
 $conexion=mysqli_connect("localhost","root","","qr_art");
 
 
-$id= $_REQUEST['id'];
+$id= $_REQUEST['cod_mesa'];
 
 
 ?>
@@ -79,7 +79,7 @@ include("modal_cart2.php");
 <th scope="col">#</th>
 <th scope="col">Producto</th>
 <th scope="col">Precio</th>
-<th scope="col">Total</th>
+
 <th scope="col">Borrar</th>
 
 
@@ -108,7 +108,6 @@ include("modal_cart2.php");
 <td style="visibility:collapse; display:none;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
 <td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['nombre_prod'] ?></td>
 <td style="vertical-align: middle;">$<?php echo $carrito_mio[$i]['precio_prod'] ?></td>
-<td style="vertical-align: middle;"> $<?php echo $carrito_mio[$i]['precio_prod'] * $carrito_mio[$i]['cantidad']; ?></td>
 <td style="vertical-align: middle;">
 <form id="form3" name="form2" method="post" action="cart.php">
           <input name="id2" type="hidden" id="id2" value="<?php print $i;   ?>" />
@@ -169,7 +168,7 @@ include("modal_cart2.php");
 
 
 <a type="button" class="btn btn-primary my-4"  href="../index.php">Volver</a>
-<a type="button" class="btn btn-success my-4" href="Pagar.php?id=<?php echo $id ?>">Terminar pedido</a>
+<a type="button" class="btn btn-success my-4" href="Pagar.php?cod_mesa=<?php echo $id ?>">Terminar pedido</a>
 
 
 
